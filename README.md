@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/murshidazher/this-mac/master/static/logo.jpg" width="75px">
+<img src="https://raw.githubusercontent.com/murshidazher/this-mac/main/static/logo.jpg" width="75px">
 
 # [this-mac](https://git.io/this-mac)
 
@@ -17,3 +17,4 @@ bash -c "`curl -L https://git.io/this-mac`"
 ## Link
 
 - [tput colors](https://unix.stackexchange.com/questions/269077/tput-setaf-color-table-how-to-determine-color-codes)
+- [digital mac base icon](https://dribbble.com/shots/6185043-Pixelado) by Gustavo Zambelli
