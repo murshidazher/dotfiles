@@ -52,7 +52,7 @@ CONTINUE=false
 
 echo ""
 cecho "Have you read through the script? You're about to run and " $red
-cecho "understood that it will make changes to your computer? (y/n)" $red
+cecho "understood that it would make changes to your computer? (y/n)" $red
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   CONTINUE=true

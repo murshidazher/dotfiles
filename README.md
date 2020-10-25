@@ -4,9 +4,18 @@
 
 > My personal installation script for a new mac.
 
-A dogmatic script to set up a new Mac computer, or if I flush my current one.
+- A dogmatic script to set up a new Mac computer, or if I flush my current one.
 
-## Install from script
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [Installing / Getting started](#installing--getting-started)
+- [Link](#link)
+- [License](#license)
+
+## Installing / Getting started
+
+> A quick introduction of the minimal setup you need to get a hello world up & running.
 
 Open the terminal, then:
 
