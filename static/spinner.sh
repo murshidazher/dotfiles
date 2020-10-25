@@ -3,10 +3,10 @@
 spin() {
   spinner="⠁⠉⠙⠚⠒⠂⠂⠒⠲⠴⠤⠄⠄⠤⠴⠲⠒⠂⠂⠒⠚⠙⠉⠁"
   while :; do
-    for i in $(seq 0 7); do
-      echo -n "${spinner:$i:1}"
+    for i in $(seq 0 23); do
+      echo -n "${spinner:$i:1}"About to make a slow web call..." }"
       echo -en "\010"
-      sleep 1
+      sleep .5
     done
   done
 }

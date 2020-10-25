@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/murshidazher/this-mac/main/static/logo.jpg" width="75px">
+<img src="https://raw.githubusercontent.com/murshidazher/this-mac/main/static/logo.jpg" width="90px">
 
 # [this-mac](https://git.io/this-mac)
 
@@ -22,6 +22,11 @@ Open the terminal, then:
 ```sh
 bash -c "`curl -L https://git.io/this-mac`"
 ```
+
+## Uses
+
+- [Homebrew]()
+- [Cask](https://github.com/Homebrew/homebrew-cask) - speed installation and management of GUI macOS applications.
 
 ## Link
 
