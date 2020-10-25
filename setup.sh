@@ -157,13 +157,13 @@ done
 echo "Starting brew app install..."
 
 ### Window Management
-brew cask install sizeup # window manager
+brew cask install magnet # window manager
 
 # Start SizeUp at login
-defaults write com.irradiatedsoftware.SizeUp StartAtLogin -bool true
+defaults write com.crowdcafe.Magnet StartAtLogin -bool true
 
 # Don’t show the preferences window on next start
-defaults write com.irradiatedsoftware.SizeUp ShowPrefsOnNextStart -bool false
+defaults write com.crowdcafe.Mangnet ShowPrefsOnNextStart -bool false
 
 ### Developer Tools
 brew cask install iterm2

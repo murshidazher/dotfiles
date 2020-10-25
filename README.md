@@ -25,8 +25,23 @@ bash -c "`curl -L https://git.io/this-mac`"
 
 ## Uses
 
-- [Homebrew]()
+### Basic
+
+- [Homebrew]() - Package Manager for macOS
 - [Cask](https://github.com/Homebrew/homebrew-cask) - speed installation and management of GUI macOS applications.
+
+### Basic
+
+- [Magnet](https://magnet.crowdcafe.com/) - Window manager
+- [iterm2]() -
+- [dash](https://kapeli.com/dash) - API documentation set
+- [ispell](https://www.gnu.org/software/ispell/) - spelling checker for Unix
+
+### Development
+
+- [docker]()
+- [postgresql]()
+- [redis]()
 
 ## Link
 
