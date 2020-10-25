@@ -50,6 +50,11 @@ A list of helpful links used to develop/inspire this project
 - :zap: [tput colors](https://unix.stackexchange.com/questions/269077/tput-setaf-color-table-how-to-determine-color-codes)
 - :burrito: [digital mac base icon](https://dribbble.com/shots/6185043-Pixelado) by Gustavo Zambelli
 
+### TODO
+
+[ ] Install [VSCode Extensions](https://stackoverflow.com/questions/34286515/how-to-install-visual-studio-code-extensions-from-command-line) thorugh shell. For [code](https://stackoverflow.com/questions/30065227/run-open-vscode-from-mac-terminal) command.
+[ ] [All in one tutorial](https://dev-yakuza.github.io/en/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/)
+
 ## License
 
 [MIT](https://github.com/murshidazher/this-mac/blob/main/LICENSE) © Murshid Azher.
