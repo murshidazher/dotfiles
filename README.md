@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/murshidazher/this-mac/master/static/logo.jpg" width="75px">
+
 # [this-mac](https://git.io/this-mac)
 
 > My personal installation script for a new mac.
