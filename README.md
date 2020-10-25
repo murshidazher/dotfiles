@@ -16,5 +16,11 @@ bash -c "`curl -L https://git.io/this-mac`"
 
 ## Link
 
-- [tput colors](https://unix.stackexchange.com/questions/269077/tput-setaf-color-table-how-to-determine-color-codes)
-- [digital mac base icon](https://dribbble.com/shots/6185043-Pixelado) by Gustavo Zambelli
+A list of helpful links used to develop/inspire this project
+
+- :zap: [tput colors](https://unix.stackexchange.com/questions/269077/tput-setaf-color-table-how-to-determine-color-codes)
+- :burrito: [digital mac base icon](https://dribbble.com/shots/6185043-Pixelado) by Gustavo Zambelli
+
+## License
+
+[MIT](https://github.com/murshidazher/this-mac/blob/main/LICENSE) © Murshid Azher.
