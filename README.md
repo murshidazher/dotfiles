@@ -11,3 +11,7 @@ Open the terminal, then:
 ```sh
 bash -c "`curl -L https://git.io/this-mac`"
 ```
+
+## Link
+
+- [tput colors](https://unix.stackexchange.com/questions/269077/tput-setaf-color-table-how-to-determine-color-codes)
