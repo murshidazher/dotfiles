@@ -1,0 +1,14 @@
+[
+  {
+    "name": "projects",
+    "rootPath": "$home/projects",
+    "paths": [],
+    "group": ""
+  },
+  {
+    "name": "repos",
+    "rootPath": "$home/repos",
+    "paths": [],
+    "group": ""
+  }
+]

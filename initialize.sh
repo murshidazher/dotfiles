@@ -1,88 +1,179 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-#                    _           _        _ _
-#  ___  _____  __   (_)_ __  ___| |_ __ _| | |
-# / _ \/ __\ \/ /   | | '_ \/ __| __/ _` | | |
-#| (_) \__ \>  <    | | | | \__ \ || (_| | | |
-# \___/|___/_/\_\   |_|_| |_|___/\__\__,_|_|_|
+# some bash library helpers
+# @author Adam Eivy https://github.com/atomantic/dotfiles
 
-echo "📦 Mac OS Install Setup Script"
-echo "By Murshid Azher"
-echo "🐦 https://twitter.com/murshidazher"
+debug=${1:-false} # default debug param.
 
-# Some configs reused from:
-# https://raw.githubusercontent.com/nnja/new-computer/master/setup.sh
+# --------------------
+# Console Print Styles
+# --------------------
 
-# Colorize
+# Colors
+ESC_SEQ="\x1b["
+COL_RESET=$ESC_SEQ"39;49;00m"
+COL_RED=$ESC_SEQ"31;01m"
+COL_GREEN=$ESC_SEQ"32;01m"
+COL_YELLOW=$ESC_SEQ"33;01m"
+COL_BLUE=$ESC_SEQ"\e[96m"
 
-# Set the colours you can use
-black=$(tput setaf 0)
-red=$(tput setaf 1)
-green=$(tput setaf 2)
-yellow=$(tput setaf 3)
-blue=$(tput setaf 4)
-magenta=$(tput setaf 5)
-cyan=$(tput setaf 6)
-white=$(tput setaf 7)
-
-# Resets to default graphic rendition
-reset=$(tput sgr0)
-
-# Color-echo.
-# arg $1 = message
-# arg $2 = Color
-cecho() {
-  echo "${2}${1}${reset}"
-  return
+function ok() {
+  echo -e "$COL_GREEN[ok]$COL_RESET $1"
 }
 
-echo ""
-cecho "###############################################" $red
-cecho "#        DO NOT RUN THIS SCRIPT BLINDLY       #" $red
-cecho "#         YOU'LL PROBABLY REGRET IT...        #" $red
-cecho "#                                             #" $red
-cecho "#              READ IT THOROUGHLY             #" $red
-cecho "#         AND EDIT TO SUIT YOUR NEEDS         #" $red
-cecho "###############################################" $red
-echo ""
+function botintro() {
+  echo -e "\n$COL_BLUE(っ◕‿◕)っ$COL_RESET - $1"
+}
+function bot() {
+  echo -e "$COL_BLUE(っ◕‿◕)っ$COL_RESET - $1"
+}
 
-# Set continue to false by default.
-CONTINUE=false
+function actioninfo() {
+  echo -e "$COL_YELLOW[action]:$COL_RESET ⇒ $1"
+}
 
-echo ""
-cecho "Have you read through the script? You're about to run and " $red
-cecho "understood that it would make changes to your computer? (y/n)" $red
-read -r response
-if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
-  CONTINUE=true
+function running() {
+  echo -en "$COL_YELLOW ⇒ $COL_RESET $1: "
+}
+
+function action() {
+  echo -e "\n$COL_YELLOW[action]:$COL_RESET ⇒ $1"
+}
+
+function warn() {
+  echo -e "$COL_YELLOW[warning]$COL_RESET $1"
+}
+
+function success() {
+  echo -e "$COL_GREEN[success]$COL_RESET $1"
+}
+
+function error() {
+  echo -e "$COL_RED[error]$COL_RESET $1"
+}
+
+function cancelled() {
+  echo -e "$COL_RED[cancelled]$COL_RESET $1"
+}
+
+function awesome_header() {
+  echo -en "\n$COL_BLUE          ██            ██     ████ ██  ██ $COL_RESET"
+  echo -en "\n$COL_BLUE         ░██           ░██    ░██░ ░░  ░██ $COL_RESET"
+  echo -en "\n$COL_BLUE         ░██  ██████  ██████ ██████ ██ ░██  █████   ██████ $COL_RESET"
+  echo -en "\n$COL_BLUE      ██████ ██░░░░██░░░██░ ░░░██░ ░██ ░██ ██░░░██ ██░░░░ $COL_RESET"
+  echo -en "\n$COL_BLUE     ██░░░██░██   ░██  ░██    ░██  ░██ ░██░███████░░█████ $COL_RESET"
+  echo -en "\n$COL_BLUE    ░██  ░██░██   ░██  ░██    ░██  ░██ ░██░██░░░░  ░░░░░██ $COL_RESET"
+  echo -en "\n$COL_BLUE    ░░██████░░██████   ░░██   ░██  ░██ ███░░██████ ██████ $COL_RESET"
+  echo -en "\n$COL_BLUE     ░░░░░░  ░░░░░░     ░░    ░░   ░░ ░░░  ░░░░░░ ░░░░░░ $COL_RESET"
+  echo -en "\n"
+  echo -en "\n"
+}
+
+ask_for_confirmation() {
+  echo -e "\e[1m$1\e[0m (y/N) "
+  read -n 1
+  echo -e "\n"
+}
+
+answer_is_yes() {
+  [[ "$REPLY" =~ ^(y|Y) ]] && return 0 || return 1
+}
+
+print_result() {
+  [ $1 -eq 0 ] && success "$2" || error "$2"
+  [ "$3" == "true" ] && [ $1 -ne 0 ] && exit
+}
+
+execute() {
+  if $debug; then
+    $1
+  else
+    $1 &>/dev/null
+  fi
+  print_result $? "${2:-$1}"
+}
+
+# Check if folder is a git repo.
+is_git_repository() {
+  [ "$(
+    git rev-parse &>/dev/null
+    printf $?
+  )" -eq 0 ] && return 0 || return 1
+}
+
+ask_for_sudo() {
+  # Ask for the administrator password upfront
+  sudo -v
+
+  # Update existing `sudo` time stamp until this script has finished
+  # https://gist.github.com/cowboy/3118588
+  while true; do
+    sudo -n true
+    sleep 60
+    kill -0 "$$" || exit
+  done &>/dev/null &
+}
+
+# ----
+# Prep
+# ----
+echo -e "\n\e[1m\$📦 Mac Setup by [Murshid Azher](https://github.com/murshidazher/dotfiles)  /~\n\e[0m"
+
+defaultdotfilesdir="$HOME/dotfiles"
+dotfilesdir=$(pwd)
+
+#if is_git_repository; then
+# git pull origin master # pull repo.
+#fi;
+
+warn "\e[1mEnsure your mac system is fully up-to-date and only\e[0m"
+warn "\e[1mrun this script in terminal.app (NOT in iTerm)\e[0m"
+warn "\e[1mrun this script on ~ or ~/projects\e[0m"
+warn "=> \e[1mCTRL+C now to abort\e[0m or \e[1mENTER\e[0m to continue."
+tput bel
+read -n 1
+
+# Introduction
+awesome_header
+
+botintro "This script sets up new machines, \e[1m*use with caution*\e[0m. Please go read the script, it only takes a few minutes, [https://github.com/murshidazher/dotfiles]."
+echo -e "\nPress \e[1mENTER\e[0m to continue."
+read -n 1
+
+botintro "To start we'll need your password.\n"
+
+tput bel
+
+ask_for_confirmation "Ready?"
+if answer_is_yes; then
+  ok "\e[1mLet's go.\e[0m"
+else
+  cancelled "\e[1mExit.\e[0m"
+  exit -1
 fi
 
-if ! $CONTINUE; then
-  # Check if we're continuing and output a message if not
-  cecho "Please go read the script, it only takes a few minutes" $red
-  cecho "https://git.io/this-mac" $cyan
-  exit
-fi
+#exit -1
 
-# Here we go.. ask for the administrator password upfront and run a
-# keep-alive to update existing `sudo` time stamp until script has finished
-sudo -v
-while true; do
-  sudo -n true
-  sleep 60
-  kill -0 "$$" || exit
-done 2>/dev/null &
+# Ask for the administrator password upfront.
+ask_for_sudo
 
-#############################################
-### Prerequisite: Login to Github
-### Generate ssh keys & add to ssh-agent
-### See: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
-#############################################
+# Source directories and files to handle.
+source ./setup/files.sh
 
-echo "Generating ssh keys, adding to ssh-agent..."
+# Install all available macos updates.
+#action "Installing Mac updates:\n"
+#sudo softwareupdate -ia
+
+#-------------------------------------------
+# Prerequisite: Login to Github
+# Generate ssh keys & add to ssh-agent
+# See: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+#-------------------------------------------
+
+botintro "Generating ssh keys, adding to ssh-agent..."
 read -p 'Input email for ssh key: ' useremail
 
-echo "Use default ssh file location, enter a passphrase: "
+botintro "Use default ssh file location, enter a passphrase: "
 ssh-keygen -t rsa -b 4096 -C "$useremail" # will prompt for password
 eval "$(ssh-agent -s)"
 
@@ -93,9 +184,9 @@ ssh-add -K ~/.ssh/id_rsa
 # If you're using macOS Sierra 10.12.2 or later, you will need to modify your ~/.ssh/config file to automatically load keys into the ssh-agent and store passphrases in your keychain.
 
 if [ -e ~/.ssh/config ]; then
-  echo "ssh config already exists. Skipping adding osx specific settings... "
+  botintro "ssh config already exists. Skipping adding osx specific settings... "
 else
-  echo "Writing osx specific settings to ssh config... "
+  botintro "Writing osx specific settings to ssh config... "
   cat <<EOT >>~/.ssh/config
 	Host *
 		AddKeysToAgent yes
@@ -104,13 +195,13 @@ else
 EOT
 fi
 
-#############################################
-### Add ssh-key to GitHub via api
-#############################################
+#-------------------------------------------
+# Add ssh-key to GitHub via api
+#-------------------------------------------
 
-echo "Adding ssh-key to GitHub (via api)..."
-echo "Important! For this step, use a github personal token with the admin:public_key permission."
-echo "If you don't have one, create it here: https://github.com/settings/tokens/new"
+botintro "Adding ssh-key to GitHub (via api)..."
+botintro "Important! For this step, use a github personal token with the admin:public_key permission."
+botintro "If you don't have one, create it here: https://github.com/settings/tokens/new"
 
 retries=3
 SSH_KEY=$(cat ~/.ssh/id_rsa.pub)
@@ -123,28 +214,46 @@ for ((i = 0; i < retries; i++)); do
   gh_status_code=$(curl -o /dev/null -s -w "%{http_code}\n" -u "$ghusername:$ghtoken" -d '{"title":"'$ghtitle'","key":"'"$SSH_KEY"'"}' 'https://api.github.com/user/keys')
 
   if (($gh_status_code - eq == 201)); then
-    echo "GitHub ssh key added successfully!"
+    botintro "GitHub ssh key added successfully!"
     break
   else
-    echo "Something went wrong. Enter your credentials and try again..."
-    echo -n "Status code returned: "
-    echo $gh_status_code
+    botintro "Something went wrong. Enter your credentials and try again..."
+    botintro -n "Status code returned: "
+    botintro $gh_status_code
   fi
 done
 
-[[ $retries -eq i ]] && echo "Adding ssh-key to GitHub failed! Try again later."
+[[ $retries -eq i ]] && botintro "Adding ssh-key to GitHub failed! Try again later."
 
-#############################################
-### Install dotfiles repo, run link script
-#############################################
+#-------------------------------------------
+# Install dotfiles repo, run link script
+#-------------------------------------------
+
+if [ -e $HOME/projects ]; then
+  botintro "Create a projects directory on root"
+  mkdir -p $HOME/projects
+else
+  botintro "~/projects directory exists..."
+fi
+
+botintro "Cloning the repo from https://github.com/murshidazher/dotfiles to ~/projects"
 
 # dotfiles for vs code, emacs, gitconfig, oh my zsh, etc.
 cd ~/projects
-git clone git@github.com:murshidazher/dotfiles.git
-cd dotfiles
-source ./setup.sh
-# fetch submodules for oh-my-zsh
-# git submodule init && git submodule update && git submodule status
-# make symbolic links and change shell to zshell
-# ./makesymlinks.sh
-# upgrade_oh_my_zsh
+gh_clone=$(git clone git@github.com:murshidazher/dotfiles.git)
+
+if (!($gh_clone)); then
+  botintro "Something went wrong. When cloning the repo..."
+  botintro -n "Status code returned: "
+  botintro $gh_clone
+  break
+else
+  botintro "Dotfile cloned successfully..."
+  cd dotfiles
+  botintro "Setting up...."
+
+  # dotfiles for vs code, emacs, gitconfig, oh my zsh, etc.
+  ./setup.sh
+fi
+
+# EOF

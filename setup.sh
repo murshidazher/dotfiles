@@ -1,149 +1,82 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-#                    _           _        _ _
-#  ___  _____  __   (_)_ __  ___| |_ __ _| | |
-# / _ \/ __\ \/ /   | | '_ \/ __| __/ _` | | |
-#| (_) \__ \>  <    | | | | \__ \ || (_| | | |
-# \___/|___/_/\_\   |_|_| |_|___/\__\__,_|_|_|
+# 1. Backup
+# 2. Directories
+# 3. Xcode CLI
+# 4. Homebrew
+# 5. Symlinks
+# 6. Misc.
 
-echo "📦 Mac OS Install Setup Script"
-echo "By Murshid Azher"
-echo "🐦 https://twitter.com/murshidazher"
+debug=${1:-false}     # default debug param.
+source ./setup/lib.sh # load help lib.
 
-# Some configs reused from:
-# https://raw.githubusercontent.com/nnja/new-computer/master/setup.sh
+# Help
+bot "OK, what we're going to do:\n"
 
-# Colorize
+actioninfo "1. Backup directories and files we'll be touching."
+actioninfo "2. Create required directories."
+actioninfo "3. Install Xcode Command Line Tools."
+actioninfo "4. Install Homebrew and all required apps."
+actioninfo "5. Create symlinks for directories and files."
+actioninfo "6. Final touches."
 
-# Set the colours you can use
-black=$(tput setaf 0)
-red=$(tput setaf 1)
-green=$(tput setaf 2)
-yellow=$(tput setaf 3)
-blue=$(tput setaf 4)
-magenta=$(tput setaf 5)
-cyan=$(tput setaf 6)
-white=$(tput setaf 7)
+# ---------
+# 1. Backup
+# ---------
+botintro "\e[1mSTEP 1: BACKUP\e[0m"
+source ./setup/backup.sh
 
-# Resets to default graphic rendition
-reset=$(tput sgr0)
+# --------------
+# 2. Directories
+# --------------
+botintro "\e[1mSTEP 2: DIRECTORIES\e[0m"
+source ./setup/directories.sh
 
-# Color-echo.
-# arg $1 = message
-# arg $2 = Color
-cecho() {
-  echo "${2}${1}${reset}"
-  return
-}
+# ------------
+# 3. Xcode CLI
+# ------------
+botintro "\e[1mSTEP 3: XCODE CLI\e[0m"
+source ./setup/xcodecli.sh
 
-echo ""
-cecho "###############################################" $red
-cecho "#        DO NOT RUN THIS SCRIPT BLINDLY       #" $red
-cecho "#         YOU'LL PROBABLY REGRET IT...        #" $red
-cecho "#                                             #" $red
-cecho "#              READ IT THOROUGHLY             #" $red
-cecho "#         AND EDIT TO SUIT YOUR NEEDS         #" $red
-cecho "###############################################" $red
-echo ""
+# -----------
+# 4. Homebrew
+# -----------
+botintro "\e[1mSTEP 4: HOMEBREW\e[0m"
+source ./setup/brew.sh
 
-# Set continue to false by default.
-CONTINUE=false
-
-echo ""
-cecho "Have you read through the script? You're about to run and " $red
-cecho "understood that it would make changes to your computer? (y/n)" $red
-read -r response
-if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
-  CONTINUE=true
+# brew is required to continue, exit out otherwise.
+if ! $brewinstall; then
+  cancelled "\e[1mCannot proceed. Exit.\e[0m"
+  exit -1
 fi
 
-if ! $CONTINUE; then
-  # Check if we're continuing and output a message if not
-  cecho "Please go read the script, it only takes a few minutes" $red
-  cecho "https://git.io/this-mac" $cyan
-  exit
-fi
+# asdf setup
+source ./setup/asdf.sh
 
-# Here we go.. ask for the administrator password upfront and run a
-# keep-alive to update existing `sudo` time stamp until script has finished
-sudo -v
-while true; do
-  sudo -n true
-  sleep 60
-  kill -0 "$$" || exit
-done 2>/dev/null &
+# Node setup
+source ./setup/node.sh
 
-#############################################
-### Prerequisite: Login to Github
-### Generate ssh keys & add to ssh-agent
-### See: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
-#############################################
+# vim setup
+source ./setup/vim.sh
 
-echo "Generating ssh keys, adding to ssh-agent..."
-read -p 'Input email for ssh key: ' useremail
+# -----------
+# 5. Symlinks
+# -----------
+botintro "\e[1mSTEP 5: SYMLINKS\e[0m"
+source ./setup/symlinks.sh
 
-echo "Use default ssh file location, enter a passphrase: "
-ssh-keygen -t rsa -b 4096 -C "$useremail" # will prompt for password
-eval "$(ssh-agent -s)"
+# vscode setup
+source ./setup/vscode.sh
 
-# Now that sshconfig is synced add key to ssh-agent and
-# store passphrase in keychain
-ssh-add -K ~/.ssh/id_rsa
+# --------
+# 6. Misc.
+# --------
+botintro "\e[1mSTEP 6: Final touches\e[0m"
+source ./setup/misc.sh
 
-# If you're using macOS Sierra 10.12.2 or later, you will need to modify your ~/.ssh/config file to automatically load keys into the ssh-agent and store passphrases in your keychain.
+# Wrap-up.
 
-if [ -e ~/.ssh/config ]; then
-  echo "ssh config already exists. Skipping adding osx specific settings... "
-else
-  echo "Writing osx specific settings to ssh config... "
-  cat <<EOT >>~/.ssh/config
-	Host *
-		AddKeysToAgent yes
-		UseKeychain yes
-		IdentityFile ~/.ssh/id_rsa
-EOT
-fi
+botintro "\e[1mFINISHED\e[0m -- That's it for the automated process."
 
-#############################################
-### Add ssh-key to GitHub via api
-#############################################
-
-echo "Adding ssh-key to GitHub (via api)..."
-echo "Important! For this step, use a github personal token with the admin:public_key permission."
-echo "If you don't have one, create it here: https://github.com/settings/tokens/new"
-
-retries=3
-SSH_KEY=$(cat ~/.ssh/id_rsa.pub)
-
-for ((i = 0; i < retries; i++)); do
-  read -p 'GitHub username: ' ghusername
-  read -p 'Machine name: ' ghtitle
-  read -sp 'GitHub personal token: ' ghtoken
-
-  gh_status_code=$(curl -o /dev/null -s -w "%{http_code}\n" -u "$ghusername:$ghtoken" -d '{"title":"'$ghtitle'","key":"'"$SSH_KEY"'"}' 'https://api.github.com/user/keys')
-
-  if (($gh_status_code - eq == 201)); then
-    echo "GitHub ssh key added successfully!"
-    break
-  else
-    echo "Something went wrong. Enter your credentials and try again..."
-    echo -n "Status code returned: "
-    echo $gh_status_code
-  fi
-done
-
-[[ $retries -eq i ]] && echo "Adding ssh-key to GitHub failed! Try again later."
-
-#############################################
-### Install dotfiles repo, run link script
-#############################################
-
-# dotfiles for vs code, emacs, gitconfig, oh my zsh, etc.
-cd ~/projects
-git clone git@github.com:murshidazher/dotfiles.git
-cd dotfiles
-# fetch submodules for oh-my-zsh
-# git submodule init && git submodule update && git submodule status
-# make symbolic links and change shell to zshell
-# ./makesymlinks.sh
-# upgrade_oh_my_zsh
+echo -e "\np.s. don't forget to sync your dropbox and get mackup running.\n"
+# EOF
