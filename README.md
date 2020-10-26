@@ -4,7 +4,7 @@
 
 > My personal installation script to automate any new macOS system setup.
 
-- A dogmatic script to set up script. Built for Mac OS X. Certified lit :fire: :fire: :fire:
+- A dogmatic script to set up script. Built for Mac OS X :fire: :fire:
 
 **Rationale**
 
@@ -19,7 +19,11 @@ Setting up a new developer machine can be **ad-hoc**, **manual**, and **time-con
 
 ## Installing / Getting started
 
-> A quick introduction of the minimal setup you need to get a hello world up & running.
+> ⚠️ Scripts in this project perform automated tasks. Review the code first and use at your own risk! ⚠️
+
+### Setup
+
+### Install
 
 Open the terminal, then:
 
