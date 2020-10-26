@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/murshidazher/this-mac/main/static/logo.jpg" width="90px">
 
-# [this-mac](https://git.io/this-mac)
+# [dotfiles](https://git.io/this-mac)
 
 > My personal installation script to automate any new macOS system setup.
 
