@@ -268,10 +268,34 @@ if $brewinstall; then
 
   # Install Mac App Store Applications.
   # requires: brew install mas
-  # mas install 1254981365 # Contrast
-  # mas install 1234952668 # FlagTimes
-  # mas install 1225570693 # Ulysses
-  # TODO: install pixelsnap
+  bot "Installing apps from the App Store..."
+
+  ### find app ids with: mas search "app name"
+  brew install mas
+
+  ### Mas login is currently broken on mojave. See:
+  ### Login manually for now.
+
+  bot "\nNeed to log in to App Store manually to install apps with mas...."
+  bot "Opening App Store. Please login."
+  open "/Applications/App Store.app"
+
+  ask_for_confirmation "\nIs app store login complete. (y/n)?"
+
+  # Flag install to go if user approves
+  if answer_is_yes; then
+    # mas install 1254981365 # Contrast
+    # mas install 1234952668 # FlagTimes
+    # mas install 1225570693 # Ulysses
+    # TODO: install pixelsnap
+    mas install 907364780  # Tomato One - Pomodoro timer
+    mas install 485812721  # Tweetdeck
+    mas install 668208984  # GIPHY Capture. The GIF Maker (For recording my screen as gif)
+    mas install 1351639930 # Gifski, convert videos to gifs
+    mas install 414030210  # Limechat, IRC app.
+  else
+    cancelled "App Store login not complete. Skipping installing App Store Apps"
+  fi
 
   running "brew cleanup"
   # Remove outdated versions from the cellar.
