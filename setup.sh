@@ -9,7 +9,6 @@
 echo "📦 Mac OS Install Setup Script"
 echo "By Murshid Azher"
 echo "🐦 https://twitter.com/murshidazher"
-echo "🐦 https://twitter.com/murshidazher"
 
 # Some configs reused from:
 # https://raw.githubusercontent.com/nnja/new-computer/master/setup.sh
@@ -74,23 +73,8 @@ while true; do
   kill -0 "$$" || exit
 done 2>/dev/null &
 
-##############################
-# Prerequisite: Install Brew #
-##############################
-
-echo "Installing brew..."
-
-if test ! $(which brew); then
-  ## Don't prompt for confirmation when installing homebrew
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" </dev/null
-fi
-
-# Latest brew, install brew cask
-brew upgrade
-brew update
-brew tap caskroom/cask
-
 #############################################
+### Prerequisite: Login to Github
 ### Generate ssh keys & add to ssh-agent
 ### See: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 #############################################
@@ -150,27 +134,16 @@ done
 
 [[ $retries -eq i ]] && echo "Adding ssh-key to GitHub failed! Try again later."
 
-##############################
-# Install via Brew           #
-##############################
+#############################################
+### Install dotfiles repo, run link script
+#############################################
 
-echo "Starting brew app install..."
-
-### Window Management
-brew cask install magnet # window manager
-
-# Start SizeUp at login
-defaults write com.crowdcafe.Magnet StartAtLogin -bool true
-
-# Don’t show the preferences window on next start
-defaults write com.crowdcafe.Mangnet ShowPrefsOnNextStart -bool false
-
-### Developer Tools
-brew cask install iterm2
-brew cask install dash
-brew install ispell
-
-### Development
-brew cask install docker
-brew install postgresql
-brew install redis
+# dotfiles for vs code, emacs, gitconfig, oh my zsh, etc.
+cd ~/projects
+git clone git@github.com:murshidazher/dotfiles.git
+cd dotfiles
+# fetch submodules for oh-my-zsh
+# git submodule init && git submodule update && git submodule status
+# make symbolic links and change shell to zshell
+# ./makesymlinks.sh
+# upgrade_oh_my_zsh
