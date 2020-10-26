@@ -142,7 +142,7 @@ done
 cd ~/projects
 git clone git@github.com:murshidazher/dotfiles.git
 cd dotfiles
-./setup.sh
+source ./setup.sh
 # fetch submodules for oh-my-zsh
 # git submodule init && git submodule update && git submodule status
 # make symbolic links and change shell to zshell

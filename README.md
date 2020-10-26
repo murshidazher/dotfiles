@@ -1,6 +1,6 @@
-<img src="https://raw.githubusercontent.com/murshidazher/this-mac/main/static/logo.jpg" width="90px">
+<img src="https://raw.githubusercontent.com/murshidazher/this-mac/main/docs/logo.jpg" width="90px">
 
-# [dotfiles](https://git.io/this-mac)
+# [dotfiles](https://git.io/dotfiles-mac)
 
 > My personal installation script to automate any new macOS system setup.
 
@@ -8,7 +8,7 @@
 
 **Rationale**
 
-Setting up a new developer machine can be **ad-hoc**, **manual**, and **time-consuming**. This project simplifies that process using easy-to-understand instructions, configuration and scripts.
+Setting up a new developer machine can be **ad-hoc**, **manual**, and **time-consuming**. This project simplifies that process.
 
 ## Table of Contents
 
@@ -23,19 +23,17 @@ Setting up a new developer machine can be **ad-hoc**, **manual**, and **time-con
 
 ### Setup
 
-### Install
-
-Open the terminal, then:
+To setup simply open the terminal, then:
 
 ```sh
-bash -c "`curl -L https://git.io/this-mac`"
+bash -c "`curl -L https://git.io/dotfiles-mac`"
 ```
 
-## Uses
+## What's in the box?
 
-### Basic
+### Highlights
 
-- [Homebrew]() - Package Manager for macOS
+- **Basic Tools** [Homebrew]() - Package Manager for macOS
 - [Cask](https://github.com/Homebrew/homebrew-cask) - speed installation and management of GUI macOS applications.
 - [mas](https://github.com/mas-cli/mas) - to install AppStore applications
 
