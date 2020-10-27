@@ -4,7 +4,7 @@ debug=${1:-false}
 # Load help lib if not already loaded.
 if [ -z ${libloaded+x} ]; then
   source ./lib.sh
-fi;
+fi
 
 bot "Create required directories."
 
@@ -12,7 +12,7 @@ bot "Create required directories."
 declare -a createdirarray=(
   "$HOME/Applications"
   "$HOME/Work"
-  "$HOME/projects"
+  "$HOME/dev/src/github"
   "$HOME/code"
   "$HOME/.tmp"
   "$HOME/.ssh"
@@ -29,5 +29,4 @@ else
   error "Errors when creating directories, please check and resolve."
   cancelled "\e[1mCannot proceed. Exit.\e[0m"
   exit -1
-fi;
-
+fi

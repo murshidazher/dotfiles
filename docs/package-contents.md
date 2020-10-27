@@ -172,6 +172,7 @@ Bash 4 and auto-completion
 - `rbenv`
 - `ruby-build`
 - `rbenv-gemset`
+- `hugo`
 
 ### Databases
 

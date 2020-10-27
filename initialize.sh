@@ -128,7 +128,7 @@ dotfilesdir=$(pwd)
 
 warn "\e[1mEnsure your mac system is fully up-to-date and only\e[0m"
 warn "\e[1mrun this script in terminal.app (NOT in iTerm)\e[0m"
-warn "\e[1mrun this script on ~ or ~/projects\e[0m"
+warn "\e[1mrun this script on ~ or ~/dev/src/github\e[0m"
 warn "=> \e[1mCTRL+C now to abort\e[0m or \e[1mENTER\e[0m to continue."
 tput bel
 read -n 1
@@ -229,17 +229,17 @@ done
 # Install dotfiles repo, run link script
 #-------------------------------------------
 
-if [ -e $HOME/projects ]; then
-  botintro "Create a projects directory on root"
-  mkdir -p $HOME/projects
+if [ -e $HOME/dev/src/github ]; then
+  botintro "Create a dev directory on root"
+  mkdir -p $HOME/dev/src/github
 else
-  botintro "~/projects directory exists..."
+  botintro "~/dev directory exists..."
 fi
 
-botintro "Cloning the repo from https://github.com/murshidazher/dotfiles to ~/projects"
+botintro "Cloning the repo from https://github.com/murshidazher/dotfiles to ~/dev/src/github"
 
 # dotfiles for vs code, emacs, gitconfig, oh my zsh, etc.
-cd ~/projects
+cd $HOME/dev/src/github
 gh_clone=$(git clone git@github.com:murshidazher/dotfiles.git)
 
 if (!($gh_clone)); then

@@ -4,32 +4,32 @@ debug=${1:-false}
 # Load help lib if not already loaded.
 if [ -z ${libloaded+x} ]; then
   source ./lib.sh
-fi;
+fi
 
 # --------------------
 # Migration (optional)
 # --------------------
 
-migrationapproved=false;
+migrationapproved=false
 
 botintro "\e[1mMIGRATION\e[0m"
 
-ask_for_confirmation "\nWould you like to migrate your existing system?";
+ask_for_confirmation "\nWould you like to migrate your existing system?"
 if answer_is_yes; then
   ok "This takes a few steps:"
 
   botintro "NOTE: This is not exhaustive, it will migrate some important directories and files to ~/migration and \e[1manything in that directory will be overwritten\e[0m -- please read the docs, code and refer to your own system first."
 
-  ask_for_confirmation "\nAre you sure you want to proceed?";
+  ask_for_confirmation "\nAre you sure you want to proceed?"
   if answer_is_yes; then
-    migrationapproved=true;
-  fi;
-fi;
+    migrationapproved=true
+  fi
+fi
 
 if ! $migrationapproved; then
   cancelled "\e[1mMigration not approved. Exiting.\e[0m"
   exit -1
-fi;
+fi
 
 botintro "Running migration tasks."
 action "Creating directories."
@@ -47,10 +47,10 @@ success "Directories created."
 
 # Export lists of installed apps from brew, brew cask, npm and yarn.
 action "Exporting installed apps (brew/npm/yarn)"
-brew leaves > "$migrationdir/brew-list.txt" # all top-level brew installs
-brew cask list > "$migrationdir/cask-list.txt"
-npm list -g --depth=0 > "$migrationdir/npm-g-list.txt"
-yarn global list --depth=0 > "$migrationdir/yarn-g-list.txt"
+brew leaves >"$migrationdir/brew-list.txt" # all top-level brew installs
+brew cask list >"$migrationdir/cask-list.txt"
+npm list -g --depth=0 >"$migrationdir/npm-g-list.txt"
+yarn global list --depth=0 >"$migrationdir/yarn-g-list.txt"
 
 ok "See $migrationdir for exported apps .txt files."
 
@@ -66,7 +66,7 @@ cp -Rp "$HOME/Desktop" "$migrationdir"
 cp -Rp "$HOME/Documents" "$migrationdir"
 cp -Rp "$HOME/Downloads" "$migrationdir"
 cp -Rp "$HOME/code" "$migrationdir"
-cp -Rp "$HOME/projects" "$migrationdir"
+cp -Rp "$HOME/dev" "$migrationdir"
 cp -Rp "$HOME/Work" "$migrationdir"
 
 # Suggest to user other files to handle.
@@ -108,4 +108,3 @@ warn "- Software licenses."
 
 echo -en "\n"
 success "\e[1mMigration completed to $HOME/migration\e[0m"
-

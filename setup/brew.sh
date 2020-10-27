@@ -154,6 +154,7 @@ if $brewinstall; then
   brew install rbenv
   brew install ruby-build
   brew install rbenv-gemset
+  brew install hugo
 
   # DATABASES
   brew install postgresql
@@ -210,7 +211,7 @@ if $brewinstall; then
   brew tap caskroom/versions
 
   # Security
-  brew cask install dashlane
+  brew cask install bitwarden
   brew cask install keybase
   brew cask install gpgtools
   brew cask install tunnelblick
@@ -228,11 +229,12 @@ if $brewinstall; then
   brew cask install spectacle
   brew cask install spotify
   brew cask install vlc
+  # brew cask install adobe-acrobat-reader
   # brew cask install zoomus
 
   # Design
-  brew cask install abstract
-  # brew cask install sketch
+  # brew cask install abstract
+  brew cask install sketch
   # brew cask install zeplin
 
   # Development

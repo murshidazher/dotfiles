@@ -16,6 +16,7 @@
     - [Highlights](#highlights)
     - [Basic](#basic)
     - [Development](#development)
+    - [Rules of `dev` directory](#rules-of-dev-directory)
     - [Updating vscode plugin list](#updating-vscode-plugin-list)
   - [Link](#link)
   - [Acknowledgements](#acknowledgements)
@@ -55,6 +56,17 @@ bash -c "`curl -L https://git.io/dotfiles-mac`"
 - [postgresql]()
 - [redis]()
 
+### Rules of `dev` directory
+
+> outside the `src` we can have directory such as `sandbox` and etc...
+
+There are some rules when naming a directory inside the `dev`;
+- all directories are lowercase
+- all directories are kebab case (that I can control)
+- there is a directory named src
+- src contains a directory for each git platform
+- inside each git platform is only repo names
+
 ### Updating vscode plugin list
 
 Keeping the plugin list up to date requires manual work (like with Homebrew), and you can update the extension list by running:
@@ -78,6 +90,8 @@ Credit, inspiration and thanks to:
 - [Simon Boudrias](https://github.com/SBoudrias/dotfiles)
 - [Nina Zakharenko](https://github.com/nnja/new-computer)
 - [Aaron Bates](https://github.com/aaronbates/dotfiles)
+
+and many more...
 
 ## License
 
@@ -113,3 +127,4 @@ Credit, inspiration and thanks to:
 - read about `git-crypt` [encryption](https://github.com/masasam/dotfiles)
 
 - Add `hugo`, `typescript`, `angular`, `svelte`, `netlify`, `heroku`
+- See how to use `tunnelblick`

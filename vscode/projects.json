@@ -1,7 +1,7 @@
 [
   {
-    "name": "projects",
-    "rootPath": "$home/projects",
+    "name": "github",
+    "rootPath": "$home/dev/src/github",
     "paths": [],
     "group": ""
   },
