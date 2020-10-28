@@ -11,7 +11,11 @@ osascript -e 'tell application "System Preferences" to quit'
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do
+	sudo -n true
+	sleep 60
+	kill -0 "$$" || exit
+done 2>/dev/null &
 
 ###############################################################################
 # General UI/UX                                                               #
@@ -95,7 +99,7 @@ defaults write com.apple.helpviewer DevMode -bool true
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
 # Disable Notification Center and remove the menu bar icon
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
+launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2>/dev/null
 
 # Disable automatic capitalization as it’s annoying when typing code
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
@@ -168,10 +172,10 @@ defaults write NSGlobalDomain AppleMetricUnits -bool true
 # sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
-sudo systemsetup -settimezone "Europe/London" > /dev/null
+sudo systemsetup -settimezone "Europe/London" >/dev/null
 
 # Stop iTunes from responding to the keyboard media keys
-launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
+launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2>/dev/null
 
 ###############################################################################
 # Energy saving                                                               #
@@ -199,7 +203,7 @@ sudo pmset -b sleep 5
 sudo pmset -a standbydelay 86400
 
 # Never go into computer sleep mode
-sudo systemsetup -setcomputersleep Off > /dev/null
+sudo systemsetup -setcomputersleep Off >/dev/null
 
 # Hibernation mode
 # 0: Disable hibernation (speeds up entering sleep mode)
@@ -642,7 +646,7 @@ defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 # Disable local Time Machine backups
-hash tmutil &> /dev/null && sudo tmutil disablelocal
+hash tmutil &>/dev/null && sudo tmutil disablelocal
 
 ###############################################################################
 # Activity Monitor                                                            #
@@ -765,7 +769,15 @@ defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool t
 # Disable signing emails by default
 defaults write ~/Library/Preferences/org.gpgtools.gpgmail SignNewEmailsByDefault -bool false
 
+###############################################################################
+# Magnet                                                                      #
+###############################################################################
 
+# Start Magnet at login
+defaults write com.crowdcafe.Magnet StartAtLogin -bool true
+
+# Don’t show the preferences window on next start
+defaults write com.crowdcafe.Magnet ShowPrefsOnNextStart -bool false
 
 ###############################################################################
 # Kill affected applications                                                  #
@@ -787,6 +799,6 @@ for app in "Activity Monitor" \
 	"SystemUIServer" \
 	"Terminal" \
 	"iCal"; do
-	killall "${app}" &> /dev/null
+	killall "${app}" &>/dev/null
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."

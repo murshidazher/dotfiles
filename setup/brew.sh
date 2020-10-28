@@ -296,11 +296,6 @@ if $brewinstall; then
     mas install 1351639930 # Gifski, convert videos to gifs
     mas install 414030210  # Limechat, IRC app.
     mas install 441258766  # Magnet
-
-    # Start Magnet at login
-    defaults write com.crowdcafe.Magnet StartAtLogin -bool true
-    # Don’t show the preferences window on next start
-    defaults write com.crowdcafe.Magnet ShowPrefsOnNextStart -bool false
   else
     cancelled "App Store login not complete. Skipping installing App Store Apps"
   fi
