@@ -220,13 +220,13 @@ if $brewinstall; then
   brew cask install caffeine
   brew cask install diskwave
   brew cask install dropbox
-  brew cask install firefox
+  # brew cask install firefox
   brew cask install g-desktop-suite
-  brew cask install google-chrome
+  # brew cask install google-chrome
   brew cask install grammarly
   brew cask install iterm2
   brew cask install slack
-  brew cask install spectacle
+  # brew cask install spectacle
   brew cask install spotify
   brew cask install vlc
   # brew cask install adobe-acrobat-reader
@@ -239,7 +239,8 @@ if $brewinstall; then
 
   # Development
   brew cask install dash
-  brew cask install google-chrome-canary
+  brew cask install brave-browser
+  # brew cask install google-chrome-canary
   brew cask install graphiql
   brew cask install imagealpha
   brew cask install imageoptim
@@ -267,6 +268,13 @@ if $brewinstall; then
   # brew cask install suspicious-package
   brew cask install quicklookase
   brew cask install qlvideo
+
+  # DRIVERS
+  running "Installing drivers"
+
+  brew tap homebrew/cask-drivers
+
+  brew cask install logitech-options
 
   # Install Mac App Store Applications.
   # requires: brew install mas
