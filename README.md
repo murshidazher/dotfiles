@@ -99,10 +99,7 @@ and many more...
 
 ### TODO
 
-- [ ] Install [VSCode Extensions](https://stackoverflow.com/questions/34286515/how-to-install-visual-studio-code-extensions-from-command-line) thorugh shell. For [code](https://stackoverflow.com/questions/30065227/run-open-vscode-from-mac-terminal) command.
 - [ ] [All in one tutorial](https://dev-yakuza.github.io/en/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/)
-- [ ] Update the `vscode.sh` with proper extension.
-- [ ] Create custom `vscode` symlinks
 
 - Add docker, kubctl.
 - Add symlinks to host file
