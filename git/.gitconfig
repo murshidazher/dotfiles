@@ -110,10 +110,10 @@ fcm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen
 contributors = shortlog --summary --numbered
 
 # Recap
-recap = log --all --oneline --no-merges --author="aaron@aaronbates.me"
+recap = log --all --oneline --no-merges --author="murshidazher@yahoo.com"
 
 # Today
-today = log --since=00:00:00 --all --no-merges --oneline --author="aaron@aaronbates.me"
+today = log --since=00:00:00 --all --no-merges --oneline --author="murshidazher@yahoo.com"
 
 # Upstream
 upstream = "!f() { \

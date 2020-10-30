@@ -246,7 +246,8 @@ Bash 4 and auto-completion
 
 ### Development
 
-- `google-chrome-canary`
+<!-- - `google-chrome-canary` -->
+- `brave-browser`
 - `imagealpha`
 - `imageoptim`
 - `ngrok`
@@ -322,7 +323,8 @@ Installed using `mas`:
 - `db-up`
 - `git-autofixup`
 - `git-big-file`
-- `git-chromecheckout`
+- `git-bravecheckout`
+<!-- - `git-chromecheckout` -->
 - `git-delete-merged-branches`
 - `git-longest-message`
 - `git-move-branch`
