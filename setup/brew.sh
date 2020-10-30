@@ -229,6 +229,7 @@ if $brewinstall; then
   # brew cask install spectacle
   brew cask install spotify
   brew cask install vlc
+  brew cask install numi
   # brew cask install adobe-acrobat-reader
   # brew cask install zoomus
 
