@@ -140,7 +140,7 @@ botintro "This script sets up new machines, \e[1m*use with caution*\e[0m. Please
 echo -e "\nPress \e[1mENTER\e[0m to continue."
 read -n 1
 
-botintro "To start we'll need your password.\n"
+bot "To start we'll need your password.\n"
 
 tput bel
 
@@ -170,10 +170,10 @@ source ./setup/files.sh
 # See: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 #-------------------------------------------
 
-botintro "Generating ssh keys, adding to ssh-agent..."
+running "Generating ssh keys, adding to ssh-agent..."
 read -p 'Input email for ssh key: ' useremail
 
-botintro "Use default ssh file location, enter a passphrase: "
+running "Use default ssh file location, enter a passphrase: "
 ssh-keygen -t rsa -b 4096 -C "$useremail" # will prompt for password
 eval "$(ssh-agent -s)"
 
@@ -184,9 +184,9 @@ ssh-add -K ~/.ssh/id_rsa
 # If you're using macOS Sierra 10.12.2 or later, you will need to modify your ~/.ssh/config file to automatically load keys into the ssh-agent and store passphrases in your keychain.
 
 if [ -e ~/.ssh/config ]; then
-  botintro "ssh config already exists. Skipping adding osx specific settings... "
+  cancelled "ssh config already exists. Skipping adding osx specific settings... "
 else
-  botintro "Writing osx specific settings to ssh config... "
+  running "Writing osx specific settings to ssh config... "
   cat <<EOT >>~/.ssh/config
 	Host *
 		AddKeysToAgent yes
@@ -199,9 +199,9 @@ fi
 # Add ssh-key to GitHub via api
 #-------------------------------------------
 
-botintro "Adding ssh-key to GitHub (via api)..."
-botintro "Important! For this step, use a github personal token with the admin:public_key permission."
-botintro "If you don't have one, create it here: https://github.com/settings/tokens/new"
+action "Adding ssh-key to GitHub (via api)..."
+warn "Important! For this step, use a github personal token with the admin:public_key permission."
+actioninfo "If you don't have one, create it here: https://github.com/settings/tokens/new"
 
 retries=3
 SSH_KEY=$(cat ~/.ssh/id_rsa.pub)
@@ -214,12 +214,12 @@ for ((i = 0; i < retries; i++)); do
   gh_status_code=$(curl -o /dev/null -s -w "%{http_code}\n" -u "$ghusername:$ghtoken" -d '{"title":"'$ghtitle'","key":"'"$SSH_KEY"'"}' 'https://api.github.com/user/keys')
 
   if (($gh_status_code - eq == 201)); then
-    botintro "GitHub ssh key added successfully!"
+    running "GitHub ssh key added successfully!"
     break
   else
-    botintro "Something went wrong. Enter your credentials and try again..."
-    botintro -n "Status code returned: "
-    botintro $gh_status_code
+    error "Something went wrong. Enter your credentials and try again..."
+    error -n "Status code returned: "
+    error $gh_status_code
   fi
 done
 
@@ -230,27 +230,27 @@ done
 #-------------------------------------------
 
 if [ -e $HOME/dev/src/github ]; then
-  botintro "Create a dev directory on root"
+  running "Create a dev directory on root"
   mkdir -p $HOME/dev/src/github
 else
-  botintro "~/dev directory exists..."
+  cancelled "~/dev directory exists..."
 fi
 
-botintro "Cloning the repo from https://github.com/murshidazher/dotfiles to ~/dev/src/github"
+running "Cloning the repo from https://github.com/murshidazher/dotfiles to ~/dev/src/github"
 
 # dotfiles for vs code, emacs, gitconfig, oh my zsh, etc.
 cd $HOME/dev/src/github
 gh_clone=$(git clone git@github.com:murshidazher/dotfiles.git)
 
 if (!($gh_clone)); then
-  botintro "Something went wrong. When cloning the repo..."
-  botintro -n "Status code returned: "
-  botintro $gh_clone
+  error "Something went wrong. When cloning the repo..."
+  error -n "Status code returned: "
+  error $gh_clone
   break
 else
-  botintro "Dotfile cloned successfully..."
+  running "Dotfile cloned successfully..."
   cd dotfiles
-  botintro "Setting up...."
+  running "Setting up...."
 
   # dotfiles for vs code, emacs, gitconfig, oh my zsh, etc.
   ./setup.sh
