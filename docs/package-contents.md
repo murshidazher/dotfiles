@@ -252,6 +252,7 @@ Bash 4 and auto-completion
 - `imageoptim`
 - `ngrok`
 - `vscode`
+- `airtable`
 
 ### DevOps
 

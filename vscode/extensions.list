@@ -54,3 +54,5 @@ jrebocho.vscode-random
 jpoissonnier.vscode-styled-components
 sdras.vue-vscode-snippets
 redhat.vscode-yaml
+svelte.svelte-vscode
+ardenivanov.svelte-intellisense
