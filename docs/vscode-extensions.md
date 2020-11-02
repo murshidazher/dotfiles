@@ -28,6 +28,8 @@ This markdown lists all the default extensions installed by the script.
 - `Import Cost` by Wix
 - `Insert Date String` by Jakub Synowiec
 - `IntelliSense for CSS class names` by Zignd
+- `Svelte for VS Code` by Svelte
+- `Svelte Intellisense` by ardenivanov
 - `vscode-styled-components` by Julien Poissonnier
 - `Vue VSCode Snippets` by sarah.drasner
 - `YAML` by Red Hat
