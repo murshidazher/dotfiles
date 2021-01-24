@@ -229,7 +229,7 @@ done
 # Install dotfiles repo, run link script
 #-------------------------------------------
 
-if [ -e $HOME/dev/src/github ]; then
+if [! -d "$HOME/dev/src/github" ]; then
   running "Create a dev directory on root"
   mkdir -p $HOME/dev/src/github
 else
