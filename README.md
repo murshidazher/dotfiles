@@ -134,3 +134,15 @@ and many more...
 - Add `hugo`, `typescript`, `angular`, `svelte`, `netlify`, `heroku`
 - See how to use `tunnelblick`
 - [How to setup tunnelblick](https://www.ovpn.com/en/guides/mac-tunnelblick)
+
+```sh
+> asdf plugin-add java
+> asdf list-all java
+> asdf install java corretto-15.0.2.7.1
+> asdf global java corretto-15.0.2.7.1
+> brew install --cask intellij-idea-ce
+```
+
+```sh
+JAVA_HOME=". ~/.asdf/plugins/java/set-java-home.bash"
+```

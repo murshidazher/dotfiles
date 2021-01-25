@@ -26,6 +26,9 @@ export PYTHONIOENCODING='UTF-8'
 # Go path.
 export GOPATH="$CODE/go"
 
+# Java path.
+export JAVA_HOME=". $HOME/.asdf/plugins/java/set-java-home.bash"
+
 # Increase Bash history size. Allow 32³ entries; the default is 500.
 export HISTSIZE='32768'
 export HISTFILESIZE="${HISTSIZE}"
@@ -76,6 +79,12 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 # AWS default profile.
 export AWS_PROFILE='read-only'
+
+# Set CLICOLOR if you want Ansi Colors in iTerm2
+export CLICOLOR=1
+
+# Set colors to match iTerm2 Terminal Colors
+export TERM=xterm-256color
 
 # LS_COLORS
 # github.com/trapd00r/LS_COLORS

@@ -48,7 +48,7 @@ c-build = "!f() { if [ -z \"$1\"  ]; then git commit -m \"build: \" -e; elif [ -
 c-chore = "!f() { if [ -z \"$1\"  ]; then git commit -m \"chore: \" -e; elif [ -z \"$2\" ]; then git commit -m \"chore: $1\"; else git commit -m \"chore($1): $2\"; fi }; f"
 c-ci = "!f() { if [ -z \"$1\"  ]; then git commit -m \"ci: \" -e; elif [ -z \"$2\" ]; then git commit -m \"ci: $1\"; else git commit -m \"ci($1): $2\"; fi }; f"
 c-docs = "!f() { if [ -z \"$1\"  ]; then git commit -m \"docs: \" -e; elif [ -z \"$2\" ]; then git commit -m \"docs: $1\"; else git commit -m \"docs($1): $2\"; fi }; f"
-c-feat = "!f() { if [ -z \"$1\"  ]; then git commit -m \"feat: \" -e; elif [ -z \"$2\" ]; then git commit -m \"feat: $1\"; else git commit -m \"feat($1): $2\"; fi }; f"
+c-feat = "!f() { if [ -z \"$1\"  ]; then git commit -m \"✨ feat: \" -e; elif [ -z \"$2\" ]; then git commit -m \"feat: $1\"; else git commit -m \"✨ feat($1): $2\"; fi }; f"
 c-fix = "!f() { if [ -z \"$1\"  ]; then git commit -m \"fix: \" -e; elif [ -z \"$2\" ]; then git commit -m \"fix: $1\"; else git commit -m \"fix($1): $2\"; fi }; f"
 c-localize = "!f() { if [ -z \"$1\"  ]; then git commit -m \"localize: \" -e; elif [ -z \"$2\" ]; then git commit -m \"localize: $1\"; else git commit -m \"localize($1): $2\"; fi }; f"
 c-perf = "!f() { if [ -z \"$1\"  ]; then git commit -m \"perf: \" -e; elif [ -z \"$2\" ]; then git commit -m \"perf: $1\"; else git commit -m \"perf($1): $2\"; fi }; f"
@@ -208,7 +208,7 @@ untracked = cyan
 
 [commit]
 # https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = true
+gpgsign = true
 
 template = ~/.git-template-commit
 
@@ -292,7 +292,7 @@ smudge = git-lfs smudge -- %f
 process = git-lfs filter-process
 required = true
 [gpg]
-	program = /usr/local/bin/gpg
+program = /usr/local/bin/gpg
 [user]
-	email = murshidazher@yahoo.com
-	signingkey = D1E367C2F9E39A170ADF1CA1A002C9B34F45A423
+email = murshidazher@yahoo.com
+signingkey = D1E367C2F9E39A170ADF1CA1A002C9B34F45A423
