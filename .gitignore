@@ -2,3 +2,7 @@
 com.googlecode.iterm2.*
 n
 *.gitconfig.local
+setup/extensions.json
+setup/keybindings.json
+setup/projects.json
+setup/settings.json
