@@ -51,11 +51,10 @@ Commit format: `<emoji_type> <commit_type>(<scope>): <subject>. <issue_reference
 | :construction_worker:  | `:ci:`            | **ci:** updates to the continuous integration system                                                              |
 | :rocket:               | `:release:`       | code deployment or publishing to external repositories                                                            |
 | :lock:                 | `:security:`      | Fixing security issues.                                                                                           |
-| :globe_with_meridians: | `:i18n:`          | Internationalization and localization.                                                                            |
+| :globe_with_meridians: | `:localize:`          | Internationalization and localization.                                                                            |
 | :boom:                 | `:breaking:`      | Introducing breaking changes.                                                                                     |
 | :gear:                 | `:config:`        | Changing configuration files.                                                                                     |
-| :heavy_plus_sign:      | `:add:`           | add something                                                                                                     |
-| :heavy_minus_sign:     | `:remove:`        | remove something                                                                                                  |
+| :cyclone:     | `:revert:`        | revert something                                                                                                  |
 
 > example ouput:
 

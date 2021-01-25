@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 export CODE_DIR="$HOME/code"
+export DEV_DIR="$HOME/dev"
 
 # Dotfiles
 export DOTFILES_DIR="$HOME/dotfiles"
@@ -25,6 +26,9 @@ export PYTHONIOENCODING='UTF-8'
 
 # Go path.
 export GOPATH="$CODE/go"
+
+# miniconda path
+export MINICONDA_PATH="$DEV_DIR/miniconda"
 
 # Java path.
 export JAVA_HOME=". $HOME/.asdf/plugins/java/set-java-home.bash"
@@ -85,6 +89,18 @@ export CLICOLOR=1
 
 # Set colors to match iTerm2 Terminal Colors
 export TERM=xterm-256color
+
+# Needed by python-build on Mojave
+export SDKROOT="$(xcrun --show-sdk-path)"
+# Setup virtualenvwrapper
+if [ -z "$PYTHON3_VERSION" ] || [ ! -z "$PYTHON_VERSION" ]; then
+  PYTHON3_VERSION=$(python3 --version | cut -d' ' -f2 | cut -d'.' -f1,2)
+fi
+if [ -e "/usr/local/bin/virtualenvwrapper.sh" ]; then
+  export WORKON_HOME="$HOME/.virtualenvs"
+  export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python${PYTHON3_VERSION}"
+  source "/usr/local/bin/virtualenvwrapper.sh"
+fi
 
 # LS_COLORS
 # github.com/trapd00r/LS_COLORS

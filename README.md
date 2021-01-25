@@ -23,6 +23,9 @@
   - [Acknowledgements](#acknowledgements)
   - [License](#license)
     - [TODO](#todo)
+    - [Java](#java)
+    - [Python](#python)
+      - [httpie](#httpie)
 
 ## Installing / Getting started
 
@@ -126,6 +129,7 @@ and many more...
 - https://www.rockyourcode.com/use-asdf-to-manage-multiple-versions-of-languages/
 - https://nono.ma/python-3-default-macos#:~:text=While%20macOS%20ships%20with%20Python,install%20Python%203%20with%20Homebrew.&text=To%20make%20this%20new%20version,zshrc%20file.
 - https://stackoverflow.com/questions/17901692/set-up-adb-on-mac-os-x
+- [kubectl cheatsheet](https://medium.com/better-programming/useful-kubectl-aliases-that-will-speed-up-your-coding-54960185d10)
 
 - `macs magnet` and add the version number of it
 - https://github.com/masasam/dotfiles
@@ -134,6 +138,8 @@ and many more...
 - Add `hugo`, `typescript`, `angular`, `svelte`, `netlify`, `heroku`
 - See how to use `tunnelblick`
 - [How to setup tunnelblick](https://www.ovpn.com/en/guides/mac-tunnelblick)
+
+### Java
 
 ```sh
 > asdf plugin-add java
@@ -145,4 +151,24 @@ and many more...
 
 ```sh
 JAVA_HOME=". ~/.asdf/plugins/java/set-java-home.bash"
+```
+
+### Python
+
+```sh
+> asdf plugin-add java
+> asdf list-all java
+> asdf install java corretto-15.0.2.7.1
+> asdf global java corretto-15.0.2.7.1
+> brew install --cask intellij-idea-ce
+```
+
+```sh
+JAVA_HOME=". ~/.asdf/plugins/java/set-java-home.bash"
+```
+
+#### httpie
+
+```sh
+> http PUT httpbin.org/put X-API-Token:123 name=John
 ```

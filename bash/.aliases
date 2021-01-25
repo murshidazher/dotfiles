@@ -35,6 +35,19 @@ alias cask="brew --cask"
 
 alias clean="clear && printf '\e[3J'"
 
+# Docker
+alias d='docker'
+alias dc='docker ps -a'
+alias drm='docker rm $(docker ps -a -q) && docker rm $(docker ps -a -q)' # Delete all containers
+alias drmi='docker rmi $(docker images -q)'                              # Deletes all images
+alias dr='docker run --rm -it'
+
+# Heroku
+alias h='heroku'
+
+# Kubernetes
+alias k=kubectl
+
 # Always use color output for `ls`
 if hash gls 2>/dev/null; then
   # use gls from gnu coreutils
