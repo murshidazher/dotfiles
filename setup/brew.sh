@@ -175,7 +175,7 @@ if $brewinstall; then
   # brew install docker-machine-driver-xhyve
   # brew install boot2docker
   # brew cask install docker
-  # brew cask install kubectl
+  # brew install kubectl
 
   # WEBFONT TOOLS
   running "Installing webfont tools"
@@ -253,7 +253,6 @@ if $brewinstall; then
   brew cask install visual-studio-code
   brew cask install airtable
 
-
   # DevOps
   brew cask install aws-vault
 
@@ -309,7 +308,7 @@ if $brewinstall; then
     mas install 668208984  # GIPHY Capture. The GIF Maker (For recording my screen as gif)
     mas install 1351639930 # Gifski, convert videos to gifs
     # mas install 414030210  # Limechat, IRC app.
-    mas install 441258766  # Magnet
+    mas install 441258766 # Magnet
   else
     cancelled "App Store login not complete. Skipping installing App Store Apps"
   fi
