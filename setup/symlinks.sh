@@ -69,7 +69,7 @@ process_symlinks "keybindings.json" "$dotfilesdir/vscode" "$HOME/Library/Applica
 process_symlinks "extensions.json" "$dotfilesdir/vscode" "$defaultdotfilesdir/vscode"
 
 # link the snippets folder
-process_symlinks "$dotfilesdir/vscode/snippets" "$dotfilesdir/vscode" "$HOME/Library/Application Support/Code/User/snippets"
+# process_symlinks "$dotfilesdir/vscode/snippets" "$dotfilesdir/vscode" "$HOME/Library/Application Support/Code/User/snippets"
 
 # If files are not stored in ~/dotfiles then symlink to that folder
 # note: if ~/dotfiles does exist or links elsewhere it only breaks

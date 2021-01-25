@@ -13,6 +13,12 @@ PATH="$PATH:/sbin"
 # Node -- use project specific binaries before global ones.
 PATH="node_modules/.bin:vendor/bin:$HOME/.node-global-modules/bin:$PATH"
 
+# gnu-sed
+PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
+# vim/vi
+PATH="/usr/local/bin/vim"
+
 # Go
 PATH="$GOPATH/bin:$PATH"
 PATH="$PATH:/usr/local/opt/go/libexec/bin"
@@ -29,16 +35,17 @@ PATH="/usr/local/aws/bin:$PATH"
 # Source local path config
 if [ -e "$HOME/.path.local" ]; then
   source "$HOME/.path.local"
-fi;
+fi
 
 # vscode
 PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
+# defaults
+PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/b‌​in"
+
 # Dedupe using awk.
 if hash awk 2>/dev/null; then
   PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')
-fi;
+fi
 
 export PATH
-
-

@@ -19,6 +19,8 @@ alias lib="cd $HOME/Library"
 alias work="cd $HOME/Work"
 alias repos="cd $HOME/repos"
 alias dev="cd $HOME/dev"
+alias gsrc="cd $HOME/dev/src"
+alias gdev="cd $HOME/dev/src/github"
 alias dwork="cd $HOME/Dropbox/Work"
 alias drepos="cd $HOME/Dropbox/repos"
 alias dcode="cd $HOME/Dropbox/code"
@@ -29,7 +31,9 @@ alias v="vim"
 alias ungz="gunzip -k"
 
 alias where=which
-alias cask='brew cask'
+alias cask="brew --cask"
+
+alias clean="clear && printf '\e[3J'"
 
 # Always use color output for `ls`
 if hash gls 2>/dev/null; then
@@ -130,7 +134,7 @@ alias flushdns="killall -HUP mDNSResponder"
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 
 # Misc.
-alias weather="curl -4 http://wttr.in/$1"
+alias weather="curl -4 http://wttr.in/$1?format='%l:+%c+%t\n'"
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 alias bell="tput bel" # ring terminal bell
 
