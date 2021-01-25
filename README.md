@@ -19,6 +19,7 @@
     - [Rules of `dev` directory](#rules-of-dev-directory)
     - [Updating vscode plugin list](#updating-vscode-plugin-list)
   - [Link](#link)
+    - [gpg sign](#gpg-sign)
   - [Acknowledgements](#acknowledgements)
   - [License](#license)
     - [TODO](#todo)
@@ -81,6 +82,13 @@ A list of helpful links used to develop/inspire this project
 
 - :zap: [tput colors](https://unix.stackexchange.com/questions/269077/tput-setaf-color-table-how-to-determine-color-codes)
 - :burrito: [digital mac base icon](https://dribbble.com/shots/6185043-Pixelado) by Gustavo Zambelli
+
+### gpg sign
+
+```sh
+> gpg --list-keys
+> git config --global user.signingkey [public key ID]
+```
 
 ## Acknowledgements
 
