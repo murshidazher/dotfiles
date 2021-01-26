@@ -27,6 +27,7 @@
     - [Python](#python)
       - [httpie](#httpie)
       - [MS office](#ms-office)
+      - [Google Drive](#google-drive)
 
 ## Installing / Getting started
 
@@ -184,5 +185,12 @@ JAVA_HOME=". ~/.asdf/plugins/java/set-java-home.bash"
 > brew install --cask microsoft-teams
 > brew install --cask microsoft-auto-update # for updates
 > brew upgrade # single command to update all apps
+> brew update # updates homebrew casks
 > bwclean # to clean all cache of homebrew for optimal performance
+```
+
+#### Google Drive
+
+```sh
+> brew install --cask google-drive-file-stream # google drive
 ```

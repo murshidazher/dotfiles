@@ -36,17 +36,28 @@ alias cask="brew --cask"
 alias clean="clear && printf '\e[3J'"
 
 # Docker
-alias d="docker"
-alias dc="docker ps -a"
-alias drm="docker rm $(docker ps -a -q) && docker rm $(docker ps -a -q)" # Delete all containers
-alias drmi="docker rmi $(docker images -q)"                              # Deletes all images
-alias dr="docker run --rm -it"
+docker_code=$(docker ps &>/dev/null)
+docker_status=$?
+# echo "docker status: $docker_status"
+
+if [ "$docker_status" == "0" ]; then
+  # docker has started
+  alias d="docker"
+  alias dps="docker ps -a"
+  alias drm="docker rm $(docker ps -a -q) && docker rm $(docker ps -a -q)" # Delete all containers
+  alias drmi="docker rmi $(docker images -q)"                              # Deletes all images
+  alias dr="docker run --rm -it"
+  alias dcu="docker-compose up"
+  alias dcd="docker-compose down"
+  alias dcb="docker-compose build"
+
+  # kubernetes
+  alias k="kubectl"
+fi
+# else docker is not available, not running or shutting down
 
 # Heroku
 alias h="heroku"
-
-# Kubernetes
-alias k="kubectl"
 
 # Always use color output for `ls`
 if hash gls 2>/dev/null; then
