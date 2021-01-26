@@ -26,6 +26,7 @@
     - [Java](#java)
     - [Python](#python)
       - [httpie](#httpie)
+      - [MS office](#ms-office)
 
 ## Installing / Getting started
 
@@ -171,4 +172,15 @@ JAVA_HOME=". ~/.asdf/plugins/java/set-java-home.bash"
 
 ```sh
 > http PUT httpbin.org/put X-API-Token:123 name=John
+```
+
+#### MS office
+
+```sh
+> brew install --cask microsoft-office # if we need all packages
+> brew install --cask microsoft-word 
+> brew install --cask microsoft-excel
+> brew install --cask microsoft-powerpoint
+> brew install --cask microsoft-teams
+> brew install --cask microsoft-auto-update # for updates
 ```
