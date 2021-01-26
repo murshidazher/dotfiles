@@ -312,3 +312,15 @@ function conda() {
   [ $? -eq 0 ] && eval "$__conda_setup"
   conda $@
 }
+
+# brew cleanup after any uninstall for removing old caches and optimizing the taps
+function bwclean() {
+  echo 'Cleanup Homebrew Cache...'
+  brew cleanup -s
+  rm -rfv /Library/Caches/Homebrew/*
+  brew tap --repair
+  echo 'Cleanup gems...'
+  gem cleanup
+  echo 'Re-generating asdf shims...'
+  asdf reshim
+}
