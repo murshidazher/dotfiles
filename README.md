@@ -183,4 +183,6 @@ JAVA_HOME=". ~/.asdf/plugins/java/set-java-home.bash"
 > brew install --cask microsoft-powerpoint
 > brew install --cask microsoft-teams
 > brew install --cask microsoft-auto-update # for updates
+> brew upgrade # single command to update all apps
+> bwclean # to clean all cache of homebrew for optimal performance
 ```
