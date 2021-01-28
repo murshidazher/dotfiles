@@ -1019,13 +1019,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.34901960784313724</real>
+				<real>0.27450980392156865</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.23137254901960785</real>
+				<real>0.2196078431372549</real>
 				<key>Red Component</key>
-				<real>0.18431372549019609</real>
+				<real>0.20392156862745098</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>

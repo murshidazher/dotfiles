@@ -114,18 +114,11 @@ and many more...
 
 - [ ] [All in one tutorial](https://dev-yakuza.github.io/en/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/)
 
-- Add docker, kubctl.
-- Add symlinks to host file
-- Add docs on how to clean install and step to backup.
-- Add react native settings and android, java jdk settings
-- install `condamini` for ML tools
+- Add react native settings and android
 - [user groups](https://dzone.com/articles/how-to-use-linux-file-permissions-and-ownership-on)
 
 - Running `brew search "/font-/"` will show you a list of all fonts that you can install this way.
-- `asdf` make use of [miniconda](https://github.com/asdf-vm/asdf/issues/648)
-- `asdf` manage `python3`(https://github.com/danhper/asdf-python)
 - `$HOME/.default-python-packages` to specify default installed packages
-
 - https://dev.to/0xdonut/how-to-install-flutter-on-macos-using-homebrew-and-asdf-3loa
 - https://github.com/asdf-community/asdf-link
 - https://www.rockyourcode.com/use-asdf-to-manage-multiple-versions-of-languages/
