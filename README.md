@@ -28,6 +28,7 @@
       - [httpie](#httpie)
       - [MS office](#ms-office)
       - [Google Drive](#google-drive)
+    - [AndroidStudio](#androidstudio)
 
 ## Installing / Getting started
 
@@ -131,7 +132,7 @@ and many more...
 - read about `git-crypt` [encryption](https://github.com/masasam/dotfiles)
 
 - Add `hugo`, `typescript`, `angular`, `svelte`, `netlify`, `heroku`
-- See how to use `tunnelblick`
+- See `OpenVPN` config files to add to tunnelblick
 - [How to setup tunnelblick](https://www.ovpn.com/en/guides/mac-tunnelblick)
 
 ### Java
@@ -186,4 +187,15 @@ JAVA_HOME=". ~/.asdf/plugins/java/set-java-home.bash"
 
 ```sh
 > brew install --cask google-drive-file-stream # google drive
+```
+
+### AndroidStudio
+
+```sh
+> brew install gradle # openjdk	15.0.1
+> brew install --cask android-studio
+# Android 
+export ANDROID_HOME="/usr/local/share/android-sdk"
+export ANDROID_SDK_ROOT=/Users/ciandroid/android-sdk-macosx
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools
 ```

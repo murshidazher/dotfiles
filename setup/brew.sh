@@ -234,7 +234,7 @@ if $brewinstall; then
   brew cask install numi
   brew cask install notion
   # brew cask install adobe-acrobat-reader
-  # brew cask install zoomus
+  # brew cask install zoom
 
   # Design
   # brew cask install abstract

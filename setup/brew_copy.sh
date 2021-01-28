@@ -117,7 +117,7 @@ if $brewinstall; then
   brew install --cask numi
   brew install --cask notion
   # brew install --cask adobe-acrobat-reader
-  # brew install --cask zoomus
+  # brew install --cask zoom
 
   # Design
   # brew install --cask abstract
