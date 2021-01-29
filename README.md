@@ -29,6 +29,7 @@
       - [MS office](#ms-office)
       - [Google Drive](#google-drive)
     - [AndroidStudio](#androidstudio)
+    - [R](#r)
 
 ## Installing / Getting started
 
@@ -198,4 +199,11 @@ JAVA_HOME=". ~/.asdf/plugins/java/set-java-home.bash"
 export ANDROID_HOME="/usr/local/share/android-sdk"
 export ANDROID_SDK_ROOT=/Users/ciandroid/android-sdk-macosx
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools
+```
+
+### R
+
+```sh
+> brew install r
+> brew install --cask rstudio
 ```
