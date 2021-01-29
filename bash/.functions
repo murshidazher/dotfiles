@@ -324,3 +324,10 @@ function bwclean() {
   echo 'Re-generating asdf shims...'
   asdf reshim
 }
+
+# brew update the cask files
+function bwutd() {
+  brew update
+  brew upgrade --cask --greedy
+  brew upgrade
+}
