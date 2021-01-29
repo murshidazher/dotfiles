@@ -340,3 +340,7 @@ function bwutd() {
 function gitio() {
   curl -i https://git.io -F "url=$1" -F "code=$2"
 }
+
+function llvmc() {
+  $LLVMBASE/bin/clang -fopenmp -L$LLVMBASE/lib $1 -o $2
+}

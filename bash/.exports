@@ -3,6 +3,9 @@
 export CODE_DIR="$HOME/code"
 export DEV_DIR="$HOME/dev"
 
+# llvm base
+export LLVMBASE=$(brew --prefix llvm)
+
 # Dotfiles
 export DOTFILES_DIR="$HOME/dotfiles"
 export DOTFILES_IDE="vs"
@@ -111,3 +114,8 @@ fi
 # github.com/trapd00r/LS_COLORS
 # command -v gdircolors >/dev/null 2>&1 || alias gdircolors="dircolors"
 # eval "$(gdircolors -b ~/.dircolors)"
+
+# llvm
+export LDFLAGS="-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib"
+# export LDFLAGS="-L/usr/local/opt/llvm/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include"

@@ -30,6 +30,7 @@
       - [Google Drive](#google-drive)
     - [AndroidStudio](#androidstudio)
     - [R](#r)
+      - [Setup](#setup-1)
 
 ## Installing / Getting started
 
@@ -203,7 +204,17 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/tools
 
 ### R
 
+> Dont install r from brew because of binary issues, set it up using this [article](https://ryanhomer.github.io/posts/build-openmp-macos-catalina-complete#install-r-studio)
+
+#### Setup
+
+> Installed R packages are at `‘/usr/local/Cellar/r/4.0.3_2/lib/R/library/DT’`
+
 ```sh
-> brew install r
-> brew install --cask rstudio
+> install.packages("devtools")
+> library(devtools)
+> devtools::install_github("rstudio/reticulate")
+> devtools::install_github("rstudio/tensorflow")
+> library(tensorflow)
+> install_tensorflow()
 ```
