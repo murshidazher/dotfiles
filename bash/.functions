@@ -327,7 +327,9 @@ function bwclean() {
 
 # brew update the cask files
 function bwutd() {
+  echo 'Update Homebrew...'
   brew update
+  echo 'Update Homebrew Casks...'
   brew upgrade --cask --greedy
   brew upgrade
 }
