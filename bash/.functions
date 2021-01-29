@@ -318,6 +318,8 @@ function bwclean() {
   echo 'Cleanup Homebrew Cache...'
   brew cleanup -s
   rm -rfv /Library/Caches/Homebrew/*
+  # remove new installed files cache
+  #rm -rf $(brew --cache)
   brew tap --repair
   echo 'Cleanup gems...'
   gem cleanup
