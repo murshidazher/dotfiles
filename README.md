@@ -206,6 +206,12 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/tools
 
 > Dont install r from brew because of binary issues, set it up using this [article](https://ryanhomer.github.io/posts/build-openmp-macos-catalina-complete#install-r-studio)
 
+- It is possible to get X11-related warnings or erros when installing packages or loading other R libraries. If at any point you need to install X11,
+
+```sh
+> brew cask install xquartz
+```
+
 #### Setup
 
 > Installed R packages are at `‘/usr/local/Cellar/r/4.0.3_2/lib/R/library/DT’`
