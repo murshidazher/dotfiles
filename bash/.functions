@@ -335,3 +335,8 @@ function bwutd() {
   brew upgrade --cask --greedy
   brew upgrade
 }
+
+# generate git.io shorthand url
+function gitio() {
+  curl -i https://git.io -F "url=$1" -F "code=$2"
+}

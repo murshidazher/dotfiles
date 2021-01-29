@@ -45,7 +45,7 @@ function warn() {
 }
 
 function success() {
-  echo -e "$COL_GREEN[success]$COL_RESET $1"
+  echo -e "$COL_GREEN🍺 $COL_RESET $1"
 }
 
 function error() {
@@ -70,7 +70,7 @@ function awesome_header() {
 }
 
 ask_for_confirmation() {
-  echo -e "\e[1m$1\e[0m (y/N) "
+  echo -e "$1 (y/N) "
   read -n 1
   echo -e "\n"
 }
@@ -117,7 +117,7 @@ ask_for_sudo() {
 # ----
 # Prep
 # ----
-echo -e "\n\e[1m\$📦 Mac Setup by [Murshid Azher](https://github.com/murshidazher/dotfiles)  /~\n\e[0m"
+echo -e "📦 Mac Setup by [Murshid Azher](https://github.com/murshidazher/dotfiles)"
 
 defaultdotfilesdir="$HOME/dotfiles"
 dotfilesdir=$(pwd)
@@ -126,18 +126,18 @@ dotfilesdir=$(pwd)
 # git pull origin master # pull repo.
 #fi;
 
-warn "\e[1mEnsure your mac system is fully up-to-date and only\e[0m"
-warn "\e[1mrun this script in terminal.app (NOT in iTerm)\e[0m"
-warn "\e[1mrun this script on ~ or ~/dev/src/github\e[0m"
-warn "=> \e[1mCTRL+C now to abort\e[0m or \e[1mENTER\e[0m to continue."
+warn "Ensure your mac system is fully up-to-date and only"
+warn "run this script in terminal.app (NOT in iTerm)"
+warn "run this script on ~ or ~/dev/src/github"
+warn "=> CTRL+C now to abort or ENTER to continue."
 tput bel
 read -n 1
 
 # Introduction
 awesome_header
 
-botintro "This script sets up new machines, \e[1m*use with caution*\e[0m. Please go read the script, it only takes a few minutes, [https://github.com/murshidazher/dotfiles]."
-echo -e "\nPress \e[1mENTER\e[0m to continue."
+botintro "This script sets up new machines, *use with caution*. Please go read the script, it only takes a few minutes, [https://github.com/murshidazher/dotfiles]."
+echo -e "\nPress ENTER to continue."
 read -n 1
 
 bot "To start we'll need your password.\n"
@@ -146,9 +146,9 @@ tput bel
 
 ask_for_confirmation "Ready?"
 if answer_is_yes; then
-  ok "\e[1mLet's go.\e[0m"
+  ok "Let's go."
 else
-  cancelled "\e[1mExit.\e[0m"
+  cancelled "Exit."
   exit -1
 fi
 
@@ -186,7 +186,7 @@ ssh-add -K ~/.ssh/id_rsa
 if [ -e ~/.ssh/config ]; then
   cancelled "ssh config already exists. Skipping adding osx specific settings... "
 else
-  running "Writing osx specific settings to ssh config... "
+  success "Writing osx specific settings to ssh config... "
   cat <<EOT >>~/.ssh/config
 	Host *
 		AddKeysToAgent yes
@@ -214,7 +214,7 @@ for ((i = 0; i < retries; i++)); do
   gh_status_code=$(curl -o /dev/null -s -w "%{http_code}\n" -u "$ghusername:$ghtoken" -d '{"title":"'$ghtitle'","key":"'"$SSH_KEY"'"}' 'https://api.github.com/user/keys')
 
   if (($gh_status_code - eq == 201)); then
-    running "GitHub ssh key added successfully!"
+    success "GitHub ssh key added successfully!"
     break
   else
     error "Something went wrong. Enter your credentials and try again..."
@@ -230,8 +230,8 @@ done
 #-------------------------------------------
 
 if [! -d "$HOME/dev/src/github" ]; then
-  running "Create a dev directory on root"
   mkdir -p $HOME/dev/src/github
+  success "Create a dev directory on root"
 else
   cancelled "~/dev directory exists..."
 fi
@@ -248,7 +248,7 @@ if (!($gh_clone)); then
   error $gh_clone
   break
 else
-  running "Dotfile cloned successfully..."
+  success "Dotfile cloned successfully..."
   cd dotfiles
   running "Setting up...."
 

@@ -40,7 +40,7 @@ function warn() {
 }
 
 function success() {
-  echo -e "$COL_GREEN[success]$COL_RESET $1"
+  echo -e "$COL_GREEN🍺  $COL_RESET $1"
 }
 
 function error() {
@@ -83,46 +83,49 @@ execute() {
   if $debug; then
     $1
   else
-    $1 &> /dev/null
-  fi;
+    $1 &>/dev/null
+  fi
   print_result $? "${2:-$1}"
 }
 
 function require_cask() {
-  running "brew cask $1";
-  brew cask list "$1" > /dev/null 2>&1 | true;
+  running "brew cask $1"
+  brew cask list "$1" >/dev/null 2>&1 | true
 
   if [[ ${PIPESTATUS[0]} != 0 ]]; then
-    action "brew install --cask $1 $2";
-    brew install --cask "$1";
+    action "brew install --cask $1 $2"
+    brew install --cask "$1"
 
     if [[ $? != 0 ]]; then
       error "failed to install $1!"
-    fi;
-  fi;
+    fi
+  fi
 
-  ok;
+  ok
 }
 
 function require_brew() {
-  running "brew $1 $2";
-  brew list "$1" > /dev/null 2>&1 | true;
+  running "brew $1 $2"
+  brew list "$1" >/dev/null 2>&1 | true
 
   if [[ ${PIPESTATUS[0]} != 0 ]]; then
-    action "brew install $1 $2";
-    brew install "$1" "$2";
+    action "brew install $1 $2"
+    brew install "$1" "$2"
 
     if [[ $? != 0 ]]; then
-      error "failed to install $1!";
-    fi;
-  fi;
+      error "failed to install $1!"
+    fi
+  fi
 
-  ok;
+  ok
 }
 
 # Check if folder is a git repo.
 is_git_repository() {
-  [ "$(git rev-parse &>/dev/null; printf $?)" -eq 0 ] && return 0 || return 1
+  [ "$(
+    git rev-parse &>/dev/null
+    printf $?
+  )" -eq 0 ] && return 0 || return 1
 }
 
 ask_for_sudo() {
@@ -135,11 +138,11 @@ ask_for_sudo() {
     sudo -n true
     sleep 60
     kill -0 "$$" || exit
-  done &> /dev/null &
+  done &>/dev/null &
 }
 
 # Takes an array of dir locations and then handles mkdir etc.
-make_directories () {
+make_directories() {
   dirsuccess=true
   local arr=("$@")
 
@@ -149,7 +152,7 @@ make_directories () {
         mkdir "$i"
       else
         mkdir -p "$i"
-      fi;
+      fi
     else
       # test if link
       if [ -L "$i" ]; then
@@ -157,13 +160,13 @@ make_directories () {
         dirsuccess=false
       elif $debug; then
         echo -e "Directory exists: $i"
-      fi;
-    fi;
-  done;
+      fi
+    fi
+  done
 }
 
 # Creates symlinks, checks for existence etc.
-process_symlinks () {
+process_symlinks() {
   local linksource="$1"
   local linktarget="${1/$2/$3}"
   local createlink=false
@@ -184,25 +187,25 @@ process_symlinks () {
         else
           # rm = bye bye.
           rm -rf "$linktarget"
-        fi;
-      fi;
+        fi
+      fi
 
       createlink=true
     else
       error "Could not symlink $linksource => $linktarget"
-    fi;
+    fi
   else
     createlink=true
-  fi;
+  fi
 
   if $createlink; then
     #echo -e "$linksource $linktarget"
     execute "ln -fs $linksource $linktarget" "Symlinked: $linksource => $linktarget"
-  fi;
+  fi
 }
 
 # Unlink symlinks, checks for existence etc.
-unlink_symlinks () {
+unlink_symlinks() {
   local linksource="$1"
   local linktarget="${1/$2/$3}"
 
@@ -213,10 +216,10 @@ unlink_symlinks () {
       execute "unlink $linktarget" "Unlinked: $linktarget"
     else
       error "$linktarget is not a symlink."
-    fi;
+    fi
   else
     error "$linktarget does not exist."
-  fi;
+  fi
 }
 
 # Mark lib as loaded
