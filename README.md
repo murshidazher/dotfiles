@@ -30,7 +30,7 @@
       - [Google Drive](#google-drive)
     - [AndroidStudio](#androidstudio)
     - [R](#r)
-      - [Setup](#setup-1)
+      - [Initial R packages](#initial-r-packages)
 
 ## Installing / Getting started
 
@@ -212,7 +212,7 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/tools
 > brew cask install xquartz
 ```
 
-#### Setup
+#### Initial R packages
 
 > Installed R packages are at `‘/usr/local/Cellar/r/4.0.3_2/lib/R/library/DT’`
 
