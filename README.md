@@ -117,25 +117,22 @@ and many more...
 
 - [ ] [All in one tutorial](https://dev-yakuza.github.io/en/environment/configure-development-environment-on-mac-with-homebrew-and-shell-script/)
 
-- Add react native settings and android
-- [user groups](https://dzone.com/articles/how-to-use-linux-file-permissions-and-ownership-on)
-
-- Running `brew search "/font-/"` will show you a list of all fonts that you can install this way.
-- `$HOME/.default-python-packages` to specify default installed packages
-- https://dev.to/0xdonut/how-to-install-flutter-on-macos-using-homebrew-and-asdf-3loa
-- https://github.com/asdf-community/asdf-link
-- https://www.rockyourcode.com/use-asdf-to-manage-multiple-versions-of-languages/
-- https://nono.ma/python-3-default-macos#:~:text=While%20macOS%20ships%20with%20Python,install%20Python%203%20with%20Homebrew.&text=To%20make%20this%20new%20version,zshrc%20file.
-- https://stackoverflow.com/questions/17901692/set-up-adb-on-mac-os-x
-- [kubectl cheatsheet](https://medium.com/better-programming/useful-kubectl-aliases-that-will-speed-up-your-coding-54960185d10)
-
-- `macs magnet` and add the version number of it
-- https://github.com/masasam/dotfiles
-- read about `git-crypt` [encryption](https://github.com/masasam/dotfiles)
-
-- Add `hugo`, `typescript`, `angular`, `svelte`, `netlify`, `heroku`
-- See `OpenVPN` config files to add to tunnelblick
-- [How to setup tunnelblick](https://www.ovpn.com/en/guides/mac-tunnelblick)
+- [ ] Add react native settings and android
+- [ ] [user groups](https://dzone.com/articles/how-to-use-linux-file-permissions-and-ownership-on)
+- [ ] Running `brew search "/font-/"` will show you a list of all fonts that you can install this way.
+- [ ] `$HOME/.default-python-packages` to specify default installed packages
+- [ ] https://dev.to/0xdonut/how-to-install-flutter-on-macos-using-homebrew-and-asdf-3loa
+- [ ] https://github.com/asdf-community/asdf-link
+- [ ] https://www.rockyourcode.com/use-asdf-to-manage-multiple-versions-of-languages/
+- [ ] https://nono.ma/python-3-default-macos#:~:text=While%20macOS%20ships%20with%20Python,install%20Python%203%20with%20Homebrew.&text=To%20make%20this%20new%20version,zshrc%20file.
+- [ ] https://stackoverflow.com/questions/17901692/set-up-adb-on-mac-os-x
+- [ ] [kubectl cheatsheet](https://medium.com/better-programming/useful-kubectl-aliases-that-will-speed-up-your-coding-54960185d10)
+- [ ] `macs magnet` and add the version number of it
+- [ ] https://github.com/masasam/dotfiles
+- [ ] read about `git-crypt` [encryption](https://github.com/masasam/dotfiles)
+- [ ] Add `hugo`, `typescript`, `angular`, `svelte`, `netlify`, `heroku`
+- [ ] See `OpenVPN` config files to add to tunnelblick
+- [ ] [How to setup tunnelblick](https://www.ovpn.com/en/guides/mac-tunnelblick)
 
 ### Java
 
