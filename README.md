@@ -31,6 +31,7 @@
     - [AndroidStudio](#androidstudio)
     - [R](#r)
       - [Initial R packages](#initial-r-packages)
+    - [PDF Convert](#pdf-convert)
 
 ## Installing / Getting started
 
@@ -220,4 +221,12 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/tools
 > devtools::install_github("rstudio/tensorflow")
 > library(tensorflow)
 > install_tensorflow()
+```
+
+### PDF Convert
+
+```
+> convert 1.png 2.png -compress jpeg -quality 50 Result.pdf
+> convert *.png -compress jpeg -quality 50 Result.pdf
+> convert *.png 2.png -resample 300 Result.pdf
 ```
