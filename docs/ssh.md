@@ -36,3 +36,7 @@ UseKeychain yes
 IdentityFile ~/.ssh/id_rsa
 
 ```
+
+### LICENSE 
+
+MIT
