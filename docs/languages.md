@@ -7,7 +7,6 @@
 > asdf list-all java
 > asdf install java corretto-15.0.2.7.1
 > asdf global java corretto-15.0.2.7.1
-> brew install --cask intellij-idea-ce
 ```
 
 ```sh
