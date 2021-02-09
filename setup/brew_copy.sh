@@ -116,6 +116,7 @@ if $brewinstall; then
   brew install --cask vlc
   brew install --cask numi
   brew install --cask notion
+  brew install --cask appcleaner
   # brew install --cask adobe-acrobat-reader
   # brew install --cask zoom
 
@@ -157,7 +158,7 @@ if $brewinstall; then
   brew install --cask quicklookase
   brew install --cask qlvideo
 
-  # DRIVERS
+  # Drivers
   running "Installing drivers"
 
   brew tap homebrew/cask-drivers
@@ -181,6 +182,8 @@ if $brewinstall; then
   ask_for_confirmation "\nIs app store login complete. (y/n)?"
 
   # Flag install to go if user approves
+  # Make sure you have installed these app atleast once manually using your current account
+  # else app store wouldn't let you download them
   if answer_is_yes; then
     # mas install 1254981365 # Contrast
     # mas install 1234952668 # FlagTimes
@@ -188,8 +191,8 @@ if $brewinstall; then
     # TODO: install pixelsnap
     # mas install 907364780  # Tomato One - Pomodoro timer
     # mas install 485812721  # Tweetdeck
-    # mas install 668208984  # GIPHY Capture. The GIF Maker (For recording my screen as gif)
-    # mas install 1351639930 # Gifski, convert videos to gifs
+    mas install 668208984  # GIPHY Capture. The GIF Maker (For recording my screen as gif)
+    mas install 1351639930 # Gifski, convert videos to gifs
     # mas install 414030210  # Limechat, IRC app.
     mas install 441258766  # Magnet
     mas install 1474276998 # HP Smart for Desktop

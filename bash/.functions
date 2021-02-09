@@ -327,13 +327,19 @@ function bwclean() {
   asdf reshim
 }
 
-# brew update the cask files
+# brew update the cask files, mas, and many more
+# Note: if you need mac software updates and cache cleans use `update`
 function bwutd() {
-  echo 'Update Homebrew...'
+  echo '==> Update Homebrew...'
   brew update
-  echo 'Update Homebrew Casks...'
+  echo '==> Update Homebrew Casks...'
+  # update gui applications
   brew upgrade --cask --greedy
+  # update cli applications
   brew upgrade
+  # update app store downloaded files
+  mas outdated
+  mas upgrade
 }
 
 # generate git.io shorthand url
