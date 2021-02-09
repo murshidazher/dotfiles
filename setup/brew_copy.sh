@@ -191,7 +191,8 @@ if $brewinstall; then
     # mas install 668208984  # GIPHY Capture. The GIF Maker (For recording my screen as gif)
     # mas install 1351639930 # Gifski, convert videos to gifs
     # mas install 414030210  # Limechat, IRC app.
-    mas install 441258766 # Magnet
+    mas install 441258766  # Magnet
+    mas install 1474276998 # HP Smart for Desktop
   else
     cancelled "App Store login not complete. Skipping installing App Store Apps"
   fi
