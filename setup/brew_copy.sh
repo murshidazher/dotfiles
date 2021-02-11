@@ -65,7 +65,7 @@ if $brewinstall; then
   brew install m-cli
   brew install carlocab/personal/unrar
 
-  # FONTS
+  # Fonts
   running "Installing fonts"
 
   brew tap homebrew/cask-fonts
@@ -88,7 +88,7 @@ if $brewinstall; then
 
   running "Installing cask apps"
 
-  # APPLICATIONS
+  # Applications
   brew tap homebrew/cask
   brew tap homebrew/cask-versions
 
@@ -122,8 +122,10 @@ if $brewinstall; then
 
   # Design
   # brew install --cask abstract
-  brew install --cask sketch
+  # brew install --cask sketch
   # brew install --cask zeplin
+  brew install --cask fontbase # font management
+  brew install --cask iconjar
 
   # Development
   brew install --cask dash
