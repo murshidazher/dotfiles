@@ -21,8 +21,8 @@
   - [Link](#link)
     - [gpg sign](#gpg-sign)
   - [Acknowledgements](#acknowledgements)
+  - [TODO](#todo)
   - [License](#license)
-    - [TODO](#todo)
 
 ## Installing / Getting started
 
@@ -101,14 +101,14 @@ Credit, inspiration and thanks to:
 
 and many more...
 
-## License
-
-[MIT](https://github.com/murshidazher/this-mac/blob/main/LICENSE) &copy; 2020 Murshid Azher ([https://murshidazher.com](https://murshidazher.com))
-
-### TODO
+## TODO
 
 - [ ] Add react native settings and android
 - [ ] Running `brew search "/font-/"` will show you a list of all fonts that you can install this way.
 - [ ] `$HOME/.default-python-packages` to specify default installed packages
 - [ ] https://dev.to/0xdonut/how-to-install-flutter-on-macos-using-homebrew-and-asdf-3loa
 - [ ] https://stackoverflow.com/questions/17901692/set-up-adb-on-mac-os-x
+## License
+
+[MIT](https://github.com/murshidazher/this-mac/blob/main/LICENSE) &copy; 2020 Murshid Azher ([https://murshidazher.com](https://murshidazher.com))
+
