@@ -1,6 +1,6 @@
 # Mac OS X Setup Guide
 
-These are the steps I like to take on a fresh Mac install to prep it before [installing my dotfiles](https://github.com/aaronbates/dotfiles):
+These are the steps I like to take on a fresh Mac install to prep it before [installing my dotfiles](https://github.com/murshidazher/dotfiles):
 
 ## General
 

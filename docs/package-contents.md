@@ -45,6 +45,8 @@ Bash 4 and auto-completion
 
 - Solarized Dark Theme
 - Solarized Dark High Contrast Theme
+- Nord Theme
+- Nord Light Theme
 
 ### Nano
 
