@@ -105,6 +105,7 @@ if $brewinstall; then
   brew install --cask caffeine
   brew install --cask diskwave
   brew install --cask dropbox
+  brew install google-drive
   # brew install --cask firefox
   brew install --cask g-desktop-suite
   # brew install --cask google-chrome
@@ -138,6 +139,11 @@ if $brewinstall; then
   brew install --cask sequel-pro #mysql management
   brew install --cask visual-studio-code
   brew install --cask airtable
+  brew install --cask astah-uml
+
+  # Cask outdated but versioned
+  brew tap murshidazher/homebrew-murshid
+  brew install --cask sketch@3.x # use version 63.x
 
   # DevOps
   brew install --cask aws-vault
