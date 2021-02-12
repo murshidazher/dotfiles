@@ -39,6 +39,7 @@ alias ungz="gunzip -k"
 
 alias where=which
 alias cask="brew --cask"
+alias brewver="brew info --json $1 | jq -r '.[].versioned_formulae[]'"
 
 alias clean="clear && printf '\e[3J'"
 
