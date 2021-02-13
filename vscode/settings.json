@@ -14,7 +14,7 @@
   "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'Source Code Pro'",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.colorTheme": "Nord",
+  "workbench.colorTheme": "Default Dark+",
   "editor.tokenColorCustomizations": {
     "[Nord]": {
       "textMateRules": [
@@ -33,6 +33,7 @@
     "editor.formatOnSave": false
   },
   "eslint.alwaysShowStatus": true,
+  "prettier.requireConfig": true,
   "prettier.disableLanguages": ["js"],
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": true,
@@ -59,7 +60,6 @@
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "editor.formatOnType": true,
-  "eslint.enable": false,
   "git.autofetch": true,
   "window.zoomLevel": 0,
   "[dockerfile]": {
@@ -92,10 +92,7 @@
   },
   "python.linting.enabled": true,
   "htmltagwrap.tag": "div",
-  "cSpell.userWords": [
-    "Keycloack",
-    "Vidly"
-  ],
+  "cSpell.userWords": ["murshidazher"],
   "[yaml]": {
     "editor.insertSpaces": true,
     "editor.quickSuggestions": {
@@ -106,5 +103,8 @@
   },
   "yaml.trace.server": "off",
   "yaml.format.enable": true,
-  "insertDateString.format": "iso"
+  "insertDateString.format": "iso",
+  "git.enabled": true,
+  "git.path": "/usr/bin/git",
+  "workbench.preferredDarkColorTheme": "Nord"
 }
