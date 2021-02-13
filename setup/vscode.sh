@@ -16,7 +16,7 @@ fi
 # add permissions
 # xattr -dr com.apple.quarantine /Applications/Visual\ Studio\ Code.app
 
-botintro "Managing VSCode Extensions."
+botintro "Manage VSCode Extensions"
 
 # install vscode extensions
 code --list-extensions | comm -23 - $defaultdotfilesdir/vscode/extensions.list | xargs -I {} code --uninstall-extension {} # Removes old extensions

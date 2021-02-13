@@ -14,20 +14,6 @@
 JAVA_HOME=". ~/.asdf/plugins/java/set-java-home.bash"
 ```
 
-## Python
-
-```sh
-> asdf plugin-add java
-> asdf list-all java
-> asdf install java corretto-15.0.2.7.1
-> asdf global java corretto-15.0.2.7.1
-> brew install --cask intellij-idea-ce
-```
-
-```sh
-JAVA_HOME=". ~/.asdf/plugins/java/set-java-home.bash"
-```
-
 ### httpie
 
 ```sh

@@ -57,7 +57,7 @@ if $brewinstall; then
   # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
   brew install findutils
   # Install GNU `sed`, overwriting the built-in `sed`.
-  brew install gnu-sed --with-default-names
+  brew install gnu-sed
 
   # Install Bash 4.
   # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before
@@ -76,7 +76,7 @@ if $brewinstall; then
   brew install zsh-completion
 
   # Install `wget` with IRI support.
-  brew install wget --with-iri
+  brew install wget
 
   # Install GnuPG to enable PGP-signing commits.
   brew install gnupg
@@ -134,7 +134,8 @@ if $brewinstall; then
   brew install the_silver_searcher
   brew install trash-cli
   brew install tree
-  brew install unrar
+  brew install m-cli
+  brew install carlocab/personal/unrar
   brew install vbindiff
   brew install wifi-password
   brew install zopfli
@@ -145,7 +146,6 @@ if $brewinstall; then
   # DEVELOPMENT
   brew install adr-tools
   brew install asdf
-  # brew install n
   brew install yarn
   # brew install go
   # brew install homebrew/php/php56 --with-gmp
@@ -174,8 +174,8 @@ if $brewinstall; then
   # brew install xhyve
   # brew install docker-machine-driver-xhyve
   # brew install boot2docker
-  # brew cask install docker
-  # brew install kubectl
+  brew install --cask docker
+  brew install kubectl
 
   # WEBFONT TOOLS
   running "Installing webfont tools"
@@ -189,97 +189,108 @@ if $brewinstall; then
   # FONTS
   running "Installing fonts"
 
-  brew tap caskroom/fonts
+  brew tap homebrew/cask-fonts
+  brew install svn
 
-  brew cask install font-domine
-  brew cask install font-droid-sans
-  brew cask install font-droid-sans-mono
-  brew cask install font-fira-code
-  brew cask install font-fira-sans
-  brew cask install font-fontawesome
-  brew cask install font-inconsolata
-  brew cask install font-inter
-  brew cask install font-lato
-  brew cask install font-open-sans
-  brew cask install font-roboto
-  brew cask install font-source-code-pro
-  brew cask install font-source-sans-pro
-  brew cask install font-ubuntu
+  brew install --cask font-domine
+  brew install --cask font-droid-sans
+  brew install --cask font-droid-sans-mono
+  brew install --cask font-fira-code
+  brew install --cask font-fira-sans
+  brew install --cask font-fontawesome
+  brew install --cask font-inconsolata
+  brew install --cask font-inter
+  brew install --cask font-lato
+  brew install --cask font-open-sans
+  brew install --cask font-roboto
+  brew install --cask font-source-code-pro
+  brew install --cask font-source-sans-pro
+  brew install --cask font-ubuntu
 
   running "Installing cask apps"
 
   # APPLICATIONS
-  brew tap caskroom/cask
-  brew tap caskroom/versions
+  brew tap homebrew/cask
+  brew tap homebrew/cask-versions
 
   # Security
-  brew cask install bitwarden
-  brew cask install keybase
-  brew cask install gpgtools
-  brew cask install tunnelblick
+  brew install --cask bitwarden
+  brew install --cask keybase
+  brew install --cask gpgtools
+  brew install --cask tunnelblick
 
   # General
-  brew cask install caffeine
-  brew cask install diskwave
-  brew cask install dropbox
-  # brew cask install firefox
-  brew cask install g-desktop-suite
-  # brew cask install google-chrome
-  brew cask install grammarly
-  brew cask install iterm2
-  brew cask install slack
-  # brew cask install spectacle
-  brew cask install spotify
-  brew cask install vlc
-  brew cask install numi
-  brew cask install notion
-  # brew cask install adobe-acrobat-reader
-  # brew cask install zoom
+  brew install --cask caffeine
+  brew install --cask diskwave
+  brew install --cask dropbox
+  brew install google-drive #drive-file-stream
+  # brew install --cask firefox
+  brew install --cask g-desktop-suite
+  # brew install --cask google-chrome
+  brew install --cask grammarly
+  brew install --cask iterm2
+  brew install --cask slack
+  # brew install --cask spectacle
+  brew install --cask spotify
+  brew install --cask vlc
+  brew install --cask numi
+  brew install --cask notion
+  brew install --cask appcleaner
+  # brew install --cask adobe-acrobat-reader
+  brew install --cask zoom
+  brew install --cask whatsapp
 
   # Design
-  # brew cask install abstract
-  brew cask install sketch
-  # brew cask install zeplin
+  # brew install --cask abstract
+  # brew install --cask sketch
+  # brew install --cask zeplin
+  brew install --cask fontbase # font management
+  # brew install --cask iconjar
+
+  # Cask outdated but versioned
+  brew tap murshidazher/homebrew-murshid
+  brew install --cask sketch@3.x # use version 63.x
 
   # Development
-  brew cask install dash
-  brew cask install brave-browser
-  # brew cask install google-chrome-canary
-  brew cask install graphiql
-  brew cask install imagealpha
-  brew cask install imageoptim
-  brew cask install ngrok
-  brew cask install sequel-pro #mysql management
-  brew cask install visual-studio-code
-  brew cask install airtable
+  brew install --cask dash
+  brew install --cask brave-browser
+  # brew install --cask google-chrome-canary
+  brew install --cask graphiql
+  brew install --cask imagealpha
+  brew install --cask imageoptim
+  brew install --cask ngrok
+  brew install --cask sequel-pro #mysql management
+  brew install --cask visual-studio-code
+  brew install --cask airtable
+  brew install --cask astah-uml
 
   # DevOps
-  brew cask install aws-vault
+  brew install --cask aws-vault
 
   # VM
-  # brew cask install virtualbox
-  # brew cask install vagrant
+  # brew install --cask virtualbox
+  # brew install --cask vagrant
 
   # Quicklook
-  brew cask install qlcolorcode
-  brew cask install qlstephen
-  brew cask install qlmarkdown
-  brew cask install quicklook-json
-  brew cask install qlprettypatch
-  brew cask install quicklook-csv
-  # brew cask install betterzipql
-  # brew cask install qlimagesize
-  brew cask install webpquicklook
-  # brew cask install suspicious-package
-  brew cask install quicklookase
-  brew cask install qlvideo
+  brew install --cask qlcolorcode
+  brew install --cask qlstephen
+  brew install --cask qlmarkdown
+  brew install --cask quicklook-json
+  brew install --cask qlprettypatch
+  brew install --cask quicklook-csv
+  # brew install --cask betterzipql
+  # brew install --cask qlimagesize
+  brew install --cask webpquicklook
+  # brew install --cask suspicious-package
+  brew install --cask quicklookase
+  brew install --cask qlvideo
 
   # DRIVERS
   running "Installing drivers"
 
   brew tap homebrew/cask-drivers
 
-  brew cask install logitech-options
+  brew install --cask logitech-options
 
   # Install Mac App Store Applications.
   # requires: brew install mas
@@ -298,17 +309,20 @@ if $brewinstall; then
   ask_for_confirmation "\nIs app store login complete. (y/n)?"
 
   # Flag install to go if user approves
+  # Make sure you have installed these app atleast once manually using your current account
+  # else app store wouldn't let you download them
   if answer_is_yes; then
     # mas install 1254981365 # Contrast
     # mas install 1234952668 # FlagTimes
     # mas install 1225570693 # Ulysses
     # TODO: install pixelsnap
-    mas install 907364780  # Tomato One - Pomodoro timer
-    mas install 485812721  # Tweetdeck
+    # mas install 907364780  # Tomato One - Pomodoro timer
+    # mas install 485812721  # Tweetdeck
     mas install 668208984  # GIPHY Capture. The GIF Maker (For recording my screen as gif)
     mas install 1351639930 # Gifski, convert videos to gifs
     # mas install 414030210  # Limechat, IRC app.
-    mas install 441258766 # Magnet
+    mas install 441258766  # Magnet
+    mas install 1474276998 # HP Smart for Desktop
   else
     cancelled "App Store login not complete. Skipping installing App Store Apps"
   fi
