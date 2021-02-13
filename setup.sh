@@ -59,6 +59,9 @@ source ./setup/node.sh
 # vim setup
 source ./setup/vim.sh
 
+# miniconda setup
+source ./setup/miniconda.sh
+
 # -----------
 # 5. Symlinks
 # -----------
