@@ -1,12 +1,18 @@
-main() {
-  install_or_update_python
-  # cleanup
-}
+#!/usr/bin/env bash
+debug=${1:-false}
 
+# Load help lib if not already loaded.
+if [ -z ${libloaded+x} ]; then
+  source ./lib.sh
+fi
+
+# -----------
+# Miniconda
+# -----------
 install_or_update_python() {
   # Ensure asdf is loaded
+  action "Installing Miniconda"
 
-  echo "Install MiniConda"
   MINICONDA_PATH="$HOME/.miniconda"
   if [ -d "$DEV_DIR" ]; then
     MINICONDA_PATH="$DEV_DIR/miniconda"
@@ -25,15 +31,4 @@ install_or_update_python() {
   conda install numpy scipy matplotlib pip -y
 }
 
-cleanup() {
-  echo 'Cleanup Homebrew Cache...'
-  brew cleanup -s
-  rm -rfv /Library/Caches/Homebrew/*
-  brew tap --repair
-  echo 'Cleanup gems...'
-  gem cleanup
-  echo 'Re-generating asdf shims...'
-  asdf reshim
-}
-
-main
+install_or_update_python

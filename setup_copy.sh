@@ -41,14 +41,17 @@ source ./setup/node.sh
 # vim setup
 source ./setup/vim.sh
 
+# miniconda setup
+source ./setup/miniconda.sh
+
+# vscode setup
+source ./setup/vscode.sh
+
 # -----------
 # 5. Symlinks
 # -----------
 botintro "\e[1mSTEP 5: SYMLINKS\e[0m"
 source ./setup/symlinks.sh
-
-# vscode setup
-source ./setup/vscode.sh
 
 # --------
 # 6. Misc.
