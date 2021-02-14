@@ -111,4 +111,3 @@ and many more...
 ## License
 
 [MIT](https://github.com/murshidazher/this-mac/blob/main/LICENSE) &copy; 2020 Murshid Azher ([https://murshidazher.com](https://murshidazher.com))
-
