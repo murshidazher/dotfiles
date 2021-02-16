@@ -189,6 +189,7 @@ if $brewinstall; then
   # FONTS
   running "Installing fonts"
 
+  brew tap murshidazher/homebrew-murshid
   brew tap homebrew/cask-fonts
   brew install svn
 
@@ -206,6 +207,7 @@ if $brewinstall; then
   brew install --cask font-source-code-pro
   brew install --cask font-source-sans-pro
   brew install --cask font-ubuntu
+  brew install --cask font-sanfrancisco
 
   running "Installing cask apps"
 
@@ -226,7 +228,7 @@ if $brewinstall; then
   brew install google-drive #drive-file-stream
   # brew install --cask firefox
   brew install --cask g-desktop-suite
-  # brew install --cask google-chrome
+  brew install --cask google-chrome
   brew install --cask grammarly
   brew install --cask iterm2
   brew install --cask slack
@@ -248,7 +250,6 @@ if $brewinstall; then
   # brew install --cask iconjar
 
   # Cask outdated but versioned
-  brew tap murshidazher/homebrew-murshid
   brew install --cask sketch@3.x # use version 63.x
 
   # Development
