@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-# Build, dedupe and then export PATH.
+# Build, dedupe and then export PATH for Filesystem Hierarchy Standard (FHS).
+# https://superuser.com/questions/325194/what-are-the-meanings-of-usr-sbin-usr-local-sbin-and-usr-local-bin
 PATH="$HOME/bin"
 PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:/usr/local/bin"
@@ -9,7 +10,7 @@ PATH="$PATH:/bin"
 PATH="$PATH:/usr/local/sbin"
 PATH="$PATH:/usr/sbin"
 PATH="$PATH:/sbin"
-PATH="/usr/local/sbin:$PATH"
+PATH="$PATH:/usr/X11/b‌​in"
 
 # Node -- use project specific binaries before global ones.
 PATH="node_modules/.bin:vendor/bin:$HOME/.node-global-modules/bin:$PATH"
@@ -18,7 +19,7 @@ PATH="node_modules/.bin:vendor/bin:$HOME/.node-global-modules/bin:$PATH"
 PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # vim/vi
-PATH="/usr/local/bin/vim"
+PATH="$PATH:/usr/local/bin/vim"
 
 # Go
 PATH="$GOPATH/bin:$PATH"
@@ -45,10 +46,7 @@ fi
 PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # llvm
-PATH="/usr/local/opt/llvm/bin:$PATH"
-
-# defaults
-PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/b‌​in"
+PATH="$PATH:/usr/local/opt/llvm/bin"
 
 # Dedupe using awk.
 if hash awk 2>/dev/null; then
