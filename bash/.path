@@ -9,6 +9,7 @@ PATH="$PATH:/bin"
 PATH="$PATH:/usr/local/sbin"
 PATH="$PATH:/usr/sbin"
 PATH="$PATH:/sbin"
+PATH="/usr/local/sbin:$PATH"
 
 # Node -- use project specific binaries before global ones.
 PATH="node_modules/.bin:vendor/bin:$HOME/.node-global-modules/bin:$PATH"

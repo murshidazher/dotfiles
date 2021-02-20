@@ -333,6 +333,8 @@ function bwutd() {
   echo '==> Update Homebrew...'
   brew update
   echo '==> Update Homebrew Casks...'
+  # List installed brew casks using the versions flag
+  brew outdated --cask --greedy
   # update gui applications
   brew upgrade --cask --greedy
   # update cli applications
