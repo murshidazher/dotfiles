@@ -19,7 +19,7 @@ PATH="node_modules/.bin:vendor/bin:$HOME/.node-global-modules/bin:$PATH"
 PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # vim/vi
-PATH="$PATH:/usr/local/bin/vim"
+PATH="/usr/local/bin/vim:$PATH"
 
 # Go
 PATH="$GOPATH/bin:$PATH"
@@ -46,7 +46,7 @@ fi
 PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # llvm
-PATH="$PATH:/usr/local/opt/llvm/bin"
+PATH="/usr/local/opt/llvm/bin:$PATH"
 
 # Dedupe using awk.
 if hash awk 2>/dev/null; then

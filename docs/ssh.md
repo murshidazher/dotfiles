@@ -7,34 +7,30 @@
 ## Template
 
 ```sh
-# default github
+Host *
+  IgnoreUnknown AddKeysToAgent,UseKeychain
+  AddKeysToAgent yes
+  UseKeychain yes
+
+# github
 Host github.com
-HostName github.com
-AddKeysToAgent yes
-UseKeychain yes
-IdentityFile ~/.ssh/id_rsa
+  HostName github.com
+  IdentityFile ~/.ssh/id_rsa
 
-# Bitbucket account
+# bitbucket
 Host bitbucket.org
-HostName bitbucket.org
-AddKeysToAgent yes
-UseKeychain yes
-IdentityFile ~/.ssh/id_bitbucket_rsa
+  HostName bitbucket.org
+  IdentityFile ~/.ssh/id_bitbucket_rsa
 
-# Personal account
+# personal
 Host personal
-HostName github.com
-AddKeysToAgent yes
-UseKeychain yes
-IdentityFile ~/.ssh/id_rsa
+  HostName github.com
+  IdentityFile ~/.ssh/id_rsa
 
-# Company account
+# company
 Host company
-HostName github.com
-AddKeysToAgent yes
-UseKeychain yes
-IdentityFile ~/.ssh/id_rsa
-
+  HostName github.com
+  IdentityFile ~/.ssh/id_rsa
 ```
 
 ### LICENSE 
