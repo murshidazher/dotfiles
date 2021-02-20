@@ -30,6 +30,9 @@ export PYTHONIOENCODING='UTF-8'
 # Go path.
 export GOPATH="$CODE/go"
 
+# asdf
+export ASDF_PATH="$HOME/.asdf"
+
 # miniconda path
 export MINICONDA_PATH="$DEV_DIR/miniconda"
 

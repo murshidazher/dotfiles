@@ -352,3 +352,10 @@ function gitio() {
 function llvmc() {
   $LLVMBASE/bin/clang -fopenmp -L$LLVMBASE/lib $1 -o $2
 }
+
+# to eleminate *-config scripts error shown by brew
+function brew() {
+  perseus
+  command brew "$@"
+  medusa
+}

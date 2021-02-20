@@ -28,9 +28,6 @@ PATH="$PATH:/usr/local/opt/go/libexec/bin"
 # rbenv
 PATH="$HOME/.rbenv/bin:$PATH"
 
-# miniconda
-PATH="$MINICONDA_PATH/bin:$PATH"
-
 # mysql@5.7
 PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
@@ -47,6 +44,12 @@ PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # llvm
 PATH="/usr/local/opt/llvm/bin:$PATH"
+
+# miniconda
+PATH="$MINICONDA_PATH/bin:$PATH"
+
+# asdf
+PATH="$ASDF_PATH/shims:$PATH"
 
 # Dedupe using awk.
 if hash awk 2>/dev/null; then

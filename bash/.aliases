@@ -137,9 +137,6 @@ alias update='\
   sudo gem cleanup; \
 '
 
-# asdf
-alias brew='env PATH=${PATH/\/Users\/USER\/\.asdf\/shims:/} brew'
-
 # Google Chrome
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 # alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary'

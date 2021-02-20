@@ -20,3 +20,7 @@
 # List outdated brew casks using the verbose flag
 > brew outdated --cask --verbose
 ```
+
+## *-config
+
+- If you get a config error then [read this](https://hashrocket.com/blog/posts/keep-anaconda-from-constricting-your-homebrew-installs)
