@@ -19,6 +19,9 @@
 
 # List outdated brew casks using the verbose flag
 > brew outdated --cask --verbose
+
+# Force update
+> brew upgrade --cask --verbose --force <name_of_cask>
 ```
 
 ## *-config
