@@ -62,11 +62,12 @@ bash -c "`curl -L https://git.io/dotfiles-mac`"
 > outside the `src` we can have directory such as `sandbox` and etc...
 
 There are some rules when naming a directory inside the `dev`;
-- all directories are lowercase
-- all directories are kebab case (that I can control)
-- there is a directory named src
-- src contains a directory for each git platform
-- inside each git platform is only repo names
+
+- All directories are lowercase.
+- All directories are kebab case (that I can control).
+- There is a directory named `src`.
+- `src` contains a directory for each git platform.
+- Inside each git platform is only repo names.
 
 ### Updating vscode plugin list
 
