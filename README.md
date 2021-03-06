@@ -15,7 +15,6 @@
   - [What's in the box](#whats-in-the-box)
     - [Highlights](#highlights)
     - [Basic](#basic)
-    - [Development](#development)
     - [Rules of `dev` directory](#rules-of-dev-directory)
     - [Updating vscode plugin list](#updating-vscode-plugin-list)
   - [Link](#link)
@@ -51,11 +50,6 @@ bash -c "`curl -L https://git.io/dotfiles-mac`"
 - [dash](https://kapeli.com/dash) - API documentation set
 - [ispell](https://www.gnu.org/software/ispell/) - spelling checker for Unix
 
-### Development
-
-- [docker]()
-- [postgresql]()
-- [redis]()
 
 ### Rules of `dev` directory
 
