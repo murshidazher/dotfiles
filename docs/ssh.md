@@ -7,30 +7,33 @@
 ## Template
 
 ```sh
-Host *
-  IgnoreUnknown AddKeysToAgent,UseKeychain
-  AddKeysToAgent yes
-  UseKeychain yes
-
 # github
 Host github.com
   HostName github.com
   IdentityFile ~/.ssh/id_rsa
+  AddKeysToAgent yes
+  UseKeychain yes
 
 # bitbucket
 Host bitbucket.org
   HostName bitbucket.org
   IdentityFile ~/.ssh/id_bitbucket_rsa
+  AddKeysToAgent yes
+  UseKeychain yes
 
 # personal
 Host personal
   HostName github.com
   IdentityFile ~/.ssh/id_rsa
+  AddKeysToAgent yes
+  UseKeychain yes
 
 # company
 Host company
   HostName github.com
   IdentityFile ~/.ssh/id_rsa
+  AddKeysToAgent yes
+  UseKeychain yes
 ```
 
 ### LICENSE 
