@@ -1,7 +1,6 @@
 # ssh config file
 
-> Read this for [multiple account setup](https://stackoverflow.com/questions/2419566/best-way-to-use-multiple-ssh-private-keys-on-one-client)
-
+- Read this for [multiple account setup](https://stackoverflow.com/questions/2419566/best-way-to-use-multiple-ssh-private-keys-on-one-client)
 - Read this for [bitbucket key generation](https://support.atlassian.com/bitbucket-cloud/docs/set-up-an-ssh-key/)
 
 ## Template
