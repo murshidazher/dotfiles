@@ -4,7 +4,7 @@
 
 ## kubernetes-cli
 
-- You may see this error after installed Kubernetes and run “brew doctor”.
+- You may see this error after installed Kubernetes and run `brew doctor`.
 
 ```sh
 # Warning: You have unlinked kegs in your Cellar.
