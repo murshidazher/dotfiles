@@ -35,6 +35,6 @@ Host company
   UseKeychain yes
 ```
 
-### LICENSE 
+### LICENSE
 
 MIT

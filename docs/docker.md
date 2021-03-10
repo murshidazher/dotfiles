@@ -47,24 +47,26 @@ That's it, you have a running Docker container.
 
 ## Container lifecycle
 
-* Create a container: [`docker create imageName`](https://docs.docker.com/engine/reference/commandline/create).  
-* Create and start a container in one operation: [`docker run imageName`](https://docs.docker.com/engine/reference/commandline/run)
+- Create a container: [`docker create imageName`](https://docs.docker.com/engine/reference/commandline/create).  
+- Create and start a container in one operation: [`docker run imageName`](https://docs.docker.com/engine/reference/commandline/run)
   -  Remove the container after it stops `--rm`: `docker run  --rm alpine ls /usr/lib`
   -  Attach the container stdin/stdout to the current terminal use `-it`: `docker run -it ubuntu bash`
   -  To mount a directory on the host to a container add `-v` option, e.g. `docker run -v $HOSTDIR:$DOCKERDIR imageName` 
   -  To map a container port use `-p $HOSTPORT:$CONTAINERPORT`: `docker run -p 8080:80 nginx`
   -  To run the container in background use `-d` switch: `docker run -d -p 8080:80 nginx`
   -  Set container name: `docker run --name myContainerName imageName` 
-  -  Example to run nginx web server to serve files from html directory on port 8080: 
+  -  Example to run nginx web server to serve files from html directory on port 8080:
+
 
 ```
     docker run -d -v $(pwd)/html:/usr/share/nginx/html -p 8080:80 --name myNginx nginx
     # access the webserver
     curl http://localhost:8080
-``` 
-* In some cases containers need [extended privileges](https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities). Add privileges with the `--cap_add` switch, e.g. `docker run --cap-add SYS_ADMIN imageName`. The flag `--cap_drop` is used to remove privileges. 
-* Rename a container: [`docker rename name newName`](https://docs.docker.com/engine/reference/commandline/rename/) 
-* Delete a container: [`docker rm containerID`](https://docs.docker.com/engine/reference/commandline/rm)
+```
+
+- In some cases containers need [extended privileges](https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities). Add privileges with the `--cap_add` switch, e.g. `docker run --cap-add SYS_ADMIN imageName`. The flag `--cap_drop` is used to remove privileges.
+- Rename a container: [`docker rename name newName`](https://docs.docker.com/engine/reference/commandline/rename/) 
+- Delete a container: [`docker rm containerID`](https://docs.docker.com/engine/reference/commandline/rm)
   - Delete all unused containers: `docker ps -q -a | xargs docker rm`
   - Remove the volumes associated with a container: `docker rm -v containerName`
  
@@ -76,13 +78,13 @@ That's it, you have a running Docker container.
 
 ## Starting and stopping containers
 
-* Start a container:
+- Start a container:
 [`docker start containerName`](https://docs.docker.com/engine/reference/commandline/start) * [`docker stop`](https://docs.docker.com/engine/reference/commandline/stop) 
-* Restart a container: [`docker restart containerName`](https://docs.docker.com/engine/reference/commandline/restart)
-* Pause a container ("freeze"): [`docker pause containerName`](https://docs.docker.com/engine/reference/commandline/pause/)
-* Unpause a container: [`docker unpause containerName `](https://docs.docker.com/engine/reference/commandline/unpause/) 
-* Stop and wait for termination: [`docker wait containerName`](https://docs.docker.com/engine/reference/commandline/wait) 
-* Kill a container (sends SIGKILL): [`docker kill containerName`](https://docs.docker.com/engine/reference/commandline/kill) 
+- Restart a container: [`docker restart containerName`](https://docs.docker.com/engine/reference/commandline/restart)
+- Pause a container ("freeze"): [`docker pause containerName`](https://docs.docker.com/engine/reference/commandline/pause/)
+- Unpause a container: [`docker unpause containerName `](https://docs.docker.com/engine/reference/commandline/unpause/) 
+- Stop and wait for termination: [`docker wait containerName`](https://docs.docker.com/engine/reference/commandline/wait) 
+- Kill a container (sends SIGKILL): [`docker kill containerName`](https://docs.docker.com/engine/reference/commandline/kill) 
 
 ## Executing commands in containers and apply changes
 
