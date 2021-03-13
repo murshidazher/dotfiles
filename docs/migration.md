@@ -39,7 +39,7 @@ Then remind the user to copy other data such as Applications, Games, Movies, Mus
 ## Step 4: Copy other data to `~/migration`
 
 - Copy wi-fi settings
-- Copy automator settings
+- Copy automator settings (create workflow and scripts)
 - Copy installed fonts (use fontbase if not)
 
-Then finally suggest a list of other data and settings the user should consider migrating (git branches, tabs, logs, licenses, etc.). 
+Then finally suggest a list of other data and settings the user should consider migrating (git branches, tabs, logs, licenses, etc.)
