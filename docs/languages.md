@@ -21,14 +21,6 @@ JAVA_HOME=". ~/.asdf/plugins/java/set-java-home.bash"
 ```
 
 
-### Google Drive
-
-```sh
-> brew install --cask google-drive-file-stream # google drive
-> brew uninstall google-drive-file-stream
-> brew install google-drive
-```
-
 ## AndroidStudio
 
 ```sh
