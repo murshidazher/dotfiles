@@ -225,7 +225,7 @@ if $brewinstall; then
   brew install --cask caffeine
   brew install --cask diskwave
   brew install --cask dropbox
-  brew install google-drive #drive-file-stream
+  brew install google-drive
   brew install --cask firefox
   brew install --cask g-desktop-suite
   brew install --cask google-chrome
