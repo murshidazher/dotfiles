@@ -6,29 +6,29 @@ if [ -z ${libloaded+x} ]; then
   source ./lib.sh
 fi
 
-# -----------
-# Miniconda
-# -----------
-install_or_update_miniconda() {
-  # Ensure asdf is loaded
-  action "Installing Miniconda"
+# install miniconda
+action "Install: miniconda"
 
-  MINICONDA_PATH="$HOME/.miniconda"
-  if [ -d "$DEV_DIR" ]; then
-    MINICONDA_PATH="$DEV_DIR/miniconda"
-  fi
-  if [ ! -d "$MINICONDA_PATH" ]; then
-    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
-    chmod +x ./Miniconda3-latest-MacOSX-x86_64.sh
-    ./Miniconda3-latest-MacOSX-x86_64.sh -b -p "$MINICONDA_PATH"
-    rm ./Miniconda3-latest-MacOSX-x86_64.sh
-  fi
+MINICONDA_PATH="$HOME/.miniconda"
 
-  # now we activate miniconda
-  export PATH="$MINICONDA_PATH/bin:$PATH"
+if [ -d "$DEV_DIR" ]; then
+  MINICONDA_PATH="$DEV_DIR/miniconda"
+fi
 
-  # and install the default deps
-  conda install numpy scipy matplotlib pip -y
-}
+# fetch the latest installer for miniconda
+if [ ! -d "$MINICONDA_PATH" ]; then
+  wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+  chmod +x ./Miniconda3-latest-MacOSX-x86_64.sh
+  ./Miniconda3-latest-MacOSX-x86_64.sh -b -p "$MINICONDA_PATH"
+  rm ./Miniconda3-latest-MacOSX-x86_64.sh
+fi
 
-install_or_update_miniconda
+# now we activate miniconda
+export PATH="$MINICONDA_PATH/bin:$PATH"
+
+action "Install: miniconda basic utitlity packages"
+
+# and install the default deps
+conda install numpy scipy matplotlib pip -y
+
+# fin.

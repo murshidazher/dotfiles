@@ -39,6 +39,17 @@ if hash asdf 2>/dev/null; then
   asdf install java "${LATEST_JAVA_CORRETTO_VERSION}"
   asdf global java "${LATEST_JAVA_CORRETTO_VERSION}"
 
+  # maven
+  action "asdf: setting up Maven"
+  asdf plugin-add maven
+
+  local LATEST_MAVEN_VERSION=$(asdf list-all maven | grep '^3\.' | grep -v '\-dev\|rc' | grep -v 'b\d\+' | tail -1)
+
+  # install
+  action "asdf: installing global versions of maven"
+  asdf install maven "${LATEST_MAVEN_VERSION}"
+  asdf global maven "${LATEST_MAVEN_VERSION}"
+
   # python
   asdf plugin-add python
 
