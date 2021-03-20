@@ -158,6 +158,7 @@ Bash 4 and auto-completion
 - `wifi-password` - to get `wifi-password` which we have saved by `ssid` or current. `wifi-password | pbcopy` to copy it straight to clipboard.
 - `youtube-dl`
 - `zopfli`
+- `thefuck` - corrects errors in previous console commands. `fuck` 😉
 
 ### Backup tools
 

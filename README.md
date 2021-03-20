@@ -92,6 +92,7 @@ Credit, inspiration and thanks to:
 - [Simon Boudrias](https://github.com/SBoudrias/dotfiles)
 - [Nina Zakharenko](https://github.com/nnja/new-computer)
 - [Aaron Bates](https://github.com/aaronbates/dotfiles)
+- [SimonAdler](https://github.com/SimonAdler/dotfiles-1) - for BATS and Make file creations
 
 and many more...
 
@@ -102,7 +103,9 @@ and many more...
 - [x] `$HOME/.default-python-packages` to specify default installed packages
 - [x] [https://dev.to/0xdonut/how-to-install-flutter-on-macos-using-homebrew-and-asdf-3loa](https://dev.to/0xdonut/how-to-install-flutter-on-macos-using-homebrew-and-asdf-3loa)
 - [ ] [https://stackoverflow.com/questions/17901692/set-up-adb-on-mac-os-x](https://stackoverflow.com/questions/17901692/set-up-adb-on-mac-os-x)
+- [ ] Add BATS tests
+- [ ] Add make file installation
 
 ## License
 
-[MIT](https://github.com/murshidazher/this-mac/blob/main/LICENSE) &copy; 2020 Murshid Azher ([https://murshidazher.com](https://murshidazher.com))
+[MIT](https://github.com/murshidazher/this-mac/blob/main/LICENSE) &copy; 2020 Murshid Azher.

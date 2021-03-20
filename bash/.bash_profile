@@ -95,5 +95,9 @@ if hash rbenv 2>/dev/null; then
   eval "$(rbenv init -)"
 fi
 
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+# fuck
+if hash fuck 2>/dev/null; then
+  eval "$(thefuck --alias fix)"
+fi
 
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
