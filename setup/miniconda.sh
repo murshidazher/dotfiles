@@ -9,7 +9,7 @@ fi
 # -----------
 # Miniconda
 # -----------
-install_or_update_python() {
+install_or_update_miniconda() {
   # Ensure asdf is loaded
   action "Installing Miniconda"
 
@@ -31,4 +31,4 @@ install_or_update_python() {
   conda install numpy scipy matplotlib pip -y
 }
 
-install_or_update_python
+install_or_update_miniconda

@@ -264,6 +264,7 @@ if $brewinstall; then
   brew install --cask visual-studio-code
   brew install --cask airtable
   brew install --cask astah-uml
+  brew install --cask intellij-idea-ce
 
   # DevOps
   brew install --cask aws-vault
