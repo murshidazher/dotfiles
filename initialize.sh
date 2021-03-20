@@ -252,6 +252,8 @@ else
   cd dotfiles
   running "Setting up...."
 
+  bot "OK, let's get started\n"
+
   # dotfiles for vs code, emacs, gitconfig, oh my zsh, etc.
   ./setup.sh
 fi
