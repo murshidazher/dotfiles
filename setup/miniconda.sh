@@ -6,8 +6,8 @@ if [ -z ${libloaded+x} ]; then
   source ./lib.sh
 fi
 
-# install miniconda
-action "Install: miniconda"
+# Install miniconda
+action "Installing miniconda."
 
 MINICONDA_PATH="$HOME/.miniconda"
 
@@ -15,7 +15,7 @@ if [ -d "$DEV_DIR" ]; then
   MINICONDA_PATH="$DEV_DIR/miniconda"
 fi
 
-# fetch the latest installer for miniconda
+# Fetch the latest installer for miniconda
 if [ ! -d "$MINICONDA_PATH" ]; then
   wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
   chmod +x ./Miniconda3-latest-MacOSX-x86_64.sh
@@ -23,12 +23,14 @@ if [ ! -d "$MINICONDA_PATH" ]; then
   rm ./Miniconda3-latest-MacOSX-x86_64.sh
 fi
 
-# now we activate miniconda
+# Activate miniconda
 export PATH="$MINICONDA_PATH/bin:$PATH"
 
-action "Install: miniconda basic utitlity packages"
+action "Installing miniconda basic utitlity packages."
 
-# and install the default deps
+# Install the default deps
 conda install numpy scipy matplotlib pip -y
+
+success "\e[1mInstallation completed: miniconda."
 
 # fin.

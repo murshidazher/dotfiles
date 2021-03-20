@@ -34,7 +34,7 @@ if hash asdf 2>/dev/null; then
   local LATEST_JAVA_CORRETTO_VERSION=$(asdf list-all java | grep '^corretto-' | tail -1)
 
   # install
-  action "asdf: installing global versions"
+  action "asdf: installing global versions $LATEST_JAVA_CORRETTO_VERSION"
 
   asdf install java "${LATEST_JAVA_CORRETTO_VERSION}"
   asdf global java "${LATEST_JAVA_CORRETTO_VERSION}"
@@ -46,7 +46,7 @@ if hash asdf 2>/dev/null; then
   local LATEST_MAVEN_VERSION=$(asdf list-all maven | grep '^3\.' | grep -v '\-dev\|rc' | grep -v 'b\d\+' | tail -1)
 
   # install
-  action "asdf: installing global versions of maven"
+  action "asdf: installing global versions of maven $LATEST_MAVEN_VERSION"
   asdf install maven "${LATEST_MAVEN_VERSION}"
   asdf global maven "${LATEST_MAVEN_VERSION}"
 
