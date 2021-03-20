@@ -97,7 +97,7 @@ fi
 
 # fuck
 if hash fuck 2>/dev/null; then
-  eval "$(thefuck --alias fix)"
+  eval "$(thefuck --alias)"
 fi
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

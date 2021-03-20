@@ -239,6 +239,7 @@ Bash 4 and auto-completion
 - `spectacle`
 - `spotify`
 - `vlc`
+- `maccy` - read more on [here](https://github.com/p0deje/Maccy)
 
 ### Design
 

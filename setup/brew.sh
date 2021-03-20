@@ -242,6 +242,7 @@ if $brewinstall; then
   # brew install --cask adobe-acrobat-reader
   brew install --cask zoom
   brew install --cask whatsapp
+  brew install --cask maccy
 
   # Design
   # brew install --cask abstract

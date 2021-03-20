@@ -93,6 +93,7 @@ Credit, inspiration and thanks to:
 - [Nina Zakharenko](https://github.com/nnja/new-computer)
 - [Aaron Bates](https://github.com/aaronbates/dotfiles)
 - [SimonAdler](https://github.com/SimonAdler/dotfiles-1) - for BATS and Make file creations
+- [webpro](https://github.com/webpro/dotfiles) - for react native setup
 
 and many more...
 
