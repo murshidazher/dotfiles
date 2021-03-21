@@ -252,6 +252,7 @@ Bash 4 and auto-completion
 
 <!-- - `google-chrome-canary` -->
 - `brave-browser`
+- `firefox`
 - `imagealpha`
 - `imageoptim`
 - `ngrok`
