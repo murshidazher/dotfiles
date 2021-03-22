@@ -52,6 +52,10 @@ Bash 4 and auto-completion
 
 - `.nanorc` — nano syntax config
 
+### R Studio
+
+- Dark Theme R Studio
+
 ### Screen
 
 - `.screenrc` — screen config
