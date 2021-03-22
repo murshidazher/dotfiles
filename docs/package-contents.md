@@ -223,7 +223,7 @@ Bash 4 and auto-completion
 
 ### Security
 
-- `dashlane`
+- `bitwarden`
 - `keybase`
 - `gpgtools`
 - `aws-vault`
