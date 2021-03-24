@@ -233,6 +233,7 @@ Bash 4 and auto-completion
 - `caffeine`
 - `diskwave`
 - `dropbox`
+- `google-drive`
 - `google-chrome`
 - `grammarly`
 - `iterm2`
