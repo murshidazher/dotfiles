@@ -255,7 +255,6 @@ Bash 4 and auto-completion
 
 ### Development
 
-<!-- - `google-chrome-canary` -->
 - `brave-browser`
 - `firefox`
 - `imagealpha`
