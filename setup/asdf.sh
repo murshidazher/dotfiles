@@ -40,6 +40,7 @@ if hash asdf 2>/dev/null; then
   action "asdf: installing global versions $LATEST_JAVA8_LTS_VERSION"
 
   asdf install java "${LATEST_JAVA8_LTS_VERSION}"
+  asdf install java "${LATEST_JAVA_CORRETTO_VERSION}"
   asdf global java "${LATEST_JAVA8_LTS_VERSION}"
 
   # maven
