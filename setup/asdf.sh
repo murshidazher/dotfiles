@@ -31,13 +31,16 @@ if hash asdf 2>/dev/null; then
   action "asdf: setting up Java"
 
   asdf plugin-add java
+  # adoptium openjdk 8 with JVM hotspot [difference between compilers](shorturl.at/fizN9)
+  local LATEST_JAVA8_LTS_VERSION=$(asdf list-all java | grep '^adoptopenjdk-8.0.' | grep -v '\.openj9\|rc' | tail -1)
+  # if you need a specific vendor latest version
   local LATEST_JAVA_CORRETTO_VERSION=$(asdf list-all java | grep '^corretto-' | tail -1)
 
   # install
-  action "asdf: installing global versions $LATEST_JAVA_CORRETTO_VERSION"
+  action "asdf: installing global versions $LATEST_JAVA8_LTS_VERSION"
 
-  asdf install java "${LATEST_JAVA_CORRETTO_VERSION}"
-  asdf global java "${LATEST_JAVA_CORRETTO_VERSION}"
+  asdf install java "${LATEST_JAVA8_LTS_VERSION}"
+  asdf global java "${LATEST_JAVA8_LTS_VERSION}"
 
   # maven
   action "asdf: setting up Maven"
