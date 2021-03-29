@@ -15,11 +15,13 @@ $ zkServer stop
 ### Ignore Zookeeper dependencies and install
 
 ```sh
-brew unlink zookeeper
-brew install zookeeper --ignore-dependencies
+# check all the dependencies except java
+$ brew list <package_name> || brew install <package_name>
+$ brew unlink zookeeper
+$ brew install zookeeper --ignore-dependencies # to ignore openjdk 15 dependency
 ```
 
 ```sh
-> brew services start zookeeper # starts as background service
-> zkServer start # Or, if you don't want/need a background service you can just run
+$ brew services start zookeeper # starts as background service
+$ zkServer start # Or, if you don't want/need a background service you can just run
 ```
