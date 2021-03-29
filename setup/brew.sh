@@ -140,6 +140,7 @@ if $brewinstall; then
   brew install wifi-password
   brew install zopfli
   brew install thefuck
+  brew install cppunit
 
   # BACKUP
   brew install mackup

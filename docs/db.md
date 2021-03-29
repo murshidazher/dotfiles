@@ -11,3 +11,15 @@ $ zkServer start
 $ kafka-server-start /usr/local/etc/kafka/server.properties
 $ zkServer stop
 ```
+
+### Ignore Zookeeper dependencies and install
+
+```sh
+brew unlink zookeeper
+brew install zookeeper --ignore-dependencies
+```
+
+```sh
+> brew services start zookeeper # starts as background service
+> zkServer start # Or, if you don't want/need a background service you can just run
+```
