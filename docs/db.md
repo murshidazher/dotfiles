@@ -28,8 +28,9 @@ $ zkServer start # Or, if you don't want/need a background service you can just 
 
 ### etcd
 
-- To create a naming server
+- To create a naming server using key/value pair database
 
 ```sh
 $ brew install etcd
+$ etcd  # execute etcd to start the service
 ```
