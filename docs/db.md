@@ -25,3 +25,11 @@ $ brew install zookeeper --ignore-dependencies # to ignore openjdk 15 dependency
 $ brew services start zookeeper # starts as background service
 $ zkServer start # Or, if you don't want/need a background service you can just run
 ```
+
+### etcd
+
+- To create a naming server
+
+```sh
+$ brew install etcd
+```
