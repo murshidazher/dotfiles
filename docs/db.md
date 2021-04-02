@@ -12,7 +12,7 @@ $ kafka-server-start /usr/local/etc/kafka/server.properties
 $ zkServer stop
 ```
 
-### Ignore Zookeeper dependencies and install plainly
+### Ignore Zookeeper brew dependencies
 
 ```sh
 # check all the dependencies except java
