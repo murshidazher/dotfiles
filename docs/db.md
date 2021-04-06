@@ -19,6 +19,6 @@
 - key/value pair database
 
 ```sh
-brew install etcd
-etcd  # execute etcd to start the service
+> brew install etcd
+> etcd  # execute etcd to start the service
 ```
