@@ -6,6 +6,6 @@ This markdown lists all the extensions installed on chromium browser to have it 
 
 - `Save to Pocket`
 - `JSON viewer`
-- `ColorZilla`
+- `Color zilla`
 - `React Developer Tools`
 - `ReactDevTools`
