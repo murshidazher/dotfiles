@@ -51,6 +51,9 @@ PATH="$MINICONDA_PATH/bin:$PATH"
 # asdf
 PATH="$ASDF_PATH/shims:$PATH"
 
+#openjdk8
+PATH="/usr/local/opt/openjdk@8/bin:$PATH"
+
 # Dedupe using awk.
 if hash awk 2>/dev/null; then
   PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')

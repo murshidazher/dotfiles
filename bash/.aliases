@@ -295,3 +295,6 @@ alias codexup="code --list-extensions | comm -13 - $HOME/dotfiles/vscode/extensi
 # R
 alias r="/Library/Frameworks/R.framework/Versions/Current/Resources/bin/R"
 alias R=r
+
+# Java
+alias javav="java -version"

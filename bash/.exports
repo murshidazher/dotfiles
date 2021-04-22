@@ -122,3 +122,6 @@ fi
 export LDFLAGS="-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib"
 # export LDFLAGS="-L/usr/local/opt/llvm/lib"
 export CPPFLAGS="-I/usr/local/opt/llvm/include"
+
+# openjdk8
+export CPPFLAGS="-I/usr/local/opt/openjdk@8/include"
