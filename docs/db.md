@@ -23,7 +23,7 @@
 > etcd  # execute etcd to start the service
 ```
 
-### 
+### ballerina
 
 ```sh
 > brew install ballerina --ignore-dependencies
