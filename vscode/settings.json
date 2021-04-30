@@ -30,8 +30,9 @@
   },
   // Turn if off for js
   "[javascript]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
+  "editor.formatOnPaste": true,
   "eslint.alwaysShowStatus": true,
   "prettier.requireConfig": true,
   "prettier.disableLanguages": ["js"],
@@ -76,7 +77,7 @@
     "editor.formatOnSave": true
   },
   "[typescript]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
   "[typescriptreact]": {
     "editor.formatOnSave": true
@@ -106,5 +107,27 @@
   "insertDateString.format": "iso",
   "git.enabled": true,
   "git.path": "/usr/bin/git",
-  "workbench.preferredDarkColorTheme": "Nord"
+  "workbench.preferredDarkColorTheme": "Nord",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+  "dash.languageIdToDocsetMap": {
+    "ansible": ["ansible"],
+    "typescript": ["typescript", "javascript"],
+    "javascript": [
+      "javascript",
+      "react",
+      "nodejs",
+      "express",
+      "awsjs",
+      "sinon",
+      "jest"
+    ],
+    "terraform": ["terraform"],
+    "sass": ["sass", "css"]
+  }
 }
