@@ -271,6 +271,7 @@ if $brewinstall; then
 
   # DevOps
   brew install --cask aws-vault
+  brew install terraform
 
   # VM
   # brew install --cask virtualbox
