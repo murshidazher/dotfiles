@@ -33,3 +33,4 @@ This markdown lists all the default extensions installed by the script.
 - `vscode-styled-components` by Julien Poissonnier
 - `YAML` by Red Hat
 - `Dash` by Budi Irawan
+- `HashiCorp Terraform` by HashiCorp
