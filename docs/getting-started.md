@@ -64,6 +64,41 @@ $ git aliases # list all available aliases
 
 Local config is available using `~/.gitconfig.local`
 
+To use `gh` cli commands :fire:,
+
+```bash
+$ gh auth login
+```
+
+Usage
+
+```bash
+gh <command> <subcommand> [flags]
+```
+
+### Example
+
+> Read more about [github cli](https://cli.github.com/manual/) 🔥🔥🔥
+
+Create gist
+
+```bash
+$ gh gist create --public hello.py
+```
+
+Create Pull Request
+
+```bash
+$ gh pr create --base develop --head monalisa:feature
+```
+
+Create a Repo
+
+```bash
+$ gh repo create my-project
+```
+
+
 ### Shorthands
 
 Another nice feature is "git shorthands" which makes it quicker to fire off commands, for example:
