@@ -109,6 +109,7 @@ if $brewinstall; then
   brew install git-quick-stats
   brew install graphviz
   brew install grc
+  brew install gh
   brew install httpie
   brew install hub
   brew install icdiff
