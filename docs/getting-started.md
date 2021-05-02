@@ -64,6 +64,8 @@ $ git aliases # list all available aliases
 
 Local config is available using `~/.gitconfig.local`
 
+### Git CLI
+
 To use `gh` cli commands :fire:,
 
 ```bash
@@ -76,7 +78,7 @@ Usage
 gh <command> <subcommand> [flags]
 ```
 
-### Example
+#### Examples
 
 > Read more about [github cli](https://cli.github.com/manual/) 🔥🔥🔥
 
