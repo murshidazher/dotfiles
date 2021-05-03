@@ -266,6 +266,7 @@ Bash 4 and auto-completion
 ### DevOps
 
 - `aws-vault`
+- `terraform`
 
 ### Quicklook plugins
 
