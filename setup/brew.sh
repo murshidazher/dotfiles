@@ -102,6 +102,7 @@ if $brewinstall; then
   brew install cmake
   brew install diff-so-fancy
   brew install fzf
+  brew install gh
   brew install gibo && gibo -l
   brew install git-delta
   brew install git-extras
@@ -109,7 +110,6 @@ if $brewinstall; then
   brew install git-quick-stats
   brew install graphviz
   brew install grc
-  brew install gh
   brew install httpie
   brew install hub
   brew install icdiff
