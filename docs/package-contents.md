@@ -288,7 +288,6 @@ Bash 4 and auto-completion
 Installed using `mas`:
 
 - [Contrast](https://usecontrast.com/)
-<!-- - [Ulysses](https://www.ulyssesapp.com) -->
 
 ## Node
 
