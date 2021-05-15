@@ -161,9 +161,12 @@ if $brewinstall; then
 
   # DATABASES
   brew install postgresql
-  brew install mongodb
   brew install mysql@5.7
   brew install redis
+
+  brew tap mongodb/brew
+  brew install mongodb-community
+  brew install --cask mongodb-compass
 
   # DEVOPS
   brew install awscli
