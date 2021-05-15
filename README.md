@@ -4,7 +4,7 @@
 
 > My personal installation script to automate any new macOS system setup so I don't need to feel poor.
 
-- A dogmatic script to set up script. Built for Mac OS X :fire: :fire:
+- A dogmatic script to set up my mac. Built for Mac OS X :fire: :fire:
 
 ## Table of Contents
 
