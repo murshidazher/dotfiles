@@ -213,7 +213,7 @@ untracked = cyan
 
 [commit]
 # https://help.github.com/articles/signing-commits-using-gpg/
-gpgsign = true
+	gpgsign = true
 
 template = ~/.git-template-commit
 
@@ -297,7 +297,7 @@ smudge = git-lfs smudge -- %f
 process = git-lfs filter-process
 required = true
 [gpg]
-program = /usr/local/bin/gpg
+	program = gpg
 [user]
 email = murshidazher@yahoo.com
-signingkey = D1E367C2F9E39A170ADF1CA1A002C9B34F45A423
+	signingkey = D1E367C2F9E39A170ADF1CA1A002C9B34F45A423

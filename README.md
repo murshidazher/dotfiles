@@ -79,6 +79,8 @@ A list of helpful links used to develop/inspire this project
 
 ### gpg sign
 
+> Read this[stackoverflow](https://stackoverflow.com/questions/39494631/gpg-failed-to-sign-the-data-fatal-failed-to-write-commit-object-git-2-10-0) for troubleshooting.
+
 ```sh
 > gpg --list-keys
 > git config --global user.signingkey [public key ID]
