@@ -6,33 +6,40 @@
 ## Template
 
 ```sh
+Host *
+  IgnoreUnknown AddKeysToAgent
+  AddKeysToAgent yes
+  ForwardX11 no
+  ForwardAgent yes
+
 # github
 Host github.com
+  User murshidazher
   HostName github.com
   IdentityFile ~/.ssh/id_rsa
-  AddKeysToAgent yes
-  UseKeychain yes
+  PreferredAuthentications publickey
+  IdentitiesOnly yes
 
 # bitbucket
 Host bitbucket.org
   HostName bitbucket.org
   IdentityFile ~/.ssh/id_bitbucket_rsa
-  AddKeysToAgent yes
-  UseKeychain yes
+  PreferredAuthentications publickey
+  IdentitiesOnly yes
 
 # personal
 Host personal
   HostName github.com
   IdentityFile ~/.ssh/id_rsa
-  AddKeysToAgent yes
-  UseKeychain yes
+  PreferredAuthentications publickey
+  IdentitiesOnly yes
 
 # company
 Host company
   HostName github.com
   IdentityFile ~/.ssh/id_rsa
-  AddKeysToAgent yes
-  UseKeychain yes
+  PreferredAuthentications publickey
+  IdentitiesOnly yes
 ```
 
 ### LICENSE
