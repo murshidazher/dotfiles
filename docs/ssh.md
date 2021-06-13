@@ -40,6 +40,13 @@ Host company
   IdentityFile ~/.ssh/id_rsa
   PreferredAuthentications publickey
   IdentitiesOnly yes
+
+# hirw
+Host hirw
+  User hirwuserxxxx
+  HostName xx.xx.xxx.xxx
+  IdentityFile ~/.ssh/hirwuserxxxx.pem
+  Port 22
 ```
 
 ### LICENSE
