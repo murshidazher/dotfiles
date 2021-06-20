@@ -226,6 +226,7 @@ if $brewinstall; then
   brew install --cask keybase
   brew install --cask gpgtools
   brew install --cask tunnelblick
+  brew install --cask openvpn-connect
 
   # General
   brew install --cask caffeine
