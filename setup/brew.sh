@@ -297,6 +297,9 @@ if $brewinstall; then
   brew install --cask quicklookase
   brew install --cask qlvideo
 
+  # Research
+  brew install --cask zotero
+
   # DRIVERS
   running "Installing drivers"
 
