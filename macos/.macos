@@ -90,6 +90,7 @@ defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
 defaults write com.apple.helpviewer DevMode -bool true
 
 # Set up WebpQuickLook
+# sudo xattr -rd com.apple.quarantine ~/Library/QuickLook/WebpQuickLook.qlgenerator
 sudo xattr -d com.apple.quarantine ~/Library/QuickLook/WebpQuickLook.qlgenerator
 
 # Fix for the ancient UTF-8 bug in QuickLook (https://mths.be/bbo)
