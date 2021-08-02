@@ -326,6 +326,7 @@ if $brewinstall; then
   # Flag install to go if user approves
   # Make sure you have installed these app atleast once manually using your current account
   # else app store wouldn't let you download them
+  # mas search <AppName>
   if answer_is_yes; then
     # mas install 1254981365 # Contrast
     # mas install 1234952668 # FlagTimes
@@ -338,6 +339,8 @@ if $brewinstall; then
     # mas install 414030210  # Limechat, IRC app.
     mas install 441258766  # Magnet
     mas install 1474276998 # HP Smart for Desktop
+    mas install 490461369  # Bandwidth+
+    mas instal 1056643111  # Clocker
   else
     cancelled "App Store login not complete. Skipping installing App Store Apps"
   fi
