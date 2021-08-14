@@ -50,7 +50,6 @@ bash -c "`curl -L https://git.io/dotfiles-mac`"
 - [dash](https://kapeli.com/dash) - API documentation set
 - [ispell](https://www.gnu.org/software/ispell/) - spelling checker for Unix
 
-
 ### Rules of `dev` directory
 
 > outside the `src` we can have directory such as `sandbox` and etc...
@@ -103,7 +102,6 @@ and many more...
 
 - [ ] Add react native settings and android
 - [x] Running `brew search "/font-/"` will show you a list of all fonts that you can install this way.
-- [x] `$HOME/.default-python-packages` to specify default installed packages
 - [x] [https://dev.to/0xdonut/how-to-install-flutter-on-macos-using-homebrew-and-asdf-3loa](https://dev.to/0xdonut/how-to-install-flutter-on-macos-using-homebrew-and-asdf-3loa)
 - [ ] [https://stackoverflow.com/questions/17901692/set-up-adb-on-mac-os-x](https://stackoverflow.com/questions/17901692/set-up-adb-on-mac-os-x)
 - [ ] Add BATS tests
