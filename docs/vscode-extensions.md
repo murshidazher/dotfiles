@@ -15,7 +15,6 @@ This markdown lists all the default extensions installed by the script.
 - `Code Highlight` by Sergil Naumov
 - `CSS Compressor` by bestvow
 - `css-compact` by jsonchou
-- `Debugger for chrome` by Microsoft
 - `Docker` by Microsoft
 - `EditorConfig for VS Code` by EditorConfig
 - `ESLint` by Dirk Baeumer
