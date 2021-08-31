@@ -68,13 +68,22 @@ source ./setup/miniconda.sh
 botintro "\e[1mSTEP 5: SYMLINKS\e[0m"
 source ./setup/symlinks.sh
 
+# --------------
+# 6. Environment
+# --------------
+
+botintro "\e[1mSTEP 6: Environment Setup\e[0m"
+
 # vscode setup
 source ./setup/vscode.sh
 
+# chrome extensions setup
+# source ./setup/chrome.sh
+
 # --------
-# 6. Misc.
+# 7. Misc.
 # --------
-botintro "\e[1mSTEP 6: Final touches\e[0m"
+botintro "\e[1mSTEP 7: Final touches\e[0m"
 source ./setup/misc.sh
 
 # Wrap-up.
