@@ -12,5 +12,4 @@ install_y() {
 
 # Install chrome extensions
 # cat $defaultdotfilesdir/chrome/test-extensions.list | xargs -I {} ./install-chrome.sh {}
-# Install chrome extensions
 cat $defaultdotfilesdir/chrome/test-extensions.list | xargs -I {} ./install_y {}
