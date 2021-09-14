@@ -39,4 +39,4 @@ install_chrome_ext() {
 
 export -f install_chrome_ext
 
-cat $defaultdotfilesdir/chrome/test-extensions.list | xargs -I {} -P2 bash -c 'install_chrome_ext {}'
+cat $defaultdotfilesdir/chrome/extensions.list | xargs -I {} -P2 bash -c 'install_chrome_ext {}'
