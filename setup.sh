@@ -78,7 +78,7 @@ botintro "\e[1mSTEP 6: Environment Setup\e[0m"
 source ./setup/vscode.sh
 
 # chrome extensions setup
-# source ./setup/chrome.sh
+source ./setup/chrome.sh
 
 # --------
 # 7. Misc.
