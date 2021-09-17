@@ -100,6 +100,7 @@ and many more...
 
 ## TODO
 
+- [ ] Finish the script for flutter setup
 - [ ] Add react native settings and android
 - [x] Running `brew search "/font-/"` will show you a list of all fonts that you can install this way.
 - [x] [https://dev.to/0xdonut/how-to-install-flutter-on-macos-using-homebrew-and-asdf-3loa](https://dev.to/0xdonut/how-to-install-flutter-on-macos-using-homebrew-and-asdf-3loa)
