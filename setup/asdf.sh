@@ -72,6 +72,13 @@ if hash asdf 2>/dev/null; then
   pip install -U pip
   pip install "${PYTHON_PIPS[@]}"
 
+  # install specific nodejs version :Different
+  local NODE_VERSION_12=12.22.6
+  action "asdf: installing node v${NODE_VERSION_12}"
+  asdf install nodejs "${NODE_VERSION_12}"
+  asdf global nodejs "${NODE_VERSION_12}"
+  asdf reshim nodejs
+
   # fin.
 else
   echo "WARNING: asdf not found."
