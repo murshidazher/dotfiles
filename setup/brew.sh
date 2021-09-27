@@ -107,6 +107,7 @@ if $brewinstall; then
   brew install git-delta
   brew install git-extras
   brew install git-lfs
+  brew install bfg
   brew install git-quick-stats
   brew install graphviz
   brew install grc

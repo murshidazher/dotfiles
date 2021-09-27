@@ -100,7 +100,6 @@ Create a Repo
 $ gh repo create my-project
 ```
 
-
 ### Shorthands
 
 Another nice feature is "git shorthands" which makes it quicker to fire off commands, for example:
@@ -110,6 +109,14 @@ $ g c gh:murshidazher/dotfiles
 
 # is the same as writing
 $ git clone git@github.com:murshidazher/dotfiles.git
+```
+
+### [bfg-repo-cleaner](https://rtyley.github.io/bfg-repo-cleaner/)
+
+A simpler, faster alternative to `git-filter-branch` for cleansing bad data out of your Git repository history.
+
+```bash
+
 ```
 
 ### hub
