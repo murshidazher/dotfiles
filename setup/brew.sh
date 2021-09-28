@@ -245,6 +245,7 @@ if $brewinstall; then
   brew install --cask vlc
   brew install --cask numi
   brew install --cask notion
+  brew install --cask simplenote
   brew install --cask appcleaner
   # brew install --cask adobe-acrobat-reader
   brew install --cask zoom
