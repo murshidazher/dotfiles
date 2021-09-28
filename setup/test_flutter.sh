@@ -1,3 +1,4 @@
+# TODO: Script under process
 # https://www.chrisjmendez.com/2021/05/12/how-to-install-flutter-on-mac-osx-using-homebrew/
 # https://reactnative.dev/docs/environment-setup
 
