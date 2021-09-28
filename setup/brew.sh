@@ -301,6 +301,7 @@ if $brewinstall; then
   brew install --cask qlvideo
 
   # Productivity
+  brew install asciinema
   brew install --cask krisp
   brew install --cask recordit
 
