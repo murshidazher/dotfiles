@@ -270,7 +270,7 @@ if $brewinstall; then
   brew install --cask imagealpha
   brew install --cask imageoptim
   brew install --cask ngrok
-  brew install --cask sequel-pro #mysql management
+  brew install --cask sequel-pro # mysql management
   brew install --cask visual-studio-code
   brew install --cask airtable
   brew install --cask astah-uml
