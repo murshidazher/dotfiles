@@ -280,7 +280,7 @@ if $brewinstall; then
   # DevOps
   brew install --cask aws-vault
   brew install terraform
-  brew install earthly
+  brew install earthly/earthly/earthly
 
   # VM
   # brew install --cask virtualbox
