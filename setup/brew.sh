@@ -304,6 +304,9 @@ if $brewinstall; then
   # Research
   brew install --cask zotero
 
+  # Others
+  brew install --cask cakebrew
+
   # DRIVERS
   running "Installing drivers"
 
