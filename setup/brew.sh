@@ -300,6 +300,7 @@ if $brewinstall; then
 
   # Productivity
   brew install --cask krisp
+  brew install --cask recordit
 
   # Research
   brew install --cask zotero
