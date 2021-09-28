@@ -11,7 +11,6 @@
   "editor.wordWrap": "on",
   "vetur.validation.template": false,
   // Controls the font family.
-  "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'Source Code Pro'",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.colorTheme": "Default Dark+",
@@ -35,7 +34,6 @@
   "editor.formatOnPaste": true,
   "eslint.alwaysShowStatus": true,
   "prettier.requireConfig": true,
-  "prettier.disableLanguages": ["js"],
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": true,
   "[jsonc]": {
@@ -109,12 +107,9 @@
   "git.path": "/usr/bin/git",
   "workbench.preferredDarkColorTheme": "Nord",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
   "dash.languageIdToDocsetMap": {
     "ansible": ["ansible"],
     "typescript": ["typescript", "javascript"],
@@ -129,5 +124,7 @@
     ],
     "terraform": ["terraform"],
     "sass": ["sass", "css"]
-  }
+  },
+  "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'Source Code Pro'",
+  "javascript.validate.enable": false
 }
