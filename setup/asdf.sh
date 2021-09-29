@@ -27,6 +27,13 @@ if hash asdf 2>/dev/null; then
 
   asdf install
 
+  # install specific nodejs version :Different
+  local NODE_VERSION_12=12.22.6
+  action "asdf: installing node v${NODE_VERSION_12}"
+  asdf install nodejs "${NODE_VERSION_12}"
+  asdf global nodejs "${NODE_VERSION_12}"
+  asdf reshim nodejs
+
   # java
   action "asdf: setting up Java"
 
@@ -72,12 +79,17 @@ if hash asdf 2>/dev/null; then
   pip install -U pip
   pip install "${PYTHON_PIPS[@]}"
 
-  # install specific nodejs version :Different
-  local NODE_VERSION_12=12.22.6
-  action "asdf: installing node v${NODE_VERSION_12}"
-  asdf install nodejs "${NODE_VERSION_12}"
-  asdf global nodejs "${NODE_VERSION_12}"
-  asdf reshim nodejs
+  # golang
+  asdf plugin-add golang
+
+  action "asdf: setting up golang"
+  local LATEST_GOLANG_VERSION=$(asdf list-all golang | grep '^1\.' | grep -v '\-dev\|rc|beta' | tail -1)
+
+  action "asdf: installing global versions of golang $LATEST_GOLANG_VERSION"
+  asdf install golang "${LATEST_GOLANG_VERSION}"
+  asdf global golang "${LATEST_GOLANG_VERSION}"
+  go get -u $PACKAGE
+  asdf reshim golang
 
   # fin.
 else
