@@ -298,3 +298,6 @@ alias R=r
 
 # Java
 alias javav="java -version"
+
+# gmailctl with user profile switching
+alias gmailcfg='f(){ local first_arg="$1"; shift 1; gmailctl --config=${HOME}/.gmailctl/user/${first_arg} "$@";  unset -f f; }; f'

@@ -159,6 +159,7 @@ if $brewinstall; then
   brew install ruby-build
   brew install rbenv-gemset
   brew install hugo
+  brew install jsonnet
 
   # DATABASES
   brew install postgresql
@@ -302,6 +303,7 @@ if $brewinstall; then
 
   # Productivity
   brew install asciinema
+  brew install gmailctl
   brew install --cask krisp
   brew install --cask recordit
 
