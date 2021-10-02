@@ -300,4 +300,14 @@ alias R=r
 alias javav="java -version"
 
 # gmailctl with user profile switching
-alias gmailcfg='f(){ local first_arg="$1"; shift 1; gmailctl --config=${HOME}/.gmailctl/user/${first_arg} "$@";  unset -f f; }; f'
+alias gmailcfg='
+f() {
+  local first_arg="$1";
+  shift 1;
+  if [ "$@" == "init" -a ! -f ${HOME}/.gmailctl/user/${first_arg}/credentials.json ]; then
+    cp ${HOME}/.gmailctl/credentials.json ${HOME}/.gmailctl/user/${first_arg}/;
+  fi;
+  gmailctl --config=${HOME}/.gmailctl/user/${first_arg} "$@";
+  unset -f f;
+};
+f'
