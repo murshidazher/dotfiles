@@ -126,5 +126,6 @@
     "sass": ["sass", "css"]
   },
   "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'Source Code Pro'",
-  "javascript.validate.enable": false
+  "javascript.validate.enable": false,
+  "jsonnet.executablePath": "/usr/local/Cellar/jsonnet/0.17.0/bin"
 }
