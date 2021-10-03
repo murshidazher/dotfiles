@@ -174,6 +174,7 @@ if $brewinstall; then
   brew install awscli
   brew install nginx
   brew install puma/puma/puma-dev
+  brew install k6
 
   # docker
   # brew install docker
