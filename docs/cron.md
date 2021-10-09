@@ -2,6 +2,10 @@
 
 > More information on CRON setup can be found [here](https://medium.com/@jsstrn/scheduling-with-cron-c5e5191663c6)
 
+- For quick and simple editor for cron schedule expressions, look [here](https://crontab.guru/).
+
+## Basic
+
 ```sh
 > crontab -l # list all available crons
 > crontab -e # to create a new crontab
