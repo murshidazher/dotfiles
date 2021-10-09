@@ -4,12 +4,12 @@ debug=${1:-false}
 # Load help lib if not already loaded.
 if [ -z ${libloaded+x} ]; then
   source ./lib.sh
-fi;
+fi
 
 # Set dotfilesdir var if not declared.
 if [ -z ${dotfilesdir+x} ]; then
   dotfilesdir="$(dirname "$(pwd)")"
-fi;
+fi
 
 botintro "Sourcing directories and files to handle."
 
@@ -17,6 +17,7 @@ botintro "Sourcing directories and files to handle."
 declare -a dotfilesdirarray=(
   "$dotfilesdir/bin"
   "$dotfilesdir/.mackup"
+  "$dotfilesdir/cron"
 )
 
 # Declare array of directories we want to symlink files from.
