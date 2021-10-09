@@ -225,6 +225,7 @@ if $brewinstall; then
   brew tap homebrew/cask-versions
 
   # Security
+  brew install --cask authy
   brew install --cask bitwarden
   brew install --cask keybase
   brew install --cask gpgtools
@@ -353,7 +354,7 @@ if $brewinstall; then
     mas install 1056643111 # Clocker
 
     ## Password management
-    mas install 1191757556 # Obsidian Authenticator App
+    # mas install 1191757556 # Obsidian Authenticator App
 
   else
     cancelled "App Store login not complete. Skipping installing App Store Apps"

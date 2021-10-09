@@ -107,6 +107,7 @@ and many more...
 - [ ] [https://stackoverflow.com/questions/17901692/set-up-adb-on-mac-os-x](https://stackoverflow.com/questions/17901692/set-up-adb-on-mac-os-x)
 - [ ] Add BATS tests
 - [ ] Add make file installation
+- [ ] Organize macOS launchpad apps using [lporg](https://github.com/blacktop/lporg)
 
 ## License
 
