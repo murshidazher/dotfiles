@@ -342,19 +342,19 @@ if $brewinstall; then
   # else app store wouldn't let you download them
   # mas search <AppName>
   if answer_is_yes; then
-    # mas install 1254981365 # Contrast
-    # mas install 1234952668 # FlagTimes
-    # mas install 1225570693 # Ulysses
-    # TODO: install pixelsnap
-    # mas install 907364780  # Tomato One - Pomodoro timer
-    # mas install 485812721  # Tweetdeck
+
+    ## Utilites
     mas install 668208984  # GIPHY Capture. The GIF Maker (For recording my screen as gif)
     mas install 1351639930 # Gifski, convert videos to gifs
     # mas install 414030210  # Limechat, IRC app.
     mas install 441258766  # Magnet
     mas install 1474276998 # HP Smart for Desktop
     mas install 490461369  # Bandwidth+
-    mas instal 1056643111  # Clocker
+    mas install 1056643111 # Clocker
+
+    ## Password management
+    mas install 1191757556 # Obsidian Authenticator App
+
   else
     cancelled "App Store login not complete. Skipping installing App Store Apps"
   fi
