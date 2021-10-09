@@ -17,7 +17,7 @@ botintro "Sourcing directories and files to handle."
 declare -a dotfilesdirarray=(
   "$dotfilesdir/bin"
   "$dotfilesdir/.mackup"
-  "$dotfilesdir/cron"
+  "$dotfilesdir/tasks"
 )
 
 # Declare array of directories we want to symlink files from.
@@ -36,6 +36,7 @@ declare -a dotfilesfilearray=(
   "$dotfilesdir/tmux"
   "$dotfilesdir/vim"
   "$dotfilesdir/wget"
+  "$dotfilesdir/cron"
 )
 
 success "Directories and files sourced."

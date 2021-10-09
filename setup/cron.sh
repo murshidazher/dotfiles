@@ -12,4 +12,5 @@ if [ -z ${defaultdotfilesdir+x} ]; then
 fi
 
 # setup up the crontasks
-crontab "$defaultdotfilesdir/cron/cron.txt"
+crontab -l
+crontab "$HOME/.cron"
