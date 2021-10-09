@@ -315,24 +315,24 @@ function conda() {
 
 # brew cleanup after any uninstall for removing old caches and optimizing the taps
 function bwclean() {
-  echo 'Cleanup Homebrew Cache...'
+  echo '🍺 Cleanup Homebrew Cache...'
   brew cleanup -s
   rm -rfv /Library/Caches/Homebrew/*
   # remove new installed files cache
   #rm -rf $(brew --cache)
   brew tap --repair
-  echo 'Cleanup gems...'
+  echo '💎 Cleanup gems...'
   gem cleanup
-  echo 'Re-generating asdf shims...'
+  echo '🔄 Re-generating asdf shims...'
   asdf reshim
 }
 
 # brew update the cask files, mas, and many more
 # Note: if you need mac software updates and cache cleans use `update`
 function bwutd() {
-  echo '==> Update Homebrew...'
+  echo '🍺 Update Homebrew...'
   brew update
-  echo '==> Update Homebrew Casks...'
+  echo '🍺 Update Homebrew Casks...'
   # List installed brew casks using the versions flag
   brew outdated --cask --greedy
   # update gui applications
@@ -342,6 +342,13 @@ function bwutd() {
   # update app store downloaded files
   mas outdated
   mas upgrade
+}
+
+function restart() {
+  read -rp 'Would you like to restart the computer now? [y/N] ' response
+  if [[ $response =~ (yes|y|Y) ]]; then
+    sudo shutdown -r now
+  fi
 }
 
 # generate git.io shorthand url
