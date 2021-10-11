@@ -217,6 +217,7 @@ if $brewinstall; then
   brew install --cask font-source-sans-pro
   brew install --cask font-ubuntu
   brew install --cask font-sanfrancisco
+  brew install --cask font-jetbrains-mono
 
   running "Installing cask apps"
 
