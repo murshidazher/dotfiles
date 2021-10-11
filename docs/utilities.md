@@ -1,5 +1,13 @@
 # Utilities
 
+### Fonts
+
+To list out all fonts that you can install,
+
+```sh
+> brew search "/font-/"
+```
+
 ### MS office
 
 ```sh

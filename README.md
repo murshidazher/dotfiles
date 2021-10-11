@@ -108,6 +108,8 @@ and many more...
 - [ ] Add BATS tests
 - [ ] Add make file installation
 - [ ] Organize macOS launchpad apps using [lporg](https://github.com/blacktop/lporg)
+- [ ] Install [asdf dart](https://github.com/PatOConnor43/asdf-dart/blob/master/tools/README.md)
+- [ ] Better management of language versions [dotfiles](https://github.com/scflode/dotfiles/tree/master/installer/versions)
 
 ## License
 
