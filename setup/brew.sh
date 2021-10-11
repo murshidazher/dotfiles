@@ -254,6 +254,7 @@ if $brewinstall; then
   brew install --cask zoom
   brew install --cask whatsapp
   brew install --cask maccy
+  brew install --cask fliqlo
 
   # Design
   # brew install --cask abstract
@@ -274,6 +275,7 @@ if $brewinstall; then
   brew install --cask imageoptim
   brew install --cask ngrok
   brew install --cask sequel-pro # mysql management
+  # brew install --cask tableplus
   brew install --cask visual-studio-code
   brew install --cask airtable
   brew install --cask astah-uml
@@ -309,6 +311,7 @@ if $brewinstall; then
   brew install gmailctl
   brew install --cask krisp
   brew install --cask recordit
+  brew install --cask keka
 
   # Research
   brew install --cask zotero

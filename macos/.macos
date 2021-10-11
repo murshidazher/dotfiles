@@ -230,6 +230,10 @@ sudo chflags uchg /private/var/vm/sleepimage
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
+# Make default screen saver as Fliqlo
+defaults write com.apple.screensaver loginWindowModulePath "${HOME}/Library/Screen Savers/Fliqlo.saver"
+defaults write com.apple.screensaver moduleName "${HOME}/Library/Screen Savers/Fliqlo.saver"
+
 # Save screenshots to the desktop
 defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 

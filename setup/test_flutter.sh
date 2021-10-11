@@ -83,5 +83,4 @@ start
 
 flutter doctor
 
-# react native expo
-npm install -g expo-cli
+brew install pidcat
