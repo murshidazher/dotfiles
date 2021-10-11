@@ -279,6 +279,7 @@ if $brewinstall; then
   brew install --cask astah-uml
   brew install --cask intellij-idea-ce
   brew install --cask eclipse-jee
+  brew install --cask responsively
 
   # DevOps
   brew install --cask aws-vault
