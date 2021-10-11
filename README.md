@@ -102,10 +102,8 @@ and many more...
 
 - [ ] Finish the script for flutter setup
 - [ ] Add react native settings and android
-- [x] Running `brew search "/font-/"` will show you a list of all fonts that you can install this way.
 - [x] [https://dev.to/0xdonut/how-to-install-flutter-on-macos-using-homebrew-and-asdf-3loa](https://dev.to/0xdonut/how-to-install-flutter-on-macos-using-homebrew-and-asdf-3loa)
 - [ ] [https://stackoverflow.com/questions/17901692/set-up-adb-on-mac-os-x](https://stackoverflow.com/questions/17901692/set-up-adb-on-mac-os-x)
-- [ ] Add BATS tests
 - [ ] Add make file installation
 - [ ] Organize macOS launchpad apps using [lporg](https://github.com/blacktop/lporg)
 - [ ] Install [asdf dart](https://github.com/PatOConnor43/asdf-dart/blob/master/tools/README.md)
