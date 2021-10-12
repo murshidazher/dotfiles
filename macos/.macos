@@ -231,9 +231,9 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Make default screen saver as Fliqlo
-xattr -rc "$HOME/Library/Screen Savers"
-defaults write com.apple.screensaver loginWindowModulePath "${HOME}/Library/Screen Savers/Fliqlo.saver"
-defaults write com.apple.screensaver moduleName "${HOME}/Library/Screen Savers/Fliqlo.saver"
+defaults -currentHost write com.apple.screensaver showClock -string "NO"
+defaults -currentHost write com.apple.screensaver moduleDict -dict moduleName Fliqlo path "${HOME}/Library/Screen Savers/Fliqlo.saver" type 0
+defaults -currentHost read com.apple.screensaver
 
 # Save screenshots to the desktop
 defaults write com.apple.screencapture location -string "${HOME}/Desktop"

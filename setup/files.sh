@@ -37,6 +37,7 @@ declare -a dotfilesfilearray=(
   "$dotfilesdir/vim"
   "$dotfilesdir/wget"
   "$dotfilesdir/cron"
+  "$dotfilesdir/go"
 )
 
 success "Directories and files sourced."

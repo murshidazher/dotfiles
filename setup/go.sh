@@ -1,19 +1,12 @@
 #!/usr/bin/env bash
-debug=${1:-false}
 
-# Load help lib if not already loaded.
-if [ -z ${libloaded+x} ]; then
-  source ./lib.sh
-fi
-
-echo -e "Installing dart"
+echo -e "Installing go"
 
 echo -e "\tSetting up asdf"
-asdf plugin-add dart https://github.com/patoconnor43/asdf-dart.git
-# asdf where dart
+asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
 
 # Set the containing directory for later use
-versions_dir="${HOME}/.dotfiles/installer/versions/dart"
+versions_dir="${HOME}/.dotfiles/installer/versions/go"
 
 # Read given file line by line
 function read_file {
@@ -28,10 +21,10 @@ function install_versions {
   local versions_list=$(read_file)
   for version in ${versions_list}; do
     echo -e "\t\tInstalling ${version}"
-    asdf install dart ${version} >/dev/null 2>&1
+    asdf install golang ${version} >/dev/null 2>&1
     local status=$?
     if [ ${status} -ne "0" ]; then
-      echo "Last exit code was ${status} for 'asdf install dart ${version}'. Please run manually. Aborting."
+      echo "Last exit code was ${status} for 'asdf install golang ${version}'. Please run manually. Aborting."
       exit 1
     fi
   done
@@ -42,7 +35,7 @@ function install_versions {
 function set_global {
   local latest_version=${1}
   echo -e "\tSetting ${latest_version} as global"
-  asdf global dart ${latest_version} >/dev/null 2>&1
+  asdf global golang ${latest_version} >/dev/null 2>&1
 }
 
 echo -e "\tInstalling versions"

@@ -83,5 +83,3 @@ stop
 start
 
 flutter doctor
-
-brew install pidcat

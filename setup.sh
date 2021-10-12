@@ -18,7 +18,9 @@ actioninfo "2. Create required directories."
 actioninfo "3. Install Xcode Command Line Tools."
 actioninfo "4. Install Homebrew and all required apps."
 actioninfo "5. Create symlinks for directories and files."
-actioninfo "6. Final touches."
+actioninfo "6. Environment Setup for Development."
+actioninfo "7. Cron Task setup."
+actioninfo "8. Final touches."
 
 # ---------
 # 1. Backup
@@ -80,10 +82,17 @@ source ./setup/vscode.sh
 # chrome extensions setup
 source ./setup/chrome.sh
 
+# --------------
+# 7. CRON Tasks
+# --------------
+
+botintro "\e[1mSTEP 7: Scheduling crontab tasks\e[0m"
+source crontab .scripts/cron.txt
+
 # --------
-# 7. Misc.
+# 8. Misc.
 # --------
-botintro "\e[1mSTEP 7: Final touches\e[0m"
+botintro "\e[1mSTEP 8: Final touches\e[0m"
 source ./setup/misc.sh
 
 # Wrap-up.

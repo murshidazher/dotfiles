@@ -16,6 +16,9 @@ fi
 if hash asdf 2>/dev/null; then
   botintro "Setup asdf and global versions"
 
+  # Install java, erlang and elixir
+  source ./elixir.sh
+
   # node
   action "asdf: setting up Node"
 

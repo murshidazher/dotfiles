@@ -143,6 +143,7 @@ if $brewinstall; then
   brew install zopfli
   brew install thefuck
   brew install cppunit
+  brew install pidcat
 
   # BACKUP
   brew install mackup
