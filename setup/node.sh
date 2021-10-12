@@ -7,7 +7,7 @@ debug=${1:-false}
 # Load help lib if not already loaded.
 if [ -z ${libloaded+x} ]; then
   source ./lib.sh
-fi;
+fi
 
 # Check if asdf is installed.
 if hash asdf 2>/dev/null; then
@@ -58,6 +58,7 @@ if hash asdf 2>/dev/null; then
     viewport-list-cli
     vtop
     @vue/cli
+    @ayoisaiah/f2
   )
 
   for package in ${packages[@]}; do
@@ -67,4 +68,4 @@ if hash asdf 2>/dev/null; then
   # fin.
 else
   echo "WARNING: asdf not found."
-fi;
+fi

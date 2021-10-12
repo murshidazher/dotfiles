@@ -162,6 +162,10 @@ if $brewinstall; then
   brew install hugo
   brew install jsonnet
 
+  brew install mkcert
+  brew install nss # if you use Firefox
+  mkcert -install
+
   # DATABASES
   brew install postgresql
   brew install mysql@5.7
@@ -176,6 +180,9 @@ if $brewinstall; then
   brew install nginx
   brew install puma/puma/puma-dev
   brew install k6
+
+  brew tap lucagrulla/tap
+  brew install cw # tail cloudwatch logs
 
   # docker
   # brew install docker
