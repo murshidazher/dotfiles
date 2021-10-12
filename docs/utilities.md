@@ -17,6 +17,8 @@ To list out all fonts that you can install,
 ```sh
 > mkcert -install
 > mkcert example.com "*.example.com" example.test localhost 127.0.0.1 ::1
+> mkcert -key-file key.pem -cert-file cert.pem localhost # create files relative
+> mkcert -uninstall
 ```
 
 ## MS office

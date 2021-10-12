@@ -139,6 +139,11 @@ function localip() {
     sed -r "s/(VLAN Configurations)|==*//g"
 }
 
+# Get the top 20 files by size.
+function lsize() {
+  du -ah "$1" | sort -rh | head -n 20
+}
+
 # Run `dig` and display the most useful info.
 function digga() {
   dig +nocmd "$1" any +multiline +noall +answer
