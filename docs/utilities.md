@@ -1,6 +1,6 @@
 # Utilities
 
-### Fonts
+## Fonts
 
 To list out all fonts that you can install,
 
@@ -8,7 +8,7 @@ To list out all fonts that you can install,
 > brew search "/font-/"
 ```
 
-### MS office
+## MS office
 
 ```sh
 > brew install --cask microsoft-office # if we need all packages
@@ -22,7 +22,7 @@ To list out all fonts that you can install,
 > bwclean # to clean all cache of homebrew for optimal performance
 ```
 
-### Google Drive
+## Google Drive
 
 ```sh
 > brew install --cask google-drive-file-stream # google drive
