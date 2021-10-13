@@ -14,6 +14,8 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.colorTheme": "Default Dark+",
+  // "workbench.colorTheme": "Material Theme Palenight High Contrast",
+  // "workbench.colorTheme": "Nord",
   "editor.tokenColorCustomizations": {
     "[Nord]": {
       "textMateRules": [
@@ -127,5 +129,10 @@
   },
   "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, 'Source Code Pro'",
   "javascript.validate.enable": false,
-  "jsonnet.executablePath": "/usr/local/Cellar/jsonnet/0.17.0/bin"
+  "jsonnet.executablePath": "/usr/local/Cellar/jsonnet/0.17.0/bin",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "files.associations": {
+    "*int.js": "javascript"
+  },
+  "blockhighlight.background": ["255", "90", "97", ".03"]
 }
