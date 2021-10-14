@@ -264,6 +264,7 @@ if $brewinstall; then
   brew install --cask whatsapp
   brew install --cask maccy
   brew install --cask fliqlo
+  brew install --cask aerial
 
   # Design
   # brew install --cask abstract
@@ -291,6 +292,8 @@ if $brewinstall; then
   brew install --cask intellij-idea-ce
   brew install --cask eclipse-jee
   brew install --cask responsively
+  brew install --cask lepton # gist
+  brew install --cask fork
 
   # DevOps
   brew install --cask aws-vault
