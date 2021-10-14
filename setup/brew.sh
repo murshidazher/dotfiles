@@ -107,6 +107,9 @@ if $brewinstall; then
   brew install git-delta
   brew install git-extras
   brew install git-lfs
+  brew install git-recent
+  brew install git-flow-avh
+  brew install gitmoji
   brew install bfg
   brew install git-quick-stats
   brew install graphviz
@@ -145,6 +148,16 @@ if $brewinstall; then
   brew install cppunit
   brew install pidcat
 
+  # DEV ENV
+  brew install autoenv
+  brew install direnv
+
+  # BUILD TOOLS
+  brew install autoconf
+  brew install automake
+  brew install gcc
+  brew install make
+
   # BACKUP
   brew install mackup
 
@@ -181,6 +194,7 @@ if $brewinstall; then
   brew install puma/puma/puma-dev
   brew install k6
 
+  # brew install awslogs
   brew tap lucagrulla/tap
   brew install cw # tail cloudwatch logs
 
@@ -246,7 +260,7 @@ if $brewinstall; then
   brew install --cask diskwave
   brew install --cask dropbox
   brew install google-drive
-  brew install --cask firefox
+  brew install --cask firefox-developer-edition
   brew install --cask g-desktop-suite
   brew install --cask google-chrome
   brew install --cask grammarly
@@ -279,7 +293,6 @@ if $brewinstall; then
   # Development
   brew install --cask dash
   brew install --cask brave-browser
-  # brew install --cask google-chrome-canary
   brew install --cask graphiql
   brew install --cask imagealpha
   brew install --cask imageoptim
