@@ -381,6 +381,7 @@ if $brewinstall; then
     mas install 1474276998 # HP Smart for Desktop
     mas install 490461369  # Bandwidth+
     mas install 1056643111 # Clocker
+    mas install 692867256  # Simplenote
 
     ## Password management
     # mas install 1191757556 # Obsidian Authenticator App
