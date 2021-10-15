@@ -108,7 +108,6 @@ and many more...
 - [ ] Organize macOS launchpad apps using [lporg](https://github.com/blacktop/lporg)
 - [ ] Install [asdf dart](https://github.com/PatOConnor43/asdf-dart/blob/master/tools/README.md)
 - [ ] Better management of language versions [dotfiles](https://github.com/scflode/dotfiles/tree/master/installer/versions)
-- [ ] Add [Unsplash Wallpapers](https://apps.apple.com/cn/app/unsplash-wallpapers/id1284863847?l=en&mt=12)
 - [ ] Migrate from [bash to zsh](https://aboutmonica.com/blog/setting-up-zsh-with-autosuggestions) in m1
 
 ## License
