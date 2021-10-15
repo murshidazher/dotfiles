@@ -93,3 +93,4 @@ wraith13.zoombar-vscode
 mongodb.mongodb-vscode
 formulahendry.vscode-mysql
 hbenl.vscode-test-explorer
+hbenl.vscode-mocha-test-adapter
