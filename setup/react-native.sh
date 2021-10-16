@@ -5,6 +5,9 @@
 # https://gist.github.com/bluenex/96a31acfebea4ad7b1b927b7125e4569
 # https://gist.github.com/patrickhammond/4ddbe49a67e5eb1b9c03
 # https://gist.github.com/ThePredators/064c46403290a6823e03be833a2a3c21
+# https://gist.github.com/mrk-han/66ac1a724456cadf1c93f4218c6060ae - install skins
+# https://www.py4u.net/discuss/626303
+# https://gist.github.com/badsyntax/ce848ab40b952d944c496575d40e5427 - run on azure pipelines (extract the config.ini) setup
 
 #!/usr/bin/env bash
 debug=${1:-false}
@@ -104,11 +107,15 @@ action "create an AVD using Pixel 2"
 # https://developer.android.com/studio/command-line/avdmanager
 # https://developer.android.com/studio/run/emulator-commandline
 # Note: use 'avdmanager list device' to get the device id
-avdmanager create avd -n Pixel_2_API_31 -k ${SYSTEM_IMAGE_VERSION} -d 17
+avdmanager --verbose create avd --force --name "avd-samsung-10.10.2021" --device "pixel" --package ${SYSTEM_IMAGE_VERSION} -c 2000M --tag "google_apis_playstore"
 
 # Note: If you've installed Android Studio,
 # Android Studio -> More actions -> AVD Manager -> Select Pixel 2 Image
 # Create Virtual Device -> Select x86 Images Tab -> Q 29 (would be already downloaded) -> Next -> Finish
+
+# Starting the emulator manually
+# emulator @avd-samsung-10.10.2021 -wipe-data -verbose -logcat '*:e *:w' -netfast -no-boot-anim -no-audio -no-window -skin 480x800
+# alias avd-samsung='emulator @avd-samsung-10.10.2021 -no-boot-anim -netdelay none -no-snapshot -wipe-data -skin 768x1280 &'
 
 # ----------
 # 3. Flutter

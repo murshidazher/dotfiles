@@ -23,6 +23,13 @@ And check the flutter version after the setup,
 > flutter doctor -v
 ```
 
+## Android Skins
+
+> 💡 You might be able to use Samsung emulator skins by downloading the skins from [developer.samsung.com](https://developer.samsung.com/galaxy-emulator-skin). More documentation on [avdmanager](https://developer.android.com/studio/command-line/avdmanager).
+
+- For installation instruction, follow this [video](https://www.youtube.com/watch?v=2vtelVClQOo) or [this](https://www.youtube.com/watch?v=r-mvUmhzgA4).
+- For installtion using Android Studio, follow [this](https://youtu.be/6JIPsZpIJzE) or this [video](https://www.youtube.com/watch?v=o0FyyKNaF9A)
+
 ## mkcert
 
 > 💡 For more information about setting up, go through the following docs. [ubuntu setup](https://kifarunix.com/create-locally-trusted-ssl-certificates-with-mkcert-on-ubuntu-20-04/) or [running Jekyll](https://diamantidis.github.io/tips/2020/06/26/serve-localhost-website-on-https-with-mkcert).

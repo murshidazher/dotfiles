@@ -318,5 +318,9 @@ f() {
 };
 f'
 
+# Android
+alias aasdk="sdkmanager --list | sed -e '/Available Packages/q'" # get the list of installed sdk
+alias asdku="sdkmanager --update"
+
 # Work aliases
 [[ -f "$HOME/.work-aliases" ]] && source "$HOME/.work-aliases" 2>/dev/null
