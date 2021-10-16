@@ -104,4 +104,4 @@ and many more...
 
 ## License
 
-[MIT](https://github.com/murshidazher/this-mac/blob/main/LICENSE) &copy; 2020 Murshid Azher.
+[MIT](https://github.com/murshidazher/this-mac/blob/main/LICENSE) &copy; 2020-2021 Murshid Azher.

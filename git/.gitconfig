@@ -2,16 +2,16 @@
 # also, don't forget git-extras:
 # https://github.com/tj/git-extras/blob/master/Commands.md
 
-ap = "!git add -p"
-gaa = "git add ."
-puo = "git push -u origin $(git branch --show-current)"
-puom = "git push -u origin master"
-puod = "git push -u origin develop"
-cne = " git commit --amend --no-edit"
-pfo = "git push -f origin $(git branch --show-current)"
-gpr = "git pull --rebase"
-gup = "git stash && git pull --rebase && git stash pop"
-gdup = "git stash && git checkout develop && git pull && git checkout - && git pull --rebase && git stash pop"
+ap = !"git add -p"
+gaa = !"git add ."
+puo = !"git push -u origin $(git branch --show-current)"
+puom = !"git push -u origin master"
+puod = !"git push -u origin develop"
+cne = !"git commit --amend --no-edit"
+pfo = !"git push -f origin $(git branch --show-current)"
+gpr = !"git pull --rebase"
+gup = !"git stash && git pull --rebase && git stash pop"
+gdup = !"git stash && git checkout develop && git pull && git checkout - && git pull --rebase && git stash pop"
 
 branch-name = !"git branch --show-current"
 
