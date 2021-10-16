@@ -301,6 +301,7 @@ if $brewinstall; then
   brew install --cask aerial
   brew install --cask openinterminal
   brew install --cask dozer
+  brew install --cask cheatsheet
 
   # Design
   # brew install --cask abstract
@@ -406,6 +407,7 @@ if $brewinstall; then
     mas install 1056643111 # Clocker
     mas install 692867256  # Simplenote
     mas install 1284863847 # Unsplash Wallpapers
+    # mas install 1470584107 # Dato
 
     ## Password management
     # mas install 1191757556 # Obsidian Authenticator App
