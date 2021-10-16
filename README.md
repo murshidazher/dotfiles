@@ -102,7 +102,6 @@ and many more...
 
 - [ ] Finish react native settings, flutter and mobile development setup script
 - [x] [https://dev.to/0xdonut/how-to-install-flutter-on-macos-using-homebrew-and-asdf-3loa](https://dev.to/0xdonut/how-to-install-flutter-on-macos-using-homebrew-and-asdf-3loa)
-- [ ] [https://stackoverflow.com/questions/17901692/set-up-adb-on-mac-os-x](https://stackoverflow.com/questions/17901692/set-up-adb-on-mac-os-x)
 - [ ] Add make file installation
 - [ ] Add [zsh](https://github.com/jsstrn/dotfiles/blob/master/zsh/.zshrc) plugin management for m1
 - [ ] Organize macOS launchpad apps using [lporg](https://github.com/blacktop/lporg)
