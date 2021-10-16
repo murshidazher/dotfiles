@@ -68,6 +68,33 @@ function fs() {
   fi
 }
 
+# Check what's running on a specific port number (usage: $ port 8080)
+function port() {
+  lsof -n -i4TCP:$1 | grep LISTEN
+}
+
+# Find process id of a given app (usage: $ pid node)
+function pid() {
+  ps ax | grep $1
+}
+
+# Turn on/off your wifi (usage: wifi on)
+function wifi() {
+  case $1 in
+  'on' | 'off')
+    networksetup -setairportpower en0 $1
+    ;;
+  'status')
+    networksetup -getairportnetwork en0
+    ;;
+  *)
+    echo -e "📡  wifi on     - turn on wifi"
+    echo -e "📡  wifi off    - turn off wifi"
+    echo -e "📡  wifi status - check wifi status"
+    ;;
+  esac
+}
+
 # Use Git’s colored diff when available.
 hash git &>/dev/null
 if [ $? -eq 0 ]; then
