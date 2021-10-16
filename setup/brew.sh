@@ -301,7 +301,6 @@ if $brewinstall; then
   brew install --cask aerial
   brew install --cask openinterminal
   brew install --cask dozer
-  brew install --cask cheatsheet
 
   # Design
   # brew install --cask abstract
