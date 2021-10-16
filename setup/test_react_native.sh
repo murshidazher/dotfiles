@@ -6,46 +6,14 @@
 # used by facebook to watch for file changes
 brew install watchman
 
-# Ant
-action "asdf: setting up Ant"
-asdf plugin add ant
-
-local LATEST_ANT_VERSION=$(asdf list-all ant | grep '^3\.' | grep -v '\-dev\|rc' | grep -v 'b\d\+' | tail -1)
-
-# install
-action "asdf: installing global versions of ant $LATEST_ANT_VERSION"
-asdf install ant "${LATEST_ANT_VERSION}"
-asdf global ant "${LATEST_ANT_VERSION}"
-# ant -version
-
-# maven
-action "asdf: setting up Maven"
-asdf plugin-add maven
-
-local LATEST_MAVEN_VERSION=$(asdf list-all maven | grep '^3\.' | grep -v '\-dev\|rc' | grep -v 'b\d\+' | tail -1)
-
-# install
-action "asdf: installing global versions of maven $LATEST_MAVEN_VERSION"
-asdf install maven "${LATEST_MAVEN_VERSION}"
-asdf global maven "${LATEST_MAVEN_VERSION}"
-
-# gradle
-action "asdf: setting up Gradle"
-asdf plugin-add gradle
-
-local LATEST_MAVEN_VERSION=$(asdf list-all maven | grep '^3\.' | grep -v '\-dev\|rc' | grep -v 'b\d\+' | tail -1)
-
-# install
-action "asdf: installing global versions of maven $LATEST_MAVEN_VERSION"
-asdf install gradle "${LATEST_MAVEN_VERSION}"
-asdf global gradle "${LATEST_MAVEN_VERSION}"
-
 # Android
 brew install ant maven gradle
 
 brew install --cask android-sdk
 brew install --cask android-ndk
 brew install --cask android-platform-tools
+brew install --cask android-studio
+brew install --cask intel-haxm
 
 cat <<'EOT' >~/.androidrc
 export ANT_HOME=/usr/local/opt/ant
@@ -67,25 +35,15 @@ source ~/.bash_profile
 
 touch ~/.android/repositories.cfg
 
+# setup the env to java 1.8 for sdkmanager
+# bash -c 'JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
+# bash -c 'INTEL_HAXM_HOME=/usr/local/Caskroom/intel-haxm'
+
 sdkmanager --update
 sdkmanager "platform-tools" "platforms;android-29"
 
 # Flutter
 
-# Flutter fvm
-pub global activate fvm
-echo "export ANDROID_HOME=/usr/local/share/android-sdk" >>~/.bash_profile
-cat <<'EOT' >~/.flutterrc
-export FLUTTER_HOME=/usr/local/share/flutter-sdk
-# Flutter binaries
-export PATH=$FLUTTER_HOME/flutter/bin:$PATH
-# fvm binaries
-export PATH=~/.pub-cache/bin:$PATH
-EOT
-echo "source ~/.flutterrc" >>~/.bash_profile
-source ~/.bash_profile
-
-fvm install 1.12.13
 flutter precache
 flutter doctor --android-licenses
 

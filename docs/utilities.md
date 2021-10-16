@@ -8,6 +8,21 @@ To list out all fonts that you can install,
 > brew search "/font-/"
 ```
 
+## Intel HAXM
+
+You might need to add these into your `.zshrc` or `.bash_profile` files if you get complaints about `haxm` or `java`.
+
+```sh
+export INTEL_HAXM_HOME=/usr/local/Caskroom/intel-haxm
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+```
+
+And check the flutter version after the setup,
+
+```sh
+> flutter doctor -v
+```
+
 ## mkcert
 
 > 💡 For more information about setting up, go through the following docs. [ubuntu setup](https://kifarunix.com/create-locally-trusted-ssl-certificates-with-mkcert-on-ubuntu-20-04/) or [running Jekyll](https://diamantidis.github.io/tips/2020/06/26/serve-localhost-website-on-https-with-mkcert).
