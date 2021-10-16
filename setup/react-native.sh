@@ -37,7 +37,7 @@ brew install ant maven gradle
 
 brew install --cask android-sdk
 brew install --cask android-ndk
-brew install --cask android-platform-tools
+brew install --cask android-platform-tools # for adb
 brew install --cask android-studio
 brew install --cask intel-haxm
 
@@ -92,3 +92,21 @@ stop
 start
 
 flutter doctor
+
+# react native
+# use nvm or asdf version manager
+
+if hash asdf 2>/dev/null; then
+
+  local LATEST_NODEJS_14_VERSION=$(asdf list nodejs | grep '^  14\.' | tail -1 | sed 's: ::g')
+  asdf local nodejs ${LATEST_NODEJS_14_VERSION}
+  asdf reshim nodejs # to have all the globally install packages in PATH
+  npm install -g react-native-cli
+
+  # to see connected android devices
+  # adb devices
+
+  # fin.
+else
+  echo "WARNING: asdf not found."
+fi
