@@ -1,7 +1,6 @@
 # TODO: Script under process
 # https://www.chrisjmendez.com/2021/05/12/how-to-install-flutter-on-mac-osx-using-homebrew/
 # https://reactnative.dev/docs/environment-setup
-# https://github.com/scflode/dotfiles/tree/master/installer/versions - settings for versions
 # https://stackoverflow.com/questions/64907154/android-studio-emulator-on-macos-with-arm-cpu-m1
 
 # used by facebook to watch for file changes
