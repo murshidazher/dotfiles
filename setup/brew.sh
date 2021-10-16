@@ -329,6 +329,7 @@ if $brewinstall; then
   brew install --cask responsively
   brew install --cask lepton # gist
   # brew install --cask fork
+  # brew install --cask proxyman
 
   # DevOps
   brew install --cask aws-vault
