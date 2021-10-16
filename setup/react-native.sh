@@ -115,7 +115,7 @@ avdmanager --verbose create avd --force --name "avd-samsung-10.10.2021" --device
 
 # Starting the emulator manually
 # emulator @avd-samsung-10.10.2021 -wipe-data -verbose -logcat '*:e *:w' -netfast -no-boot-anim -no-audio -no-window -skin 480x800
-# alias avd-samsung='emulator @avd-samsung-10.10.2021 -no-boot-anim -netdelay none -no-snapshot -wipe-data -skin 768x1280 &'
+# alias avd-samsung='emulator @avd-samsung-10.10.2021 -no-boot-anim -netfast -no-snapshot -wipe-data -skin 768x1280 -memory 2048 &'
 
 # ----------
 # 3. Flutter

@@ -299,6 +299,8 @@ if $brewinstall; then
   brew install --cask maccy
   brew install --cask fliqlo
   brew install --cask aerial
+  brew install --cask openinterminal
+  brew install --cask dozer
 
   # Design
   # brew install --cask abstract
