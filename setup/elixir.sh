@@ -14,7 +14,7 @@ asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git >/dev/null 2>&
 asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git >/dev/null 2>&1
 
 # Set the containing directory for later use
-versions_dir="${HOME}/.dotfiles/installer/versions"
+versions_dir="$defaultdotfilesdir/versions"
 
 # Read given file line by line
 function read_file {

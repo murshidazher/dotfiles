@@ -6,12 +6,17 @@ if [ -z ${libloaded+x} ]; then
   source ./lib.sh
 fi
 
-action "asdf: setting up Dart"
-asdf plugin-add dart https://github.com/patoconnor43/asdf-dart.git
-# asdf where dart
+# Set defaultdotfilesdir var if not declared.
+if [ -z ${defaultdotfilesdir+x} ]; then
+  defaultdotfilesdir="$HOME/dotfiles"
+fi
+
+action "asdf: setting up Ant"
+asdf plugin-add ant
+# asdf where ant
 
 # Set the containing directory for later use
-versions_dir="${HOME}/.dotfiles/installer/versions/dart"
+versions_dir="$defaultdotfilesdir/versions/ant"
 
 # Read given file line by line
 function read_file {
@@ -25,11 +30,11 @@ function read_file {
 function install_versions {
   local versions_list=$(read_file)
   for version in ${versions_list}; do
-    running "asdf: installing ${version} for dart"
-    asdf install dart ${version} >/dev/null 2>&1
+    running "asdf: installing ${version} for ant"
+    asdf install ant ${version} >/dev/null 2>&1
     local status=$?
     if [ ${status} -ne "0" ]; then
-      error "Last exit code was ${status} for 'asdf install dart ${version}'. Please run manually. Aborting."
+      error "Last exit code was ${status} for 'asdf install ant ${version}'. Please run manually. Aborting."
       exit 1
     fi
   done
@@ -39,9 +44,9 @@ function install_versions {
 
 function set_global {
   local latest_version=${1}
-  running "asdf dart: setting ${latest_version} as global"
-  asdf global dart ${latest_version} >/dev/null 2>&1
+  running "asdf ant: setting ${latest_version} as global"
+  asdf global ant ${latest_version} >/dev/null 2>&1
 }
 
-action "asdf dart: installing versions"
+action "asdf ant: installing versions"
 install_versions

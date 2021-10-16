@@ -6,11 +6,16 @@ if [ -z ${libloaded+x} ]; then
   source ./lib.sh
 fi
 
+# Set defaultdotfilesdir var if not declared.
+if [ -z ${defaultdotfilesdir+x} ]; then
+  defaultdotfilesdir="$HOME/dotfiles"
+fi
+
 action "asdf: setting up Go"
 asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
 
 # Set the containing directory for later use
-versions_dir="${HOME}/.dotfiles/installer/versions/go"
+versions_dir="$defaultdotfilesdir/versions/go"
 
 # Read given file line by line
 function read_file {

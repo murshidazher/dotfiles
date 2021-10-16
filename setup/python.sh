@@ -13,7 +13,7 @@ action "asdf: setting up python"
 asdf plugin-add python >/dev/null 2>&1
 
 # Set the containing directory for later use
-versions_dir="${HOME}/.dotfiles/installer/versions"
+versions_dir="$defaultdotfilesdir/versions"
 version_2=""
 version_3=""
 

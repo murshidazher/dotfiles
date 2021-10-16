@@ -6,12 +6,17 @@ if [ -z ${libloaded+x} ]; then
   source ./lib.sh
 fi
 
+# Set defaultdotfilesdir var if not declared.
+if [ -z ${defaultdotfilesdir+x} ]; then
+  defaultdotfilesdir="$HOME/dotfiles"
+fi
+
 action "asdf: setting up Dart"
 asdf plugin-add dart https://github.com/patoconnor43/asdf-dart.git
 # asdf where dart
 
 # Set the containing directory for later use
-versions_dir="${HOME}/.dotfiles/installer/versions/dart"
+versions_dir="$defaultdotfilesdir/versions/dart"
 
 # Read given file line by line
 function read_file {
