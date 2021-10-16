@@ -17,7 +17,6 @@
     - [Basic](#basic)
     - [Rules of `dev` directory](#rules-of-dev-directory)
     - [Updating vscode plugin list](#updating-vscode-plugin-list)
-  - [Link](#link)
     - [gpg sign](#gpg-sign)
   - [Acknowledgements](#acknowledgements)
   - [TODO](#todo)
@@ -69,13 +68,6 @@ Keeping the plugin list up to date requires manual work (like with Homebrew), an
 ```sh
 codexm
 ```
-
-## Link
-
-A list of helpful links used to develop/inspire this project
-
-- :burrito: [digital mac base icon](https://dribbble.com/shots/6185043-Pixelado) by Gustavo Zambelli
-
 ### gpg sign
 
 > Read this[stackoverflow](https://stackoverflow.com/questions/39494631/gpg-failed-to-sign-the-data-fatal-failed-to-write-commit-object-git-2-10-0) for troubleshooting.
@@ -95,6 +87,7 @@ Credit, inspiration and thanks to:
 - [Aaron Bates](https://github.com/aaronbates/dotfiles)
 - [SimonAdler](https://github.com/SimonAdler/dotfiles-1) - for BATS and Make file creations
 - [webpro](https://github.com/webpro/dotfiles) - for react native setup
+- :burrito: [digital mac base icon](https://dribbble.com/shots/6185043-Pixelado) by Gustavo Zambelli
 
 and many more...
 
