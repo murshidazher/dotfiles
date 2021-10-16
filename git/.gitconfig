@@ -4,16 +4,16 @@
 
 ap = "!git add -p"
 gaa = "git add ."
-gpuo = "git push -u origin $(git branch --show-current)"
-gpuom = "git push -u origin master"
-gpuod = "git push -u origin develop"
-gcne = " git commit --amend --no-edit"
-gpfo = "git push -f origin $(git branch --show-current)"
+puo = "git push -u origin $(git branch --show-current)"
+puom = "git push -u origin master"
+puod = "git push -u origin develop"
+cne = " git commit --amend --no-edit"
+pfo = "git push -f origin $(git branch --show-current)"
 gpr = "git pull --rebase"
 gup = "git stash && git pull --rebase && git stash pop"
 gdup = "git stash && git checkout develop && git pull && git checkout - && git pull --rebase && git stash pop"
 
-branch-name = "git branch --show-current"
+branch-name = !"git branch --show-current"
 
 # View abbreviated SHA, description, and history graph of the latest 20 commits
 l = log --pretty=oneline -n 20 --graph --abbrev-commit
