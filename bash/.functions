@@ -319,12 +319,12 @@ function conda() {
 }
 
 # brew cleanup after any uninstall for removing old caches and optimizing the taps
-function bwclean() {
+function lemon() {
   echo '🍺 Cleanup Homebrew Cache...'
   brew cleanup -s
   rm -rfv /Library/Caches/Homebrew/*
   # remove new installed files cache
-  #rm -rf $(brew --cache)
+  # rm -rf $(brew --cache)
   brew tap --repair
   echo '💎 Cleanup gems...'
   gem cleanup
@@ -334,7 +334,7 @@ function bwclean() {
 
 # brew update the cask files, mas, and many more
 # Note: if you need mac software updates and cache cleans use `update`
-function bwutd() {
+function beer() {
   echo '🍺 Update Homebrew...'
   brew update
   echo '🍺 Update Homebrew Casks...'
@@ -347,6 +347,7 @@ function bwutd() {
   # update app store downloaded files
   mas outdated
   mas upgrade
+  lemon
 }
 
 function restart() {

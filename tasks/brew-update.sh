@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
 
-# Upgrade all brew packages
-bwutd
-
-# Remove old versions of packages
-bwclean
+# Upgrade all brew packages and old versions of packages
+beer
