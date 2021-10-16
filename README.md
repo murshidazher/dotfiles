@@ -39,7 +39,7 @@ bash -c "`curl -L https://git.io/dotfiles-mac`"
 
 ### Highlights
 
-- **Basic Tools** [Homebrew]() - Package Manager for macOS
+- **Basic Tools** [Homebrew](https://brew.sh/) - Package Manager for macOS
 - [Cask](https://github.com/Homebrew/homebrew-cask) - speed installation and management of GUI macOS applications.
 - [mas](https://github.com/mas-cli/mas) - to install AppStore applications
 
@@ -100,11 +100,11 @@ and many more...
 
 ## TODO
 
-- [ ] Finish the script for flutter setup
-- [ ] Add react native settings and android
+- [ ] Finish react native settings, flutter and mobile development setup script
 - [x] [https://dev.to/0xdonut/how-to-install-flutter-on-macos-using-homebrew-and-asdf-3loa](https://dev.to/0xdonut/how-to-install-flutter-on-macos-using-homebrew-and-asdf-3loa)
 - [ ] [https://stackoverflow.com/questions/17901692/set-up-adb-on-mac-os-x](https://stackoverflow.com/questions/17901692/set-up-adb-on-mac-os-x)
 - [ ] Add make file installation
+- [ ] Add [zsh](https://github.com/jsstrn/dotfiles/blob/master/zsh/.zshrc) plugin management for m1
 - [ ] Organize macOS launchpad apps using [lporg](https://github.com/blacktop/lporg)
 - [ ] Better management of language versions [dotfiles](https://github.com/scflode/dotfiles/tree/master/installer/versions)
 - [ ] Migrate from [bash to zsh](https://aboutmonica.com/blog/setting-up-zsh-with-autosuggestions) in m1
