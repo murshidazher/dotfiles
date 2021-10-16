@@ -2,6 +2,9 @@
 # https://www.chrisjmendez.com/2021/05/12/how-to-install-flutter-on-mac-osx-using-homebrew/
 # https://reactnative.dev/docs/environment-setup
 # https://stackoverflow.com/questions/64907154/android-studio-emulator-on-macos-with-arm-cpu-m1
+# https://gist.github.com/bluenex/96a31acfebea4ad7b1b927b7125e4569
+# https://gist.github.com/patrickhammond/4ddbe49a67e5eb1b9c03
+# https://gist.github.com/ThePredators/064c46403290a6823e03be833a2a3c21
 
 #!/usr/bin/env bash
 debug=${1:-false}
@@ -68,7 +71,23 @@ touch ~/.android/repositories.cfg
 sdkmanager --update
 sdkmanager "platform-tools" "platforms;android-29"
 
-# Flutter
+# add to ~/.bash_rc file
+# Android
+export ANDROID_HOME="$HOME/Android/Sdk"
+export PATH="$ANDROID_HOME/emulator:$PATH"
+export PATH="$ANDROID_HOME/tools:$PATH"
+export PATH="$ANDROID_HOME/tools/bin:$PATH"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
+
+# RUN IN EMULATOR (create an AVD using Pixel 2)
+# Android Studio -> More actions -> AVD Manager -> Select Pixel 2 Image
+# Create Virtual Device -> Select x86 Images Tab -> Q 29 (would be already downloaded) -> Next -> Finish
+# https://developer.android.com/studio/command-line/avdmanager
+# https://developer.android.com/studio/run/emulator-commandline
+
+# ----------
+# 3. Flutter
+# ----------
 
 flutter precache
 flutter doctor --android-licenses

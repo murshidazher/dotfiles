@@ -39,6 +39,7 @@ export MINICONDA_PATH="$DEV_DIR/miniconda"
 # Java path.
 # source ~/.asdf/plugins/java/set-java-home.bash
 export JAVA_HOME=". $HOME/.asdf/plugins/java/set-java-home.bash"
+export STUDIO_JDK="$(/usr/libexec/java_home -v1.8)"
 
 # Increase Bash history size. Allow 32³ entries; the default is 500.
 export HISTSIZE='32768'
