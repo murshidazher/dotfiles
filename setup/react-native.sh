@@ -3,6 +3,32 @@
 # https://reactnative.dev/docs/environment-setup
 # https://stackoverflow.com/questions/64907154/android-studio-emulator-on-macos-with-arm-cpu-m1
 
+#!/usr/bin/env bash
+debug=${1:-false}
+
+# Load help lib if not already loaded.
+if [ -z ${libloaded+x} ]; then
+  source ./lib.sh
+fi
+
+# Set defaultdotfilesdir var if not declared.
+if [ -z ${defaultdotfilesdir+x} ]; then
+  defaultdotfilesdir="$HOME/dotfiles"
+fi
+
+bot "OK, what we're going to do:\n"
+actioninfo "1. Install all dependencies for working with react native."
+actioninfo "2. Install android studio and setup the Andorid SDK v29."
+actioninfo "3. Configure xcode and cocoapods to work with flutter."
+
+ask_for_confirmation "Ready?"
+if answer_is_yes; then
+  ok "Let's go."
+else
+  cancelled "Exit."
+  exit -1
+fi
+
 # used by facebook to watch for file changes
 brew install watchman
 

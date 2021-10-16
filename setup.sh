@@ -5,7 +5,10 @@
 # 3. Xcode CLI
 # 4. Homebrew
 # 5. Symlinks
-# 6. Misc.
+# 6. Web development
+# 7. Mobile development
+# 8. Cron tasks
+# 9. Misc.
 
 debug=${1:-false}     # default debug param.
 source ./setup/lib.sh # load help lib.
@@ -18,9 +21,10 @@ actioninfo "2. Create required directories."
 actioninfo "3. Install Xcode Command Line Tools."
 actioninfo "4. Install Homebrew and all required apps."
 actioninfo "5. Create symlinks for directories and files."
-actioninfo "6. Environment Setup for Development."
-actioninfo "7. Cron Task setup."
-actioninfo "8. Final touches."
+actioninfo "6. Environment Setup for web development."
+actioninfo "7. Environment Setup for mobile development."
+actioninfo "8. Cron Task setup."
+actioninfo "9. Final touches."
 
 # ---------
 # 1. Backup
@@ -55,6 +59,9 @@ fi
 # asdf setup
 source ./setup/asdf.sh
 
+# asdf minimal setup
+# source ./setup/asdf-minimal.sh
+
 # Node setup
 source ./setup/node.sh
 
@@ -70,11 +77,11 @@ source ./setup/miniconda.sh
 botintro "\e[1mSTEP 5: SYMLINKS\e[0m"
 source ./setup/symlinks.sh
 
-# --------------
-# 6. Environment
-# --------------
+# ------------------
+# 6. Web Environment
+# ------------------
 
-botintro "\e[1mSTEP 6: Environment Setup\e[0m"
+botintro "\e[1mSTEP 6: Environment Setup for web development.\e[0m"
 
 # vscode setup
 source ./setup/vscode.sh
@@ -82,17 +89,23 @@ source ./setup/vscode.sh
 # chrome extensions setup
 source ./setup/chrome.sh
 
-# --------------
-# 7. CRON Tasks
-# --------------
+# ---------------------
+# 7. Mobile Environment
+# ---------------------
+botintro "\e[1mSTEP 7: Environment Setup for mobile development.\e[0m"
+source ./setup/react-native.sh
 
-botintro "\e[1mSTEP 7: Scheduling crontab tasks\e[0m"
+# -------------
+# 8. CRON Tasks
+# -------------
+
+botintro "\e[1mSTEP 8: Scheduling crontab tasks\e[0m"
 source crontab .scripts/cron.txt
 
 # --------
-# 8. Misc.
+# 9. Misc.
 # --------
-botintro "\e[1mSTEP 8: Final touches\e[0m"
+botintro "\e[1mSTEP 9: Final touches\e[0m"
 source ./setup/misc.sh
 
 # Wrap-up.
