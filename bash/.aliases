@@ -137,12 +137,15 @@ alias update='\
   sudo gem cleanup; \
 '
 
-# Google Chrome
+# Browsers
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 # alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary'
-
-# Brave Browsers
 alias brave='/Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser'
+alias chrome-in="open -a /Applications/Google\ Chrome.app --args --incognito"
+alias ff="open -a /Applications/Firefox.app"
+alias firefox="open -a /Applications/Firefox.app"
+alias ffde="open -a /Applications/FirefoxDeveloperEdition.app"
+alias safari="open -a safari"
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -189,6 +192,9 @@ alias c="tr -d '\n' | pbcopy"
 
 # Recursively delete `.DS_Store` files
 alias dscleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
+# Lock the computer by putting the display to sleep immediately
+alias lock="pmset displaysleepnow"
 
 # Empty the Trash on all mounted volumes and the main HDD.
 # Also, clear Apple’s System Logs to improve shell startup speed.
