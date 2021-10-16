@@ -87,6 +87,8 @@ if $brewinstall; then
   brew install grep
   brew install nano
   brew install openssh
+  brew install openssl
+  brew install readline
   brew install screen
 
   # Key tools.
@@ -148,6 +150,23 @@ if $brewinstall; then
   brew install cppunit
   brew install pidcat
 
+  # PHP Dependencies
+  brew install bison
+  brew install freetype
+  brew install gd
+  brew install gettext
+  brew install icu4c
+  brew install krb5
+  brew install libedit
+  brew install libiconv
+  brew install libjpeg
+  brew install libpng
+  brew install libxml2
+  brew install libzip
+  brew install pkg-config
+  brew install re2c
+  brew install zlib
+
   # DEV ENV
   brew install autoenv
   brew install direnv
@@ -174,6 +193,7 @@ if $brewinstall; then
   brew install rbenv-gemset
   brew install hugo
   brew install jsonnet
+  brew install watchman # watch file changes
 
   brew install mkcert
   brew install nss # if you use Firefox

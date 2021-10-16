@@ -51,8 +51,11 @@ PATH="$MINICONDA_PATH/bin:$PATH"
 # asdf
 PATH="$ASDF_PATH/shims:$PATH"
 
-#openjdk8
+# openjdk8
 PATH="/usr/local/opt/openjdk@8/bin:$PATH"
+
+# php
+PATH="$(brew --prefix bison)/bin:${PATH}"
 
 # Dedupe using awk.
 if hash awk 2>/dev/null; then

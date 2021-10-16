@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
+debug=${1:-false}
 
-echo -e "Installing nodejs"
+# Load help lib if not already loaded.
+if [ -z ${libloaded+x} ]; then
+  source ./lib.sh
+fi
 
-echo -e "\tSetting up asdf"
+action "asdf: setting up Nodejs"
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git >/dev/null 2>&1
-bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring >/dev/null 2>&1
+bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
 
 # Set the containing directory for later use
 versions_dir="${HOME}/.dotfiles/installer/versions/nodejs"
@@ -13,7 +17,7 @@ versions_dir="${HOME}/.dotfiles/installer/versions/nodejs"
 function read_file {
   local file_path="${versions_dir}"
   while read -r line; do
-    echo -e "${line}"
+    running "${line}"
   done <"${file_path}"
 }
 
@@ -21,11 +25,11 @@ function read_file {
 function install_versions {
   local versions_list=$(read_file)
   for version in ${versions_list}; do
-    echo -e "\t\tInstalling ${version}"
+    running "asdf: Installing ${version} for nodejs"
     asdf install nodejs ${version} >/dev/null 2>&1
     local status=$?
     if [ ${status} -ne "0" ]; then
-      echo "Last exit code was ${status} for 'asdf install nodejs ${version}'. Please run manually. Aborting."
+      error "Last exit code was ${status} for 'asdf install nodejs ${version}'. Please run manually. Aborting."
       exit 1
     fi
   done
@@ -35,24 +39,9 @@ function install_versions {
 
 function set_global {
   local latest_version=${1}
-  echo -e "\tSetting ${latest_version} as global"
+  running "asdf nodejs: setting ${latest_version} as global"
   asdf global nodejs ${latest_version} >/dev/null 2>&1
 }
 
-echo -e "\tInstalling versions"
+action "asdf nodejs: installing versions"
 install_versions
-
-echo -e "\tInstalling yarn"
-npm install -g yarn >/dev/null 2>&1
-
-# Typescript
-echo -e "\tInstalling typescript"
-npm install -g typescript >/dev/null 2>&1
-
-# Vim dependencies
-echo -e "\tInstalling language servers"
-npm install -g javascript-typescript-langserver >/dev/null 2>&1
-npm install -g typescript-language-server >/dev/null 2>&1
-
-echo -e "\tInstalling neovim bindings"
-npm install -g neovim >/dev/null 2>&1

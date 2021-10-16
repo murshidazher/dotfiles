@@ -40,7 +40,9 @@ if hash asdf 2>/dev/null; then
     http-server
     imageoptim-cli
     is-up-cli
+    javascript-typescript-langserver
     lighthouse
+    neovim
     npm-check
     npm-home
     npm-name-cli
@@ -55,6 +57,8 @@ if hash asdf 2>/dev/null; then
     surge
     svgo
     trash-cli
+    typescript
+    typescript-language-server
     viewport-list-cli
     vtop
     @vue/cli

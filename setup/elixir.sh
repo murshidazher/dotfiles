@@ -8,7 +8,7 @@ fi
 
 action "asdf: setting up Elixir"
 
-action "asdf: Setting up asdf plugins for java, erlang and elixir"
+action "asdf: Setting up asdf plugins for Java, Erlang and Eixir"
 asdf plugin-add java https://github.com/halcyon/asdf-java.git >/dev/null 2>&1
 asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git >/dev/null 2>&1
 asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git >/dev/null 2>&1
@@ -29,7 +29,7 @@ function install_versions {
   local language="${1}"
   local versions_list=$(read_file "${versions_dir}/${language}")
   for version in ${versions_list}; do
-    running "Installing ${version} for ${language}"
+    running "asdf: installing ${version} for ${language}"
     asdf install $language ${version} >/dev/null 2>&1
     local status=$?
     if [ ${status} -ne "0" ]; then
@@ -43,15 +43,19 @@ function install_versions {
 function set_global {
   local language=${1}
   local latest_version=${2}
-  running "\t\tSetting ${language} ${latest_version} as global"
+  running "asdf ${language}: setting ${latest_version} as global"
   asdf global ${language} ${latest_version} >/dev/null 2>&1
 }
 
-action "\tInstalling versions"
-
+action "asdf java: installing versions"
 install_versions "java"
-source ~/.asdf/plugins/java/set-java-home.bash
-grep -q "source ~/.asdf/plugins/java/set-java-home.bash" ~/.zshrc || echo "source ~/.asdf/plugins/java/set-java-home.bash" >>~/.zshrc
 
+bash -c 'source ~/.asdf/plugins/java/set-java-home.bash'
+# source ~/.asdf/plugins/java/set-java-home.bash
+# grep -q "source ~/.asdf/plugins/java/set-java-home.bash" ~/.zshrc || echo "source ~/.asdf/plugins/java/set-java-home.bash" >>~/.zshrc
+
+action "asdf erlang: installing versions"
 install_versions "erlang"
+
+action "asdf elixir: installing versions"
 install_versions "elixir"

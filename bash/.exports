@@ -37,6 +37,7 @@ export ASDF_PATH="$HOME/.asdf"
 export MINICONDA_PATH="$DEV_DIR/miniconda"
 
 # Java path.
+# source ~/.asdf/plugins/java/set-java-home.bash
 export JAVA_HOME=". $HOME/.asdf/plugins/java/set-java-home.bash"
 
 # Increase Bash history size. Allow 32³ entries; the default is 500.
@@ -127,10 +128,16 @@ export LDFLAGS="-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib"
 # export LDFLAGS="-L/usr/local/opt/llvm/lib"
 export CPPFLAGS="-I/usr/local/opt/llvm/include"
 
-# openjdk8
+# Openjdk8
 export CPPFLAGS="-I/usr/local/opt/openjdk@8/include"
 export CFLAGS="-O2 -g -fno-stack-check"
 export KERL_CONFIGURE_OPTIONS="--disable-hipe --with-ssl=$(brew --prefix openssl)"
 
 # mkcert
 export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
+
+# php dependencies
+export PKG_CONFIG_PATH="$(brew --prefix icu4c)/lib/pkgconfig:$(brew --prefix krb5)/lib/pkgconfig:$(brew --prefix libedit)/lib/pkgconfig:$(brew --prefix libxml2)/lib/pkgconfig:$(brew --prefix openssl)/lib/pkgconfig"
+
+# Ruby
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"

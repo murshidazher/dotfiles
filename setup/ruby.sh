@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
+debug=${1:-false}
 
-echo -e "Installing ruby"
+# Load help lib if not already loaded.
+if [ -z ${libloaded+x} ]; then
+  source ./lib.sh
+fi
 
-echo -e "\tSetting up asdf"
+action "asdf: setting up ruby"
 asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git >/dev/null 2>&1
-brew install openssl readline >/dev/null 2>&1
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
+# ruby dependencies
+bash -c 'export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"'
 
 # Set the containing directory for later use
 versions_dir="${HOME}/.dotfiles/installer/versions/ruby"
@@ -14,7 +19,7 @@ versions_dir="${HOME}/.dotfiles/installer/versions/ruby"
 function read_file {
   local file_path="${versions_dir}"
   while read -r line; do
-    echo -e "${line}"
+    running "${line}"
   done <"${file_path}"
 }
 
@@ -22,11 +27,11 @@ function read_file {
 function install_versions {
   local versions_list=$(read_file)
   for version in ${versions_list}; do
-    echo -e "\t\tInstalling ${version}"
+    running "asdf ruby: installing ${version}"
     asdf install ruby ${version} >/dev/null 2>&1
     local status=$?
     if [ ${status} -ne "0" ]; then
-      echo "Last exit code was ${status} for 'asdf install ruby ${version}'. Please run manually. Aborting."
+      error "Last exit code was ${status} for 'asdf install ruby ${version}'. Please run manually. Aborting."
       exit 1
     fi
   done
@@ -36,12 +41,12 @@ function install_versions {
 
 function set_global {
   local latest_version=${1}
-  echo -e "\tSetting ${latest_version} as global"
+  running "asdf ruby: setting ${latest_version} as global"
   asdf global ruby ${latest_version} >/dev/null 2>&1
 }
 
-echo -e "\tInstalling versions"
+action "asdf ruby: installing versions"
 install_versions
 
-echo -e "\tInstalling neovim bindings"
-gem install neovim >/dev/null 2>&1
+action "asdf ruby: installing neovim bindings"
+gem install neovim

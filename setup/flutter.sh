@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
+debug=${1:-false}
 
-echo -e "Installing flutter"
-
-echo -e "\tSetting up asdf"
+# Load help lib if not already loaded.
+if [ -z ${libloaded+x} ]; then
+  source ./lib.sh
+fi
+action "asdf: setting up Flutter"
 asdf plugin-add flutter >/dev/null 2>&1
 
 # Set the containing directory for later use
@@ -12,7 +15,7 @@ versions_dir="${HOME}/.dotfiles/installer/versions/flutter"
 function read_file {
   local file_path="${versions_dir}"
   while read -r line; do
-    echo -e "${line}"
+    running "${line}"
   done <"${file_path}"
 }
 
@@ -20,11 +23,11 @@ function read_file {
 function install_versions {
   local versions_list=$(read_file)
   for version in ${versions_list}; do
-    echo -e "\t\tInstalling ${version}"
+    running "asdf: installing ${version} for flutter"
     asdf install flutter ${version} >/dev/null 2>&1
     local status=$?
     if [ ${status} -ne "0" ]; then
-      echo "Last exit code was ${status} for 'asdf install flutter ${version}'. Please run manually. Aborting."
+      error "Last exit code was ${status} for 'asdf install Flutter ${version}'. Please run manually. Aborting."
       exit 1
     fi
   done
@@ -34,30 +37,13 @@ function install_versions {
 
 function set_global {
   local latest_version=${1}
-  echo -e "\tSetting ${latest_version} as global"
+  running "asdf flutter: setting ${latest_version} as global"
   asdf global flutter ${latest_version} >/dev/null 2>&1
 }
 
-echo -e "\tInstalling versions"
+action "asdf: installing versions"
 install_versions
 
-echo -e "\tSetting up environment"
-
-echo -e "\t\tSetting up iOS environment"
-echo -e "\t\t\tSetting up Xcode"
-sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer >/dev/null 2>&1
-if [ $? -ne "0" ]; then
-  echo -e "You need to install full Xcode first to continue!"
-else
-  sudo xcodebuild -runFirstLaunch
-  echo -e "\t\t\tSetting up cocoapods"
-  gem install cocoapods >/dev/null 2>&1
-fi
-
-echo -e "\t\tSetting up Android environment"
-echo -e "\t\t\tInstalling Android Studio"
-brew cask install android-studio >/dev/null 2>&1
-
-echo -e "\tThere are likely manual step required"
-echo -e "\tInstallation status"
-flutter doctor
+# action "asdf: there are likely manual step required"
+# action "asdf: installation status"
+# flutter doctor

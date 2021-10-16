@@ -2,17 +2,48 @@
 # https://www.chrisjmendez.com/2021/05/12/how-to-install-flutter-on-mac-osx-using-homebrew/
 # https://reactnative.dev/docs/environment-setup
 # https://github.com/scflode/dotfiles/tree/master/installer/versions - settings for versions
-
-# install jetbrains-toolbox
-brew install --cask jetbrains-toolbox
+# https://stackoverflow.com/questions/64907154/android-studio-emulator-on-macos-with-arm-cpu-m1
 
 # used by facebook to watch for file changes
 brew install watchman
 
+# Ant
+action "asdf: setting up Ant"
+asdf plugin add ant
+
+local LATEST_ANT_VERSION=$(asdf list-all ant | grep '^3\.' | grep -v '\-dev\|rc' | grep -v 'b\d\+' | tail -1)
+
+# install
+action "asdf: installing global versions of ant $LATEST_ANT_VERSION"
+asdf install ant "${LATEST_ANT_VERSION}"
+asdf global ant "${LATEST_ANT_VERSION}"
+# ant -version
+
+# maven
+action "asdf: setting up Maven"
+asdf plugin-add maven
+
+local LATEST_MAVEN_VERSION=$(asdf list-all maven | grep '^3\.' | grep -v '\-dev\|rc' | grep -v 'b\d\+' | tail -1)
+
+# install
+action "asdf: installing global versions of maven $LATEST_MAVEN_VERSION"
+asdf install maven "${LATEST_MAVEN_VERSION}"
+asdf global maven "${LATEST_MAVEN_VERSION}"
+
+# gradle
+action "asdf: setting up Gradle"
+asdf plugin-add gradle
+
+local LATEST_MAVEN_VERSION=$(asdf list-all maven | grep '^3\.' | grep -v '\-dev\|rc' | grep -v 'b\d\+' | tail -1)
+
+# install
+action "asdf: installing global versions of maven $LATEST_MAVEN_VERSION"
+asdf install gradle "${LATEST_MAVEN_VERSION}"
+asdf global gradle "${LATEST_MAVEN_VERSION}"
+
 # Android
 brew install ant maven gradle
-# Android-studio installed with jetbrains-toolbox
-# brew install --cask android-studio
+
 brew install --cask android-sdk
 brew install --cask android-ndk
 brew install --cask android-platform-tools
@@ -40,13 +71,7 @@ touch ~/.android/repositories.cfg
 sdkmanager --update
 sdkmanager "platform-tools" "platforms;android-29"
 
-# Dart
-brew tap dart-lang/dart
-brew install dart
-
 # Flutter
-# https://flutter.dev/docs/get-started/install/macos
-brew install --cask flutter
 
 # Flutter fvm
 pub global activate fvm
@@ -68,15 +93,16 @@ flutter doctor --android-licenses
 echo "Install XCode from MacStore"
 read -p "Press [Enter] key when done..."
 
-sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
-sudo xcodebuild -runFirstLaunch
-sudo xcodebuild -license
+# sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+# sudo xcodebuild -runFirstLaunch
+# sudo xcodebuild -license
 open -a Simulator
 sudo gem install cocoapods
 pod setup
 
 # skia
 # https://developer.android.com/studio/run/emulator-acceleration
+# ARM based chipset cant use the hardware acceleration
 su
 setprop debug.hwui.renderer skiagl
 stop
