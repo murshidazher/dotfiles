@@ -45,7 +45,7 @@ bash -c "`curl -L https://git.io/dotfiles-mac`"
 ### Basic
 
 - [Magnet](https://magnet.crowdcafe.com/) - Window manager
-- [iterm2]() -
+- [iterm2](https://iterm2.com/) - macOS terminal replacement
 - [dash](https://kapeli.com/dash) - API documentation set
 - [ispell](https://www.gnu.org/software/ispell/) - spelling checker for Unix
 
@@ -68,6 +68,7 @@ Keeping the plugin list up to date requires manual work (like with Homebrew), an
 ```sh
 codexm
 ```
+
 ### gpg sign
 
 > Read this[stackoverflow](https://stackoverflow.com/questions/39494631/gpg-failed-to-sign-the-data-fatal-failed-to-write-commit-object-git-2-10-0) for troubleshooting.
