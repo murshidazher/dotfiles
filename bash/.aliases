@@ -194,7 +194,7 @@ alias c="tr -d '\n' | pbcopy"
 alias dscleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Lock the computer by putting the display to sleep immediately
-alias lock="pmset displaysleepnow"
+alias lock="osascript -e 'tell application \"System Events\" to keystroke \"q\" using {command down,control down}'"
 
 # Empty the Trash on all mounted volumes and the main HDD.
 # Also, clear Apple’s System Logs to improve shell startup speed.
@@ -317,3 +317,6 @@ f() {
   unset -f f;
 };
 f'
+
+# Work aliases
+[[ -f "$HOME/.work-aliases" ]] && source "$HOME/.work-aliases" 2>/dev/null

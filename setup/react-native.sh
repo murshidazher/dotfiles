@@ -32,58 +32,83 @@ else
   exit -1
 fi
 
+# --------
+# 1. Basic
+# --------
+
 # used by facebook to watch for file changes
 brew install watchman
 
-# Android
+# ----------
+# 2. Android
+# ----------
 brew install ant maven gradle
 
 brew install --cask android-sdk
 brew install --cask android-ndk
 brew install --cask android-platform-tools # for adb
-brew install --cask android-studio
-brew install --cask intel-haxm
 
-cat <<'EOT' >~/.androidrc
-export ANT_HOME=/usr/local/opt/ant
-export MAVEN_HOME=/usr/local/opt/maven
-export GRADLE_HOME=/usr/local/opt/gradle
-export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
-export ANDROID_HOME=$ANDROID_SDK_ROOT
-export ANDROID_NDK_HOME=/usr/local/opt/android-ndk
-export PATH=$ANT_HOME/bin:$PATH
-export PATH=$MAVEN_HOME/bin:$PATH
-export PATH=$GRADLE_HOME/bin:$PATH
-export PATH=$ANDROID_HOME/emulator:$PATH
-export PATH=$ANDROID_HOME/tools/bin:$PATH
-export PATH=$ANDROID_HOME/platform-tools:$PATH
-export PATH=$ANDROID_HOME/build-tools/19.1.0:$PATH
-EOT
-echo "source ~/.androidrc" >>~/.bash_profile
-source ~/.bash_profile
+# Android studio
+# brew install --cask android-studio
 
 touch ~/.android/repositories.cfg
+
+# Hardware Acceleration
+brew install --cask intel-haxm
 
 # setup the env to java 1.8 for sdkmanager
 # bash -c 'JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
 # bash -c 'INTEL_HAXM_HOME=/usr/local/Caskroom/intel-haxm'
 
+# If you have install android studio
+# https://stackoverflow.com/questions/17963508/how-to-install-android-sdk-build-tools-on-the-command-line#answer-22862021
+# ./tools/android list sdk --all
+# ./tools/android list avd
+
 sdkmanager --update
 sdkmanager "platform-tools" "platforms;android-29"
+sdkmanager "build-tools;29.0.2"
+sdkmanager "sources;android-29"
+sdkmanager "extras;android;m2repository" # support libraries for maven repo for backward compatibility (gradle)
+sdkmanager "extras;google;m2repository"
 
-# add to ~/.bash_rc file
-# Android
-export ANDROID_HOME="$HOME/Android/Sdk"
-export PATH="$ANDROID_HOME/emulator:$PATH"
-export PATH="$ANDROID_HOME/tools:$PATH"
-export PATH="$ANDROID_HOME/tools/bin:$PATH"
-export PATH="$ANDROID_HOME/platform-tools:$PATH"
+# For m1 macbook
+sdkmanager "platform-tools" "platforms;android-31"
+sdkmanager "build-tools;31.0.0"
+sdkmanager "sources;android-31"
+sdkmanager "extras;android;m2repository" # what is this
+sdkmanager "extras;google;m2repository"
 
-# RUN IN EMULATOR (create an AVD using Pixel 2)
-# Android Studio -> More actions -> AVD Manager -> Select Pixel 2 Image
-# Create Virtual Device -> Select x86 Images Tab -> Q 29 (would be already downloaded) -> Next -> Finish
+sdkmanager --licenses
+
+# -------------
+# 2.1. Emulator
+# -------------
+
+action "update sdk manager"
+sdkmanager --update
+
+action "download system images for android emulator"
+# sdkmanager --list | grep "system-images.*playstore"
+# For Intel macbooks
+local SYSTEM_IMAGE_INTEL_VERSION="system-images;android-29;google_apis_playstore;x86_64"
+sdkmanager ${SYSTEM_IMAGE_VERSION}
+
+# For m1 macbooks
+local SYSTEM_IMAGE_ARM_VERSION="system-images;android-29;google_apis_playstore;x86_64"
+sdkmanager ${SYSTEM_IMAGE_ARM_VERSION}
+
+action "create an AVD using Pixel 2"
+
+# Create an AVD using Pixel 2
 # https://developer.android.com/studio/command-line/avdmanager
 # https://developer.android.com/studio/run/emulator-commandline
+# Note: use 'avdmanager list device' to get the device id
+avdmanager create avd -n Pixel_2_API_31 -k ${SYSTEM_IMAGE_VERSION} -d 17
+
+# Note: If you've installed Android Studio,
+# Android Studio -> More actions -> AVD Manager -> Select Pixel 2 Image
+# Create Virtual Device -> Select x86 Images Tab -> Q 29 (would be already downloaded) -> Next -> Finish
 
 # ----------
 # 3. Flutter
@@ -104,7 +129,8 @@ pod setup
 
 # skia
 # https://developer.android.com/studio/run/emulator-acceleration
-# ARM based chipset cant use the hardware acceleration
+# Note: ARM based chipset (M1) can't use hardware acceleration
+
 su
 setprop debug.hwui.renderer skiagl
 stop
@@ -112,8 +138,9 @@ start
 
 flutter doctor
 
-# react native
-# use nvm or asdf version manager
+# ---------------
+# 4. React native
+# ---------------
 
 if hash asdf 2>/dev/null; then
 

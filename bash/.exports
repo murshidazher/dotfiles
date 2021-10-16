@@ -142,3 +142,9 @@ export PKG_CONFIG_PATH="$(brew --prefix icu4c)/lib/pkgconfig:$(brew --prefix krb
 
 # Ruby
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
+# Android
+[[ -f "$HOME/.androidrc" ]] && source "$HOME/.androidrc" 2>/dev/null
+
+# Credentials
+[[ -f "$HOME/.credentials" ]] && source "$HOME/.credentials" 2>/dev/null

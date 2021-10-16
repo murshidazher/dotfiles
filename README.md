@@ -60,6 +60,7 @@ There are some rules when naming a directory inside the `dev`;
 - There is a directory named `src`.
 - `src` contains a directory for each git platform.
 - Inside each git platform is only repo names.
+- Add your secrets and work aliases in the root directory.
 
 ### Updating vscode plugin list
 

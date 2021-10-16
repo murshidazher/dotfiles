@@ -1,2 +1,4 @@
 # auto generated files
 *.gitconfig.local
+**/*.credentials
+.gmailctl
