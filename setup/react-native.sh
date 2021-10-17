@@ -8,6 +8,7 @@
 # https://gist.github.com/mrk-han/66ac1a724456cadf1c93f4218c6060ae - install skins
 # https://www.py4u.net/discuss/626303
 # https://gist.github.com/badsyntax/ce848ab40b952d944c496575d40e5427 - run on azure pipelines (extract the config.ini) setup
+# TODO: Explore and add script to manage avd_skins to emulator programatically.
 
 #!/usr/bin/env bash
 debug=${1:-false}
