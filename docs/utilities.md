@@ -43,6 +43,20 @@ And check the flutter version after the setup,
 > mkcert -uninstall
 ```
 
+## Astah UML
+
+```sh
+> brew install --cask astah-uml
+```
+
+## Zotero
+
+For research
+
+```sh
+> brew install --cask zotero
+```
+
 ## MS office
 
 ```sh
