@@ -117,7 +117,7 @@ avdmanager --verbose create avd --force --name "avd-samsung-10.10.2021" --device
 # emulator @avd-samsung-10.10.2021 -wipe-data -verbose -logcat '*:e *:w' -netfast -no-boot-anim -no-audio -no-window -skin 480x800
 # alias avd-samsung='emulator @avd-samsung-10.10.2021 -no-boot-anim -netfast -no-snapshot -wipe-data -skin 768x1280 -memory 2048 &'
 
-# Add keyboard forwarding
+# Add keyboard forwarding, to enable keyboard keypress to be sent to emulator.
 for file in ~/.android/avd/*avd; do
   if cat $file/config.ini | grep "hw.keyboard=yes" >/dev/null; then
     success "✔ hw.keyboard is already added to $(basename $file)"
