@@ -161,8 +161,8 @@ ask_for_sudo
 source ./setup/files.sh
 
 # Install all available macos updates.
-#action "Installing Mac updates:\n"
-#sudo softwareupdate -ia
+action "Installing Mac updates:\n"
+sudo softwareupdate -ia
 
 #-------------------------------------------
 # Prerequisite: Login to Github
@@ -236,7 +236,7 @@ else
   cancelled "~/dev directory exists..."
 fi
 
-running "Cloning the repo from https://github.com/murshidazher/dotfiles to ~/dev/src/github"
+running "Cloning the repo from https://github.com/murshidazher/dotfiles to ~"
 
 # dotfiles for vs code, emacs, gitconfig, oh my zsh, etc.
 cd $HOME/dev/src/github
