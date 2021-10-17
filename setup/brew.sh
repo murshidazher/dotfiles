@@ -206,7 +206,6 @@ if $brewinstall; then
 
   brew tap mongodb/brew
   brew install mongodb-community
-  brew install --cask mongodb-compass
 
   # DEVOPS
   brew install awscli
@@ -301,6 +300,8 @@ if $brewinstall; then
   brew install --cask aerial
   brew install --cask openinterminal
   brew install --cask dozer
+  brew install --cask itsycal
+  # brew install --cask meetingbar
 
   # Design
   # brew install --cask abstract
@@ -315,20 +316,21 @@ if $brewinstall; then
   # Development
   brew install --cask dash
   brew install --cask brave-browser
-  brew install --cask graphiql
   brew install --cask imagealpha
   brew install --cask imageoptim
   brew install --cask ngrok
-  brew install --cask sequel-pro # mysql management
-  # brew install --cask tableplus
+  # brew install --cask sequel-pro # mysql management
+  # brew install --cask mongodb-compass
+  brew install --cask tableplus
   brew install --cask visual-studio-code
-  brew install --cask airtable
-  brew install --cask astah-uml
+  # brew install --cask airtable
+  # brew install --cask astah-uml
   brew install --cask intellij-idea-ce
-  brew install --cask eclipse-jee
+  # brew install --cask eclipse-jee
   brew install --cask responsively
-  brew install --cask lepton # gist
   # brew install --cask fork
+  brew install --cask lepton # gist
+  # brew install --cask graphiql
   # brew install --cask proxyman
 
   # DevOps
