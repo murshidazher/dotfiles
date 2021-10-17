@@ -32,6 +32,7 @@ alias dwork="cd $HOME/Dropbox/Work"
 alias drepos="cd $HOME/Dropbox/repos"
 alias dcode="cd $HOME/Dropbox/code"
 alias ddev="cd $HOME/Dropbox/dev"
+alias wallpapers="cd $HOME/Pictures/wallpapers"
 
 alias g="git"
 alias v="vim"
