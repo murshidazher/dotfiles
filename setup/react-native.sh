@@ -107,7 +107,7 @@ action "create an AVD using Pixel 2"
 # https://developer.android.com/studio/command-line/avdmanager
 # https://developer.android.com/studio/run/emulator-commandline
 # Note: use 'avdmanager list device' to get the device id
-avdmanager --verbose create avd --force --name "avd-samsung-10.10.2021" --device "pixel" --package ${SYSTEM_IMAGE_VERSION} -c 2000M --tag "google_apis_playstore"
+avdmanager --verbose create avd --force --name "avd-samsung-10.10.2021" --device "pixel" --package ${SYSTEM_IMAGE_VERSION} -c 2048M --tag "google_apis_playstore"
 
 # Note: If you've installed Android Studio,
 # Android Studio -> More actions -> AVD Manager -> Select Pixel 2 Image
