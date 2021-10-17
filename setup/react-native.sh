@@ -76,13 +76,6 @@ sdkmanager "sources;android-29"
 sdkmanager "extras;android;m2repository" # support libraries for maven repo for backward compatibility (gradle)
 sdkmanager "extras;google;m2repository"
 
-# For m1 macbook
-sdkmanager "platform-tools" "platforms;android-31"
-sdkmanager "build-tools;31.0.0"
-sdkmanager "sources;android-31"
-sdkmanager "extras;android;m2repository" # what is this
-sdkmanager "extras;google;m2repository"
-
 sdkmanager --licenses
 
 # -------------
@@ -94,13 +87,8 @@ sdkmanager --update
 
 action "download system images for android emulator"
 # sdkmanager --list | grep "system-images.*playstore"
-# For Intel macbooks
 local SYSTEM_IMAGE_INTEL_VERSION="system-images;android-29;google_apis_playstore;x86_64"
-sdkmanager ${SYSTEM_IMAGE_VERSION}
-
-# For m1 macbooks
-local SYSTEM_IMAGE_ARM_VERSION="system-images;android-29;google_apis_playstore;x86_64"
-sdkmanager ${SYSTEM_IMAGE_ARM_VERSION}
+sdkmanager ${SYSTEM_IMAGE_INTEL_VERSION}
 
 action "create an AVD using Pixel 2"
 
@@ -108,7 +96,7 @@ action "create an AVD using Pixel 2"
 # https://developer.android.com/studio/command-line/avdmanager
 # https://developer.android.com/studio/run/emulator-commandline
 # Note: use 'avdmanager list device' to get the device id
-avdmanager --verbose create avd --force --name "avd-samsung-10.10.2021" --device "pixel" --package ${SYSTEM_IMAGE_VERSION} -c 2048M --tag "google_apis_playstore"
+avdmanager --verbose create avd --force --name "avd-samsung-10.10.2021" --device "pixel" --package ${SYSTEM_IMAGE_INTEL_VERSION} -c 2048M --tag "google_apis_playstore"
 
 # Note: If you've installed Android Studio,
 # Android Studio -> More actions -> AVD Manager -> Select Pixel 2 Image
