@@ -13,10 +13,15 @@ declare -a createdirarray=(
   "$HOME/Applications"
   "$HOME/Work"
   "$HOME/dev/src/github"
+  "$HOME/Pictures/wallpapers"
   "$HOME/code"
   "$HOME/.tmp"
   "$HOME/.ssh"
   "$HOME/.ssh/control"
+  "$HOME/Work/dbs/mysql"
+  "$HOME/Work/dbs/mongodb"
+  "$HOME/Work/src"
+  "$HOME/Work/github"
 )
 
 action "Creating directories"
