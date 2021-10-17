@@ -302,6 +302,8 @@ if $brewinstall; then
   brew install --cask dozer
   brew install --cask itsycal
   # brew install --cask meetingbar
+  brew install --cask recordit
+  brew install --cask keka
 
   # Design
   # brew install --cask abstract
@@ -314,17 +316,18 @@ if $brewinstall; then
   brew install --cask sketch@3.x # use version 63.x
 
   # Development
-  brew install --cask dash
+  # brew install --cask airtable
+  # brew install --cask astah-uml
   brew install --cask brave-browser
+  brew install --cask dash
   brew install --cask imagealpha
   brew install --cask imageoptim
   brew install --cask ngrok
-  # brew install --cask sequel-pro # mysql management
-  # brew install --cask mongodb-compass
+  brew install --cask sequel-pro # mysql management
+  brew install --cask mongodb-compass
+  brew install --cask robo-3t
   brew install --cask tableplus
   brew install --cask visual-studio-code
-  # brew install --cask airtable
-  # brew install --cask astah-uml
   brew install --cask intellij-idea-ce
   # brew install --cask eclipse-jee
   brew install --cask responsively
@@ -357,11 +360,9 @@ if $brewinstall; then
   brew install --cask qlvideo
 
   # Productivity
-  brew install asciinema
+  # brew install asciinema
   brew install gmailctl
   brew install --cask krisp
-  brew install --cask recordit
-  brew install --cask keka
 
   # Research
   brew install --cask zotero
