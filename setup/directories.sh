@@ -18,10 +18,10 @@ declare -a createdirarray=(
   "$HOME/.tmp"
   "$HOME/.ssh"
   "$HOME/.ssh/control"
-  "$HOME/Work/dbs/mysql"
-  "$HOME/Work/dbs/mongodb"
+  "$HOME/Work/db_backup/mysql"
+  "$HOME/Work/db_backup/mongodb"
   "$HOME/Work/src"
-  "$HOME/Work/github"
+  "$HOME/Work/src/github"
 )
 
 action "Creating directories"
