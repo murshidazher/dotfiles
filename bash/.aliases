@@ -324,4 +324,4 @@ alias aasdk="sdkmanager --list | sed -e '/Available Packages/q'" # get the list 
 alias asdku="sdkmanager --update"
 
 # Work aliases
-[[ -f "$HOME/.work-aliases" ]] && source "$HOME/.work-aliases" 2>/dev/null
+[[ -f "$HOME/.workrc" ]] && source "$HOME/.workrc" 2>/dev/null

@@ -26,9 +26,11 @@ declare -a dotfilesfilearray=(
   "$dotfilesdir/android"
   "$dotfilesdir/asdf"
   "$dotfilesdir/bash"
+  "$dotfilesdir/cron"
   "$dotfilesdir/curl"
   "$dotfilesdir/editor"
   "$dotfilesdir/git"
+  "$dotfilesdir/go"
   "$dotfilesdir/mackup"
   "$dotfilesdir/node"
   "$dotfilesdir/ruby"
@@ -37,8 +39,7 @@ declare -a dotfilesfilearray=(
   "$dotfilesdir/tmux"
   "$dotfilesdir/vim"
   "$dotfilesdir/wget"
-  "$dotfilesdir/cron"
-  "$dotfilesdir/go"
+  "$dotfilesdir/work"
 )
 
 success "Directories and files sourced."
