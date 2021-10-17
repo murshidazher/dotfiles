@@ -266,15 +266,7 @@ if $brewinstall; then
   brew tap homebrew/cask
   brew tap homebrew/cask-versions
 
-  # Security
-  brew install --cask authy
-  brew install --cask bitwarden
-  brew install --cask keybase
-  brew install --cask gpgtools
-  brew install --cask tunnelblick
-  # brew install --cask openvpn-connect
-
-  # General
+  # GENERAL
   brew install --cask caffeine
   brew install --cask diskwave
   brew install --cask dropbox
@@ -305,7 +297,15 @@ if $brewinstall; then
   brew install --cask recordit
   brew install --cask keka
 
-  # Design
+  # SECURITY
+  brew install --cask authy
+  brew install --cask bitwarden
+  brew install --cask keybase
+  brew install --cask gpgtools
+  brew install --cask tunnelblick
+  # brew install --cask openvpn-connect
+
+  # DESIGN
   # brew install --cask abstract
   # brew install --cask sketch
   # brew install --cask zeplin
@@ -315,7 +315,7 @@ if $brewinstall; then
   # Cask outdated but versioned
   brew install --cask sketch@3.x # use version 63.x
 
-  # Development
+  # DEVELOPMENT
   # brew install --cask airtable
   # brew install --cask astah-uml
   brew install --cask brave-browser
@@ -336,7 +336,7 @@ if $brewinstall; then
   # brew install --cask graphiql
   # brew install --cask proxyman
 
-  # DevOps
+  # DEVOPS
   brew install --cask aws-vault
   brew install terraform
   brew install earthly/earthly/earthly
@@ -345,7 +345,7 @@ if $brewinstall; then
   # brew install --cask virtualbox
   # brew install --cask vagrant
 
-  # Quicklook
+  # QUICKLOOK
   brew install --cask qlcolorcode
   brew install --cask qlstephen
   brew install --cask qlmarkdown
@@ -359,23 +359,21 @@ if $brewinstall; then
   brew install --cask quicklookase
   brew install --cask qlvideo
 
-  # Productivity
+  # PRODUCTIVITY
   # brew install asciinema
   brew install gmailctl
   brew install --cask krisp
 
-  # Research
-  brew install --cask zotero
-
-  # Others
-  brew install --cask cakebrew
-
   # DRIVERS
   running "Installing drivers"
-
   brew tap homebrew/cask-drivers
-
   brew install --cask logitech-options
+
+  # RESEARCH
+  brew install --cask zotero
+
+  # OTHERS
+  brew install --cask cakebrew
 
   # Install Mac App Store Applications.
   # requires: brew install mas
