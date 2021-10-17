@@ -134,12 +134,12 @@ done
 flutter precache
 flutter doctor --android-licenses
 
-echo "Install XCode from MacStore"
+runnning "Install XCode from MacStore"
 read -p "Press [Enter] key when done..."
 
-# sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
-# sudo xcodebuild -runFirstLaunch
-# sudo xcodebuild -license
+sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+sudo xcodebuild -runFirstLaunch
+sudo xcodebuild -license
 open -a Simulator
 sudo gem install cocoapods
 pod setup
