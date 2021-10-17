@@ -102,7 +102,7 @@ and many more...
 - [ ] Organize macOS launchpad apps using [lporg](https://github.com/blacktop/lporg)
 - [ ] Better management of language versions [dotfiles](https://github.com/scflode/dotfiles/tree/master/installer/versions)
 - [ ] Migrate from [bash to zsh](https://aboutmonica.com/blog/setting-up-zsh-with-autosuggestions) in m1
-- [ ] [Docker flutter github](https://github.com/matsp/docker-flutter) 
+- [ ] [Docker flutter github](https://github.com/matsp/docker-flutter)
 
 ## License
 
