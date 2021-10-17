@@ -173,3 +173,10 @@ if hash asdf 2>/dev/null; then
 else
   echo "WARNING: asdf not found."
 fi
+
+# --------
+# 5. Misc.
+# --------
+
+# https://gist.github.com/ThePredators/a1d105b0794198cade4ef2b0e0836541
+# brew install fastlane
