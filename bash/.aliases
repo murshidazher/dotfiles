@@ -261,6 +261,11 @@ alias sequel="LIBMYSQL_ENABLE_CLEARTEXT_PLUGIN=y /Applications/Sequel\ Pro.app/C
 # Make Grunt print stack traces by default
 command -v grunt >/dev/null && alias grunt="grunt --stack"
 
+# tmux
+alias tls='tmux list-sessions'
+alias tn='tmux new -s'
+alias ta='tmux at -t'
+
 # Rails
 alias be="bundle exec "
 alias bi="bundle install"
