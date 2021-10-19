@@ -10,12 +10,16 @@ debug=${1:-false} # default debug param.
 # --------------------
 
 # Colors
+# @author Virgil Ratiu https://gist.github.com/vratiu/9780109
 ESC_SEQ="\x1b["
 COL_RESET=$ESC_SEQ"39;49;00m"
 COL_RED=$ESC_SEQ"31;01m"
 COL_GREEN=$ESC_SEQ"32;01m"
 COL_YELLOW=$ESC_SEQ"33;01m"
-COL_BLUE=$ESC_SEQ"\e[96m"
+COL_BLUE=$ESC_SEQ"34;01m"
+COL_PURPLE=$ESC_SEQ"35;01m"
+COL_CYAN=$ESC_SEQ"36;01m"
+COL_WHITE=$ESC_SEQ"37;01m"
 
 function ok() {
   echo -e "$COL_GREEN[ok]$COL_RESET $1"
@@ -69,13 +73,13 @@ function awesome_header() {
   echo -en "\n"
 }
 
-ask_for_confirmation() {
-  echo -e "$1 (y/N) "
+function ask_for_confirmation() {
+  echo -e "$COL_PURPLE[confirmation]$COL_RESET $1 (y/N) "
   read -n 1
   echo -e "\n"
 }
 
-answer_is_yes() {
+function answer_is_yes() {
   [[ "$REPLY" =~ ^(y|Y) ]] && return 0 || return 1
 }
 
